@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EC46E0C2A23821200F3AF79 /* GraphenAutomatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E0B2A23821200F3AF79 /* GraphenAutomatorApp.swift */; };
+		8EC46E0E2A23821200F3AF79 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E0D2A23821200F3AF79 /* Persistence.swift */; };
+		8EC46E112A23821200F3AF79 /* GraphenAutomator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E0F2A23821200F3AF79 /* GraphenAutomator.xcdatamodeld */; };
+		8EC46E132A23821200F3AF79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E122A23821200F3AF79 /* ContentView.swift */; };
+		8EC46E152A23821500F3AF79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC46E142A23821500F3AF79 /* Assets.xcassets */; };
+		8EC46E192A23821500F3AF79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC46E182A23821500F3AF79 /* Preview Assets.xcassets */; };
+		8EC46E232A23821500F3AF79 /* GraphenAutomatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E222A23821500F3AF79 /* GraphenAutomatorTests.swift */; };
+		8EC46E2D2A23821500F3AF79 /* GraphenAutomatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E2C2A23821500F3AF79 /* GraphenAutomatorUITests.swift */; };
+		8EC46E2F2A23821500F3AF79 /* GraphenAutomatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E2E2A23821500F3AF79 /* GraphenAutomatorUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EC46E1F2A23821500F3AF79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC46E002A23821200F3AF79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EC46E072A23821200F3AF79;
+			remoteInfo = GraphenAutomator;
+		};
+		8EC46E292A23821500F3AF79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC46E002A23821200F3AF79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EC46E072A23821200F3AF79;
+			remoteInfo = GraphenAutomator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8EC46E082A23821200F3AF79 /* GraphenAutomator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphenAutomator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC46E0B2A23821200F3AF79 /* GraphenAutomatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphenAutomatorApp.swift; sourceTree = "<group>"; };
+		8EC46E0D2A23821200F3AF79 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		8EC46E102A23821200F3AF79 /* GraphenAutomator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GraphenAutomator.xcdatamodel; sourceTree = "<group>"; };
+		8EC46E122A23821200F3AF79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8EC46E142A23821500F3AF79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EC46E162A23821500F3AF79 /* GraphenAutomator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GraphenAutomator.entitlements; sourceTree = "<group>"; };
+		8EC46E182A23821500F3AF79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8EC46E1E2A23821500F3AF79 /* GraphenAutomatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphenAutomatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC46E222A23821500F3AF79 /* GraphenAutomatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphenAutomatorTests.swift; sourceTree = "<group>"; };
+		8EC46E282A23821500F3AF79 /* GraphenAutomatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphenAutomatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC46E2C2A23821500F3AF79 /* GraphenAutomatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphenAutomatorUITests.swift; sourceTree = "<group>"; };
+		8EC46E2E2A23821500F3AF79 /* GraphenAutomatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphenAutomatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EC46E052A23821200F3AF79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC46E1B2A23821500F3AF79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC46E252A23821500F3AF79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8EC46DFF2A23821200F3AF79 = {
+			isa = PBXGroup;
+			children = (
+				8EC46E0A2A23821200F3AF79 /* GraphenAutomator */,
+				8EC46E212A23821500F3AF79 /* GraphenAutomatorTests */,
+				8EC46E2B2A23821500F3AF79 /* GraphenAutomatorUITests */,
+				8EC46E092A23821200F3AF79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EC46E092A23821200F3AF79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EC46E082A23821200F3AF79 /* GraphenAutomator.app */,
+				8EC46E1E2A23821500F3AF79 /* GraphenAutomatorTests.xctest */,
+				8EC46E282A23821500F3AF79 /* GraphenAutomatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EC46E0A2A23821200F3AF79 /* GraphenAutomator */ = {
+			isa = PBXGroup;
+			children = (
+				8EC46E0B2A23821200F3AF79 /* GraphenAutomatorApp.swift */,
+				8EC46E0D2A23821200F3AF79 /* Persistence.swift */,
+				8EC46E122A23821200F3AF79 /* ContentView.swift */,
+				8EC46E142A23821500F3AF79 /* Assets.xcassets */,
+				8EC46E162A23821500F3AF79 /* GraphenAutomator.entitlements */,
+				8EC46E0F2A23821200F3AF79 /* GraphenAutomator.xcdatamodeld */,
+				8EC46E172A23821500F3AF79 /* Preview Content */,
+			);
+			path = GraphenAutomator;
+			sourceTree = "<group>";
+		};
+		8EC46E172A23821500F3AF79 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8EC46E182A23821500F3AF79 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8EC46E212A23821500F3AF79 /* GraphenAutomatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EC46E222A23821500F3AF79 /* GraphenAutomatorTests.swift */,
+			);
+			path = GraphenAutomatorTests;
+			sourceTree = "<group>";
+		};
+		8EC46E2B2A23821500F3AF79 /* GraphenAutomatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8EC46E2C2A23821500F3AF79 /* GraphenAutomatorUITests.swift */,
+				8EC46E2E2A23821500F3AF79 /* GraphenAutomatorUITestsLaunchTests.swift */,
+			);
+			path = GraphenAutomatorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EC46E072A23821200F3AF79 /* GraphenAutomator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC46E322A23821500F3AF79 /* Build configuration list for PBXNativeTarget "GraphenAutomator" */;
+			buildPhases = (
+				8EC46E042A23821200F3AF79 /* Sources */,
+				8EC46E052A23821200F3AF79 /* Frameworks */,
+				8EC46E062A23821200F3AF79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GraphenAutomator;
+			productName = GraphenAutomator;
+			productReference = 8EC46E082A23821200F3AF79 /* GraphenAutomator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8EC46E1D2A23821500F3AF79 /* GraphenAutomatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC46E352A23821500F3AF79 /* Build configuration list for PBXNativeTarget "GraphenAutomatorTests" */;
+			buildPhases = (
+				8EC46E1A2A23821500F3AF79 /* Sources */,
+				8EC46E1B2A23821500F3AF79 /* Frameworks */,
+				8EC46E1C2A23821500F3AF79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EC46E202A23821500F3AF79 /* PBXTargetDependency */,
+			);
+			name = GraphenAutomatorTests;
+			productName = GraphenAutomatorTests;
+			productReference = 8EC46E1E2A23821500F3AF79 /* GraphenAutomatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8EC46E272A23821500F3AF79 /* GraphenAutomatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC46E382A23821500F3AF79 /* Build configuration list for PBXNativeTarget "GraphenAutomatorUITests" */;
+			buildPhases = (
+				8EC46E242A23821500F3AF79 /* Sources */,
+				8EC46E252A23821500F3AF79 /* Frameworks */,
+				8EC46E262A23821500F3AF79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EC46E2A2A23821500F3AF79 /* PBXTargetDependency */,
+			);
+			name = GraphenAutomatorUITests;
+			productName = GraphenAutomatorUITests;
+			productReference = 8EC46E282A23821500F3AF79 /* GraphenAutomatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EC46E002A23821200F3AF79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					8EC46E072A23821200F3AF79 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					8EC46E1D2A23821500F3AF79 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 8EC46E072A23821200F3AF79;
+					};
+					8EC46E272A23821500F3AF79 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 8EC46E072A23821200F3AF79;
+					};
+				};
+			};
+			buildConfigurationList = 8EC46E032A23821200F3AF79 /* Build configuration list for PBXProject "GraphenAutomator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8EC46DFF2A23821200F3AF79;
+			productRefGroup = 8EC46E092A23821200F3AF79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EC46E072A23821200F3AF79 /* GraphenAutomator */,
+				8EC46E1D2A23821500F3AF79 /* GraphenAutomatorTests */,
+				8EC46E272A23821500F3AF79 /* GraphenAutomatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EC46E062A23821200F3AF79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC46E192A23821500F3AF79 /* Preview Assets.xcassets in Resources */,
+				8EC46E152A23821500F3AF79 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC46E1C2A23821500F3AF79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC46E262A23821500F3AF79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EC46E042A23821200F3AF79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC46E112A23821200F3AF79 /* GraphenAutomator.xcdatamodeld in Sources */,
+				8EC46E0C2A23821200F3AF79 /* GraphenAutomatorApp.swift in Sources */,
+				8EC46E132A23821200F3AF79 /* ContentView.swift in Sources */,
+				8EC46E0E2A23821200F3AF79 /* Persistence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC46E1A2A23821500F3AF79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC46E232A23821500F3AF79 /* GraphenAutomatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC46E242A23821500F3AF79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC46E2D2A23821500F3AF79 /* GraphenAutomatorUITests.swift in Sources */,
+				8EC46E2F2A23821500F3AF79 /* GraphenAutomatorUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EC46E202A23821500F3AF79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EC46E072A23821200F3AF79 /* GraphenAutomator */;
+			targetProxy = 8EC46E1F2A23821500F3AF79 /* PBXContainerItemProxy */;
+		};
+		8EC46E2A2A23821500F3AF79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EC46E072A23821200F3AF79 /* GraphenAutomator */;
+			targetProxy = 8EC46E292A23821500F3AF79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8EC46E302A23821500F3AF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8EC46E312A23821500F3AF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8EC46E332A23821500F3AF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GraphenAutomator/GraphenAutomator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GraphenAutomator/Preview Content\"";
+				DEVELOPMENT_TEAM = 5JFNMP7X7J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GraphenAutomator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EC46E342A23821500F3AF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GraphenAutomator/GraphenAutomator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GraphenAutomator/Preview Content\"";
+				DEVELOPMENT_TEAM = 5JFNMP7X7J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GraphenAutomator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8EC46E362A23821500F3AF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5JFNMP7X7J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GraphenAutomatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphenAutomator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GraphenAutomator";
+			};
+			name = Debug;
+		};
+		8EC46E372A23821500F3AF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5JFNMP7X7J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GraphenAutomatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphenAutomator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GraphenAutomator";
+			};
+			name = Release;
+		};
+		8EC46E392A23821500F3AF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5JFNMP7X7J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GraphenAutomatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GraphenAutomator;
+			};
+			name = Debug;
+		};
+		8EC46E3A2A23821500F3AF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5JFNMP7X7J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GraphenAutomatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GraphenAutomator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EC46E032A23821200F3AF79 /* Build configuration list for PBXProject "GraphenAutomator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC46E302A23821500F3AF79 /* Debug */,
+				8EC46E312A23821500F3AF79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EC46E322A23821500F3AF79 /* Build configuration list for PBXNativeTarget "GraphenAutomator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC46E332A23821500F3AF79 /* Debug */,
+				8EC46E342A23821500F3AF79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EC46E352A23821500F3AF79 /* Build configuration list for PBXNativeTarget "GraphenAutomatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC46E362A23821500F3AF79 /* Debug */,
+				8EC46E372A23821500F3AF79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EC46E382A23821500F3AF79 /* Build configuration list for PBXNativeTarget "GraphenAutomatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC46E392A23821500F3AF79 /* Debug */,
+				8EC46E3A2A23821500F3AF79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8EC46E0F2A23821200F3AF79 /* GraphenAutomator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8EC46E102A23821200F3AF79 /* GraphenAutomator.xcdatamodel */,
+			);
+			currentVersion = 8EC46E102A23821200F3AF79 /* GraphenAutomator.xcdatamodel */;
+			path = GraphenAutomator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8EC46E002A23821200F3AF79 /* Project object */;
+}
