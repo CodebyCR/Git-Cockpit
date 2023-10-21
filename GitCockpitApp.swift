@@ -8,13 +8,10 @@
 import SwiftUI
 
 @main
-struct GraphenAutomatorApp: App {
-    let persistenceController = PersistenceController.shared
-
+struct GitCockpitApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
