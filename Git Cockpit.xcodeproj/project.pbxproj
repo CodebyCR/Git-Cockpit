@@ -14,6 +14,7 @@
 		8E7DB4872ADFBD4100F4EAB7 /* SettingsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */; };
 		8E93264C2AE15ABA00DFE0D9 /* RepoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93264B2AE15ABA00DFE0D9 /* RepoGridView.swift */; };
 		8E9987462AE3B58B00145820 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9987452AE3B58B00145820 /* SidebarView.swift */; };
+		8E9987482AE3C32600145820 /* SidebarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9987472AE3C32600145820 /* SidebarItems.swift */; };
 		8EC46E0C2A23821200F3AF79 /* GitCockpitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E0B2A23821200F3AF79 /* GitCockpitApp.swift */; };
 		8EC46E132A23821200F3AF79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E122A23821200F3AF79 /* ContentView.swift */; };
 		8EC46E152A23821500F3AF79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC46E142A23821500F3AF79 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBarView.swift; sourceTree = "<group>"; };
 		8E93264B2AE15ABA00DFE0D9 /* RepoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoGridView.swift; sourceTree = "<group>"; };
 		8E9987452AE3B58B00145820 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		8E9987472AE3C32600145820 /* SidebarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItems.swift; sourceTree = "<group>"; };
 		8EC46E082A23821200F3AF79 /* Git Cockpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Git Cockpit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC46E0B2A23821200F3AF79 /* GitCockpitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCockpitApp.swift; sourceTree = "<group>"; };
 		8EC46E122A23821200F3AF79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */,
 				8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */,
+				8E9987472AE3C32600145820 /* SidebarItems.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				8E6574EA2AE16BD90047ACFD /* NavigationManager.swift in Sources */,
 				8EC46E3D2A23835000F3AF79 /* MainWindow.swift in Sources */,
 				8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */,
+				8E9987482AE3C32600145820 /* SidebarItems.swift in Sources */,
 				8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */,
 				8E2AFC382A24EBEB00D12539 /* MainRectangleView.swift in Sources */,
 				8E93264C2AE15ABA00DFE0D9 /* RepoGridView.swift in Sources */,

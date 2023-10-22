@@ -8,35 +8,23 @@
 import Foundation
 import SwiftUI
 
-enum SideBarItem: String, Identifiable, CaseIterable {
-    var id: String { rawValue }
-    case repositories
-//    case animals
-//    case food
-}
-
 struct NavigationManagerView: View {
     @State
     var sideBarVisibility: NavigationSplitViewVisibility = .detailOnly
 
     @State
-    var selectedSideBarItem: SideBarItem = .repositories
+    var selectedSidebarItem: SidebarItem = .repositories
 
     var body: some View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
-            List(SideBarItem.allCases, selection: $selectedSideBarItem) { item in
-                NavigationLink(
-                    item.rawValue.localizedCapitalized,
-                    value: item
-                )
-            }
-            .onChange(of: selectedSideBarItem) { _ in
-                // TODO:
-            }
+            SidebarView(selectedSidebarItem: $selectedSidebarItem)
+                .onChange(of: selectedSidebarItem) { _ in
+                    // TODO:
+                }
         }
 
         detail: {
-            switch selectedSideBarItem {
+            switch selectedSidebarItem {
             case .repositories:
                 MainRectangleView(width: 0.9, height: 0.9, gradientColors: gradientColors)
                     .onAppear(perform: {
@@ -44,6 +32,8 @@ struct NavigationManagerView: View {
                             print("animated")
                         }
                     })
+            default:
+                Text("default")
             }
 
             //            if let detailItem = selectedDetailItem {
