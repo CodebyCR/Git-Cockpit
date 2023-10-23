@@ -29,7 +29,7 @@ struct SidebarView: View {
                 Button("Add Path",
                        action: {
                            if let dirPath = chosePath() {
-                               print(dirPath)
+                               GitRepoHandler.listGitDirectories(from: dirPath)
                            }
                            else {
                                print("No path chosen")

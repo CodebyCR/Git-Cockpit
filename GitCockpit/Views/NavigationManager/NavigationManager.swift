@@ -18,11 +18,15 @@ struct NavigationManagerView: View {
     var body: some View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
             SidebarView(selectedSidebarItem: $selectedSidebarItem)
+                .onAppear(perform: {
+                    withAnimation(.easeIn(duration: 1.0)) {
+                        print("animated")
+                    }
+                })
                 .onChange(of: selectedSidebarItem) { _ in
                     // TODO:
                 }
         }
-
         detail: {
             switch selectedSidebarItem {
             case .repositories:

@@ -13,6 +13,18 @@ class RepositoryModel: Identifiable, Hashable {
     let pathToRoot: String
     var remote: String?
 
+    var lastAccessDate: String? {
+        if let accessDate = FileUtils.getLastAccessDate(forFolderPath: pathToRoot) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd. MMM yyyy HH:mm:ss"
+            return dateFormatter.string(from: accessDate)
+
+        } else {
+            print("Das Zugriffsdatum konnte nicht abgerufen werden.")
+            return nil
+        }
+    }
+
     init(name: String, pathToRoot: String, remote: String?) {
         self.id = UUID()
         self.name = name

@@ -12,6 +12,11 @@
 		8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */; };
 		8E6574EA2AE16BD90047ACFD /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6574E92AE16BD90047ACFD /* NavigationManager.swift */; };
 		8E7DB4872ADFBD4100F4EAB7 /* SettingsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */; };
+		8E8DC4B82AE4FF75002D2C5A /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */; };
+		8E8DC4BC2AE50D31002D2C5A /* GitRepoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */; };
+		8E8DC4C12AE65C8F002D2C5A /* HamburgerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4C02AE65C8F002D2C5A /* HamburgerMenuView.swift */; };
+		8E8DC4C32AE67B2A002D2C5A /* SingleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4C22AE67B2A002D2C5A /* SingleCellView.swift */; };
+		8E8DC4C62AE68065002D2C5A /* ConfigParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4C52AE68065002D2C5A /* ConfigParser.swift */; };
 		8E93264C2AE15ABA00DFE0D9 /* RepoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93264B2AE15ABA00DFE0D9 /* RepoGridView.swift */; };
 		8E9987462AE3B58B00145820 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9987452AE3B58B00145820 /* SidebarView.swift */; };
 		8E9987482AE3C32600145820 /* SidebarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9987472AE3C32600145820 /* SidebarItems.swift */; };
@@ -48,6 +53,11 @@
 		8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessHandler.swift; sourceTree = "<group>"; };
 		8E6574E92AE16BD90047ACFD /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBarView.swift; sourceTree = "<group>"; };
+		8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoHandler.swift; sourceTree = "<group>"; };
+		8E8DC4C02AE65C8F002D2C5A /* HamburgerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuView.swift; sourceTree = "<group>"; };
+		8E8DC4C22AE67B2A002D2C5A /* SingleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCellView.swift; sourceTree = "<group>"; };
+		8E8DC4C52AE68065002D2C5A /* ConfigParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigParser.swift; sourceTree = "<group>"; };
 		8E93264B2AE15ABA00DFE0D9 /* RepoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoGridView.swift; sourceTree = "<group>"; };
 		8E9987452AE3B58B00145820 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		8E9987472AE3C32600145820 /* SidebarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItems.swift; sourceTree = "<group>"; };
@@ -102,9 +112,12 @@
 		8E53E0B42AE2A3D8003D22CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E8DC4C42AE67FD1002D2C5A /* Git Config Parser */,
 				8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */,
 				8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */,
 				8E9987472AE3C32600145820 /* SidebarItems.swift */,
+				8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */,
+				8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +130,23 @@
 				8E9987452AE3B58B00145820 /* SidebarView.swift */,
 			);
 			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		8E8DC4BF2AE65C5F002D2C5A /* SingleRepoViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E8DC4C02AE65C8F002D2C5A /* HamburgerMenuView.swift */,
+				8E8DC4C22AE67B2A002D2C5A /* SingleCellView.swift */,
+			);
+			path = SingleRepoViews;
+			sourceTree = "<group>";
+		};
+		8E8DC4C42AE67FD1002D2C5A /* Git Config Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8E8DC4C52AE68065002D2C5A /* ConfigParser.swift */,
+			);
+			path = "Git Config Parser";
 			sourceTree = "<group>";
 		};
 		8EC46DFF2A23821200F3AF79 = {
@@ -181,6 +211,7 @@
 		8EC46E3B2A23831B00F3AF79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E8DC4BF2AE65C5F002D2C5A /* SingleRepoViews */,
 				8E6574E82AE16BB20047ACFD /* NavigationManager */,
 				8E2AFC362A24EBBD00D12539 /* MainWindow */,
 				8E93264B2AE15ABA00DFE0D9 /* RepoGridView.swift */,
@@ -318,12 +349,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8DC4C62AE68065002D2C5A /* ConfigParser.swift in Sources */,
 				8E9987462AE3B58B00145820 /* SidebarView.swift in Sources */,
 				8EC46E0C2A23821200F3AF79 /* GitCockpitApp.swift in Sources */,
 				8E6574EA2AE16BD90047ACFD /* NavigationManager.swift in Sources */,
+				8E8DC4C12AE65C8F002D2C5A /* HamburgerMenuView.swift in Sources */,
+				8E8DC4C32AE67B2A002D2C5A /* SingleCellView.swift in Sources */,
+				8E8DC4B82AE4FF75002D2C5A /* FileUtils.swift in Sources */,
 				8EC46E3D2A23835000F3AF79 /* MainWindow.swift in Sources */,
 				8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */,
 				8E9987482AE3C32600145820 /* SidebarItems.swift in Sources */,
+				8E8DC4BC2AE50D31002D2C5A /* GitRepoHandler.swift in Sources */,
 				8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */,
 				8E2AFC382A24EBEB00D12539 /* MainRectangleView.swift in Sources */,
 				8E93264C2AE15ABA00DFE0D9 /* RepoGridView.swift in Sources */,

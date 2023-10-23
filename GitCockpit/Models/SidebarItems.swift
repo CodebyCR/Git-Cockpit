@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct SidebarItem: Identifiable, CaseIterable, Hashable {
     let id: UUID = .init()
     let icon: String

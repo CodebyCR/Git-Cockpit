@@ -23,49 +23,16 @@ struct RepoGridView: View {
                       spacing: 20)
             {
                 ForEach(repos, id: \.self) { repo in
-                    ZStack {
-                        getGradient()
-                            .frame(width: 440, height: 200)
-                            .cornerRadius(30)
-                        Text("\(repo.name)")
-                            .foregroundColor(.white)
-                            .font(.system(size: 30,
-                                          weight: .medium,
-                                          design: .rounded))
-                        VStack {
-                            Spacer()
-                            HStack {
-                                Button("Show",
-                                       systemImage: "folder",
-                                       action: { repo.showLocal() })
-                                    .buttonStyle(.borderless)
-                                    .foregroundColor(Color.white)
-                                    .padding()
-
-                                if repo.remote != nil {
-                                    Button("Remote",
-                                           systemImage: "network",
-                                           action: { repo.showRemote() })
-                                        .buttonStyle(.borderless)
-                                        .foregroundColor(Color.white)
-                                        .padding()
-                                }
-                                
+                    SingleCellView(repo: repo)
+                        .onAppear(perform: {
+                            withAnimation(.easeIn(duration: 1.0)) {
+                                print("SingleCellView animated")
                             }
-                        }
-                    }
+                        })
                 }
             }
         }
         .padding()
-    }
-
-    func getGradient() -> LinearGradient {
-        return LinearGradient(
-            gradient: Gradient(colors: gradientColors),
-            startPoint: .bottomLeading,
-            endPoint: .topTrailing
-        )
     }
 }
 
