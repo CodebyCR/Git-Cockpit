@@ -12,7 +12,7 @@ struct FileUtils {
 
     static func recursiveFileList(path: String) -> [String] {
         let fileManager = FileManager.default
-        var paths: [String] = []
+        var paths: [String] = [path]
 
         do {
             let contents = try fileManager.contentsOfDirectory(atPath: path)

@@ -11,6 +11,7 @@ class RepositoryModel: Identifiable, Hashable {
     let id: UUID
     let name: String
     let pathToRoot: String
+    let gitConfig: GitConfig?
     var remote: String?
 
     var lastAccessDate: String? {
@@ -29,6 +30,7 @@ class RepositoryModel: Identifiable, Hashable {
         self.id = UUID()
         self.name = name
         self.pathToRoot = pathToRoot
+        self.gitConfig = GitConfig(atPath: "\(pathToRoot)/.git/config")
         self.remote = remote
     }
 

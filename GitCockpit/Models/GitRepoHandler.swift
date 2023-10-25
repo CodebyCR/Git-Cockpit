@@ -12,28 +12,19 @@ struct GitRepoHandler {
 
     static func listGitDirectories(from path: String) -> [String] {
         let directories = FileUtils.recursiveDirectoryList(path: path)
-
         let gitRepos = filterGitDirectories(fromPaths: directories)
-//        print("-- Git Repos --\nFound repos: \(gitRepos.count)")
 
         for repo in gitRepos {
-            let pathToRepoRoot = URL(fileURLWithPath: repo)
-            // BUG: path encodig for spaces etc.
-            // BUG 2: sollte auch für direkte pfade funktionieren
-            let configFilePath = pathToRepoRoot.appendingPathComponent(".git/config")
-
-//            print("Git Config: \(configFilePath)")
-            let configPath = URL(fileURLWithPath: configFilePath.path())
-
-            let gitConfig = GitConfig(atPath: configPath)
-            print(gitConfig.prettyPrint())
-
-//            if let core = gitConfig.getValue(forKey: "core") {
-//                print("-- Entries --")
-//                for entry in core {
-//                    print(entry)
-//                }
-//            }
+            GitConfig.parse(from: "\(repo)/.git/config") { result in
+                switch result {
+                case .success(let gitConfig):
+                    print("\n\(gitConfig.path)")
+                    gitConfig.prettyPrint()
+                case .failure(let failure):
+                    let description = GitConfig.getFailureDescription(failure)
+                    print("Error: \(description)")
+                }
+            }
         }
 
         return gitRepos
@@ -41,7 +32,6 @@ struct GitRepoHandler {
 
     static func filterGitDirectories(fromPaths directories: [String]) -> [String] {
         var gitDirectories: [String] = []
-
         let fileManager = FileManager.default
 
         for path in directories {

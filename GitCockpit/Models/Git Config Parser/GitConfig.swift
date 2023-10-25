@@ -1,38 +1,37 @@
 import Foundation
 
 enum GitConfigError: Error {
-    case fileNotFound, parsing, valueNotFound
-}
-
-enum ConfigSection: String {
-    case core, submodule, lfs
+    case fileNotFound, parsing
 }
 
 class GitConfig {
     let path: String
     private var configDictionary: [String: [String: String]] = [:]
 
-    init(atPath path: URL) {
-        self.path = path.path()
+    init?(atPath path: String) {
+        self.path = path
         parseData()
+    }
 
-        print("configDictionary size: \(configDictionary.count)\n \(configDictionary)")
+    // MARK: STATIC
+
+    public static func parse(from path: String, completion: @escaping (Result<GitConfig, GitConfigError>) -> Void) {
+        let fileManager = FileManager.default
+
+        // Prüfen, ob die Datei existiert
+        guard fileManager.fileExists(atPath: path) else {
+            completion(.failure(GitConfigError.fileNotFound))
+            return
+        }
+
+        if let gitConfig = GitConfig(atPath: path) {
+            completion(.success(gitConfig))
+        } else {
+            completion(.failure(GitConfigError.parsing))
+        }
     }
 
     // MARK: PUBLIC
-
-//    public func getParsingResult() -> Result<[String: [String: String]], GitConfig> {
-//        if dontExistis() {
-//            return .failure(GitConfig.fileNotFound)
-//        }
-//
-//        do {
-//            parseData()
-//            return .success(configDictionary)
-//        } catch {
-//            return .failure(GitConfig.parsing)
-//        }
-//    }
 
     public func getValue(forKey key: String) -> [String: String]? {
         if let valueDictionary = configDictionary[key] {
@@ -41,32 +40,46 @@ class GitConfig {
         return nil
     }
 
-    public func forEach(_ body: ([String: String]) -> Void) {
-        for (_, sectionData) in configDictionary {
-            body(sectionData)
+    public func forEach(_ body: (String, [String: String]) -> Void) {
+        for (section, sectionData) in configDictionary {
+            body(section, sectionData)
         }
     }
 
     public func prettyPrint() {
-        forEach { map in
-            print("[\(map)]")
-            for pair in map {
-                print("\t\(pair.key) : \(pair.value)")
+        forEach { section, map in
+            print("[\(section)]")
+            for (key, value) in map {
+                print("\t\(key) : \(value)")
             }
+        }
+    }
+
+    public static func getFailureDescription(_ error: GitConfigError) -> String {
+        switch error {
+        case .fileNotFound:
+            return "File could not be found."
+        case .parsing:
+            return "File content cannot be parsed."
         }
     }
 
     // MARK: PRIVATE
 
-    private func dontExistis() -> Bool {
-        let fileManager = FileManager.default
-        return fileManager.fileExists(atPath: path)
+    private func readFile(atPath path: String) -> String? {
+        do {
+            let contents = try String(contentsOfFile: path, encoding: .utf8)
+            return contents
+        } catch {
+            print("Error reading file: \(error)")
+            return nil
+        }
     }
 
     private func parseData() {
         var currentSection: String?
 
-        if let configData = try? String(contentsOfFile: path, encoding: .utf8) {
+        if let configData = readFile(atPath: path) {
             for line in configData.components(separatedBy: "\n") {
                 if line.hasPrefix("["), line.hasSuffix("]") {
                     currentSection = parseSectionHeader(line)
