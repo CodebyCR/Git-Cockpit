@@ -12,6 +12,7 @@ struct GitCockpitApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .frame(minWidth: 650, minHeight: 600)
         }
     }
 }
