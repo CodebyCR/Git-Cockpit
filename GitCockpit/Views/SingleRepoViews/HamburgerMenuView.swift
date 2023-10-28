@@ -27,6 +27,7 @@ struct HamburgerMenuView: View {
                      })
                      .colorInvert()
                      .menuStyle(.borderlessButton)
+                     .menuIndicator(.hidden)
                      .padding()
             }
             Spacer()
