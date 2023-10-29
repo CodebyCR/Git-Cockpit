@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct SidebarItem: Identifiable, CaseIterable, Hashable {
     let id: UUID = .init()
     let icon: String
@@ -18,11 +17,12 @@ struct SidebarItem: Identifiable, CaseIterable, Hashable {
         self.displayName = displayName
     }
 
-    static let repositories = SidebarItem(icon: "star", displayName: "My Repositories")
+    static let repositories = SidebarItem(icon: "star", displayName: "Repositories")
     static let paths = SidebarItem(icon: "folder", displayName: "Paths")
+    static let gitConfig = SidebarItem(icon: "person.text.rectangle", displayName: "Git Configuration")
 
     static var allCases: [SidebarItem] {
-        return [repositories, paths]
+        return [repositories, paths, gitConfig]
     }
 
     static func == (lhs: SidebarItem, rhs: SidebarItem) -> Bool {
