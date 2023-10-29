@@ -11,6 +11,7 @@
 		8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */; };
 		8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */; };
 		8E6574EA2AE16BD90047ACFD /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6574E92AE16BD90047ACFD /* NavigationManager.swift */; };
+		8E6E0C7E2AEEBEEF00B1A013 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */; };
 		8E7DB4872ADFBD4100F4EAB7 /* SettingsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */; };
 		8E8DC4B82AE4FF75002D2C5A /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */; };
 		8E8DC4BC2AE50D31002D2C5A /* GitRepoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */; };
@@ -52,6 +53,7 @@
 		8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoyModel.swift; sourceTree = "<group>"; };
 		8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessHandler.swift; sourceTree = "<group>"; };
 		8E6574E92AE16BD90047ACFD /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBarView.swift; sourceTree = "<group>"; };
 		8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoHandler.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				8E6574E82AE16BB20047ACFD /* NavigationManager */,
 				8E2AFC362A24EBBD00D12539 /* MainWindow */,
 				8E93264B2AE15ABA00DFE0D9 /* RepoGridView.swift */,
+				8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,10 +232,12 @@
 				8EC46E042A23821200F3AF79 /* Sources */,
 				8EC46E052A23821200F3AF79 /* Frameworks */,
 				8EC46E062A23821200F3AF79 /* Resources */,
+				8E6E0C7F2AEED4F700B1A013 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8E6E0C822AEED6FE00B1A013 /* PBXTargetDependency */,
 			);
 			name = "Git Cockpit";
 			productName = GraphenAutomator;
@@ -307,6 +312,9 @@
 				Base,
 			);
 			mainGroup = 8EC46DFF2A23821200F3AF79;
+			packageReferences = (
+				8E6E0C802AEED69300B1A013 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = 8EC46E092A23821200F3AF79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +352,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8E6E0C7F2AEED4F700B1A013 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8EC46E042A23821200F3AF79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -363,6 +391,7 @@
 				8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */,
 				8E2AFC382A24EBEB00D12539 /* MainRectangleView.swift in Sources */,
 				8E93264C2AE15ABA00DFE0D9 /* RepoGridView.swift in Sources */,
+				8E6E0C7E2AEEBEEF00B1A013 /* ToolbarView.swift in Sources */,
 				8EC46E132A23821200F3AF79 /* ContentView.swift in Sources */,
 				8E7DB4872ADFBD4100F4EAB7 /* SettingsBarView.swift in Sources */,
 			);
@@ -388,6 +417,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8E6E0C822AEED6FE00B1A013 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8E6E0C812AEED6FE00B1A013 /* SwiftLintPlugin */;
+		};
 		8EC46E202A23821500F3AF79 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8EC46E072A23821200F3AF79 /* Git Cockpit */;
@@ -439,7 +472,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -500,7 +533,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -542,10 +576,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GitCockpit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -583,10 +617,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GitCockpit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -732,6 +766,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E6E0C802AEED69300B1A013 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.53.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E6E0C812AEED6FE00B1A013 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E6E0C802AEED69300B1A013 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8EC46E002A23821200F3AF79 /* Project object */;
 }
