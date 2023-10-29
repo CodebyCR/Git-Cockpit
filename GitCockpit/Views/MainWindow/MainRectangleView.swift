@@ -14,21 +14,30 @@ struct MainRectangleView: View {
     let height: CGFloat
     let gradientColors: [Color]
 
+    @State
+    private var isPresented: Bool = false
+
+//    @Environment(\.isPresented) private var isPresented
+
     var body: some View {
         ZStack {
-            Color.black
-                .opacity(0.6)
-                .ignoresSafeArea()
+//            Color.black
+//                .opacity(0.6)
+//                .ignoresSafeArea()
 
             RepoGridView()
+        }
+        .inspector(isPresented: $isPresented) {
+            Text("Show details here...")
                 .onAppear(perform: {
                     withAnimation(.easeIn(duration: 1.0)) {
                         print("animated")
                     }
                 })
-
-//            SettingsBarView(testList:
-//                ["Setting 1", "Setting 2", "Setting 3"])
+        }
+        .inspectorColumnWidth(min: 80, ideal: 200, max: 380)
+        .toolbar {
+            ToolbarView(detailsAreVisible: $isPresented)
         }
     }
 }

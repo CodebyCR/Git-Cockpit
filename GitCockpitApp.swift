@@ -12,12 +12,11 @@ struct GitCockpitApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 650, minHeight: 600)
+                .frame(minWidth: 800, minHeight: 600)
         }
         .commands {
             MyCommandMenu()
-            
-            
+
             CommandGroup(before: .newItem) {
                 Button("Add Path", action: {
                     if let dirPath = chosePath() {
@@ -29,8 +28,6 @@ struct GitCockpitApp: App {
                 })
                 .keyboardShortcut("n", modifiers: [.command, .shift])
             }
-            
-            
         }
 //        .windowStyle(HiddenTitleBarWindowStyle())
     }
@@ -69,7 +66,6 @@ struct MyCommandMenu: Commands {
                    .keyboardShortcut("n", modifiers: [.command, .shift])
                    .buttonStyle(.borderless)
                    .frame(maxWidth: .infinity, alignment: .leading)
-                   
 
 //            CommandMenu("Help", content: {
 //                Button("Help", action: { print("help") })

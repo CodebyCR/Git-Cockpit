@@ -23,33 +23,20 @@ struct NavigationManagerView: View {
                         print("animated")
                     }
                 })
-                .onChange(of: selectedSidebarItem) { _ in
-                    // TODO:
-                }
+//                .onChange(of: selectedSidebarItem) { _ in
+//                    // TODO:
+//                }
         }
         detail: {
             switch selectedSidebarItem {
             case .repositories:
-                MainRectangleView(width: 0.9, height: 0.9, gradientColors: gradientColors)
-                    .onAppear(perform: {
-                        withAnimation(.easeIn(duration: 1.0)) {
-                            print("animated")
-                        }
-                    })
-            default:
-                Text("default")
-            }
 
-            //            if let detailItem = selectedDetailItem {
-            //                switch detailItem {
-            //                case .user(let user):
-            //                    UserDetailsView(user: user)
-            //                case .animal(let animal):
-            //                    AnimalDetailsView(animal: animal)
-            //                case .food(let food):
-            //                    FoodDetailsView(food: food)
-            //                }
-            //            }
+                MainRectangleView(width: 0.9, height: 0.9, gradientColors: gradientColors)
+                    .frame(minWidth: 400, idealWidth: 484)
+
+            default:
+                Text("\(selectedSidebarItem.displayName)")
+            }
         }
     }
 }

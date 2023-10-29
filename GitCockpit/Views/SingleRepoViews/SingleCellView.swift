@@ -11,11 +11,17 @@ import SwiftUI
 struct SingleCellView: View {
     @State
     var repo: RepositoryModel
+    @State
+    var isSelected: Bool
 
     var body: some View {
         ZStack {
             getGradient()
                 .frame(width: 440, height: 200)
+                .border(isSelected
+                    ? Color.white
+                    : Color.clear,
+                    width: 2)
                 .cornerRadius(30)
             Text("\(repo.name)")
                 .foregroundColor(.white)
@@ -46,6 +52,7 @@ struct SingleCellView: View {
             HamburgerMenuView(repo: repo)
                 .frame(width: 440)
         }
+//        .modifier(highlightRepo(ifSelected: isSelected))
     }
 
     func getGradient() -> LinearGradient {
@@ -57,7 +64,26 @@ struct SingleCellView: View {
     }
 }
 
+// struct highlightRepo: ViewModifier {
+//    let isSelected: Bool // Boolean-Eigenschaft für die Modifikation
+//
+//    init(ifSelected isSelected: Bool) {
+//        self.isSelected = isSelected
+//    }
+//
+//    func body(content: Content) -> some View {
+//        if isSelected {
+//            content
+//                .border(Color.white)
+//                .cornerRadius(30)
+//        }
+//    }
+// }
+
 #Preview("SingleCellView") {
-    SingleCellView(repo: RepositoryModel.getDemoRepos().first!)
-        .frame(width: 440, height: 200)
+    SingleCellView(
+        repo: RepositoryModel.getDemoRepos().first!,
+        isSelected: true
+    )
+    .frame(width: 440, height: 200)
 }

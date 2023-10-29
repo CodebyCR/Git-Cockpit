@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct RepoGridView: View {
+    @State
+    var selectedRepo: RepositoryModel? = nil
     var repos: [RepositoryModel] = RepositoryModel.getDemoRepos()
     let gradientColors: [Color] = [.purple, .indigo, .blue, .cyan]
 
@@ -19,16 +21,11 @@ struct RepoGridView: View {
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: adaptiveColumns,
-                      spacing: 20)
-            {
-                ForEach(repos, id: \.self) { repo in
-                    SingleCellView(repo: repo)
-                        .onAppear(perform: {
-                            withAnimation(.easeIn(duration: 1.0)) {
-                                print("SingleCellView animated")
-                            }
-                        })
+            LazyVGrid(columns: adaptiveColumns, spacing: 20) {
+                ForEach(RepositoryModel.getDemoRepos()) { repo in
+                    let isSelected = repo == selectedRepo
+                    SingleCellView(repo: repo, isSelected: isSelected)
+                        .tag(repo)
                 }
             }
         }
