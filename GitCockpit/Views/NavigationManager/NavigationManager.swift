@@ -27,7 +27,7 @@ struct NavigationManagerView: View {
             case .repositories:
 
                 MainRectangleView(width: 0.9, height: 0.9, gradientColors: gradientColors)
-                    .frame(minWidth: 400, idealWidth: 484)
+                    .frame(minWidth: 600, idealWidth: 600)
 
             default:
                 Text("\(selectedSidebarItem.displayName)")

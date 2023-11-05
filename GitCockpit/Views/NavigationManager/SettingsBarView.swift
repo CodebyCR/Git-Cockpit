@@ -8,12 +8,10 @@
 import Foundation
 import SwiftUI
 
-import SwiftUI
-
 struct SettingsBarView: View {
     let testList: [String]
     @State
-    var selected: String? = nil
+    private var selected: String?
 
     var body: some View {
         ZStack {
@@ -40,11 +38,8 @@ struct SettingsBarView: View {
                        if let dirPath = chosePath() {
                            print(dirPath)
                        }
-                       else {
-                           print("No path chosen")
-                       }
                    })
-            
+
         }.frame(width: 140)
     }
 

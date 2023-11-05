@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RepoGridView: View {
     @State
-    var selectedRepo: RepositoryModel? = nil
+    private var selectedRepo: RepositoryModel?
     var repos: [RepositoryModel] = RepositoryModel.getDemoRepos()
     let gradientColors: [Color] = [.purple, .indigo, .blue, .cyan]
 

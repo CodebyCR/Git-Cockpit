@@ -22,9 +22,6 @@ struct GitCockpitApp: App {
                     if let dirPath = chosePath() {
                         GitRepoHandler.listGitDirectories(from: dirPath)
                     }
-                    else {
-                        print("No path chosen")
-                    }
                 })
                 .keyboardShortcut("n", modifiers: [.command, .shift])
             }
@@ -56,11 +53,8 @@ struct MyCommandMenu: Commands {
         CommandMenu("File", content: {
             Button("Add Path",
                    action: {
-                       if let dirPath = chosePath() {
+                       if let dirPath = chosePath(withDialogTitle: "Choose a path to search for Git repositories.") {
                            GitRepoHandler.listGitDirectories(from: dirPath)
-                       }
-                       else {
-                           print("No path chosen")
                        }
                    })
                    .keyboardShortcut("n", modifiers: [.command, .shift])
@@ -77,10 +71,10 @@ struct MyCommandMenu: Commands {
         })
     }
 
-    func chosePath() -> String? {
+    func chosePath(withDialogTitle dialogTitle: String = "Choose a Directory") -> String? {
         let dialog = NSOpenPanel()
 
-        dialog.title = "Choose a Folder"
+        dialog.title = dialogTitle
         dialog.showsResizeIndicator = true
         dialog.showsHiddenFiles = false
         dialog.allowsMultipleSelection = false

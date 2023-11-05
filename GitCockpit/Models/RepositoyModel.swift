@@ -15,15 +15,14 @@ class RepositoryModel: Identifiable, Hashable {
     var remote: String?
 
     var lastAccessDate: String? {
-        if let accessDate = FileUtils.getLastAccessDate(forFolderPath: pathToRoot) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd. MMM yyyy HH:mm:ss"
-            return dateFormatter.string(from: accessDate)
-
-        } else {
-            print("Das Zugriffsdatum konnte nicht abgerufen werden.")
+        guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: pathToRoot) else {
+            print("The access Date can't be called.")
             return nil
         }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd. MMM yyyy HH:mm:ss"
+        return dateFormatter.string(from: accessDate)
     }
 
     init(name: String, pathToRoot: String, remote: String?) {
