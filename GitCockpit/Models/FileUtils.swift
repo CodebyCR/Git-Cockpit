@@ -42,7 +42,9 @@ struct FileUtils {
     static func filterFolders(fromPaths filePaths: [String]) -> [String] {
         var folderPaths: [String] = []
         filePaths.forEach { path in
-            if isDirectory(path) { folderPaths.append(path) }
+            if isDirectory(path) { 
+                folderPaths.append(path)
+            }
         }
 
         return folderPaths

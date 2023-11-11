@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8E2AFC382A24EBEB00D12539 /* MainRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AFC372A24EBEB00D12539 /* MainRectangleView.swift */; };
+		8E415E912AFFBABF00F49FA9 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E415E902AFFBABF00F49FA9 /* SFSymbols.swift */; };
 		8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */; };
 		8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */; };
+		8E5BAB0A2AFFAEC000DA6350 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */; };
 		8E6574EA2AE16BD90047ACFD /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6574E92AE16BD90047ACFD /* NavigationManager.swift */; };
 		8E6E0C7E2AEEBEEF00B1A013 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */; };
 		8E7DB4872ADFBD4100F4EAB7 /* SettingsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */; };
@@ -50,8 +52,10 @@
 
 /* Begin PBXFileReference section */
 		8E2AFC372A24EBEB00D12539 /* MainRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRectangleView.swift; sourceTree = "<group>"; };
+		8E415E902AFFBABF00F49FA9 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoyModel.swift; sourceTree = "<group>"; };
 		8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessHandler.swift; sourceTree = "<group>"; };
+		8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8E6574E92AE16BD90047ACFD /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBarView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,14 @@
 			path = MainWindow;
 			sourceTree = "<group>";
 		};
+		8E415E8F2AFFBA7900F49FA9 /* Essentials */ = {
+			isa = PBXGroup;
+			children = (
+				8E415E902AFFBABF00F49FA9 /* SFSymbols.swift */,
+			);
+			path = Essentials;
+			sourceTree = "<group>";
+		};
 		8E53E0B42AE2A3D8003D22CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +134,14 @@
 				8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8E5BAB082AFFAE1500DA6350 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 		8E6574E82AE16BB20047ACFD /* NavigationManager */ = {
@@ -176,6 +196,7 @@
 		8EC46E0A2A23821200F3AF79 /* GitCockpit */ = {
 			isa = PBXGroup;
 			children = (
+				8E415E8F2AFFBA7900F49FA9 /* Essentials */,
 				8ECDE3D52AE2C92100A74341 /* GitCockpit.entitlements */,
 				8E53E0B42AE2A3D8003D22CF /* Models */,
 				8EC46E3B2A23831B00F3AF79 /* Views */,
@@ -213,6 +234,7 @@
 		8EC46E3B2A23831B00F3AF79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E5BAB082AFFAE1500DA6350 /* SplashScreen */,
 				8E8DC4BF2AE65C5F002D2C5A /* SingleRepoViews */,
 				8E6574E82AE16BB20047ACFD /* NavigationManager */,
 				8E2AFC362A24EBBD00D12539 /* MainWindow */,
@@ -388,12 +410,14 @@
 				8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */,
 				8E9987482AE3C32600145820 /* SidebarItems.swift in Sources */,
 				8E8DC4BC2AE50D31002D2C5A /* GitRepoHandler.swift in Sources */,
+				8E5BAB0A2AFFAEC000DA6350 /* SplashScreenView.swift in Sources */,
 				8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */,
 				8E2AFC382A24EBEB00D12539 /* MainRectangleView.swift in Sources */,
 				8E93264C2AE15ABA00DFE0D9 /* RepoGridView.swift in Sources */,
 				8E6E0C7E2AEEBEEF00B1A013 /* ToolbarView.swift in Sources */,
 				8EC46E132A23821200F3AF79 /* ContentView.swift in Sources */,
 				8E7DB4872ADFBD4100F4EAB7 /* SettingsBarView.swift in Sources */,
+				8E415E912AFFBABF00F49FA9 /* SFSymbols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
