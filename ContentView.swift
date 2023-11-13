@@ -12,22 +12,17 @@ struct ContentView: View {
     private var showSplashScreen = true
     var body: some View {
         ZStack {
+            NavigationManagerView()
+                .ignoresSafeArea()
             if showSplashScreen {
                 SplashScreenView()
                     .transition(.opacity)
-                    .animation(
-                        .easeOut(duration: 2)
-                    )
-            }
-            else {
-                NavigationManagerView()
-                    .ignoresSafeArea()
             }
         }
         .onAppear {
             DispatchQueue
                 .main
-                .asyncAfter(deadline: .now() + 3) {
+                .asyncAfter(deadline: .now() + 1.2) {
                     withAnimation {
                         self.showSplashScreen = false
                     }

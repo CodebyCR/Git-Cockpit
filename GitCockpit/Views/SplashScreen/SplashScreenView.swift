@@ -9,26 +9,27 @@ import Foundation
 import SwiftUI
 
 struct SplashScreenView: View {
-    @State private var animated = true
+    @State private var animated = 1
 
     var body: some View {
         ZStack {
-            Color.blue
+            Color.gray
+                .opacity(0.2)
+                .shadow(color: .black.opacity(0.6), radius: 30)
+                .blur(radius: 30)
                 .ignoresSafeArea()
 
-            Image(systemName: "globe") // SFSymbol.gitCockpit
+            Image(systemName: "globe") // SFSymbols.gitCockpit
+                .resizable()
+                .scaledToFit()
                 .font(.largeTitle)
-                .colorInvert()
                 .frame(width: 140, height: 140)
-                .symbolEffect(.bounce, options: .repeat(2).speed(2), value: animated)
-                .onAppear {
-                    // Starte die Animation zweimal mit einer Verzögerung von 0.5 Sekunden
-                    for _ in 0 ..< 2 {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            animated.toggle()
-                        }
-                    }
-                }
+                .symbolEffect(.bounce.up.wholeSymbol,
+                              options: .repeat(2).speed(5),
+                              value: animated)
+        }
+        .onAppear {
+            animated += 1
         }
     }
 }
