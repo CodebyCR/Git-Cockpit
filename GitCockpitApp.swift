@@ -20,7 +20,13 @@ struct GitCockpitApp: App {
             CommandGroup(before: .newItem) {
                 Button("Add Path", action: {
                     if let dirPath = chosePath() {
-                        GitRepoHandler.listGitDirectories(from: dirPath)
+                        let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath)
+                        let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
+
+                        for repo in gitRepos {
+                            print("Test: \(repo.name)")
+                        }
+                        // TODO: add to Env list
                     }
                 })
                 .keyboardShortcut("n", modifiers: [.command, .shift])
@@ -54,7 +60,12 @@ struct MyCommandMenu: Commands {
             Button("Add Path",
                    action: {
                        if let dirPath = chosePath(withDialogTitle: "Choose a path to search for Git repositories.") {
-                           GitRepoHandler.listGitDirectories(from: dirPath)
+                           let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath)
+                           let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
+
+                           for repo in gitRepos {
+                               print("Test: \(repo.name)")
+                           }
                        }
                    })
                    .keyboardShortcut("n", modifiers: [.command, .shift])

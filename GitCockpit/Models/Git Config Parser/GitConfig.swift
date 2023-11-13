@@ -5,11 +5,13 @@ enum GitConfigError: Error {
 }
 
 class GitConfig {
+    let repoRootPath: URL
     let path: String
     private var configDictionary: [String: [String: String]] = [:]
 
     init?(atPath path: String) {
         self.path = path
+        self.repoRootPath = (URL(string: path)!.deletingLastPathComponent().deletingLastPathComponent())
         parseData()
     }
 
@@ -62,6 +64,25 @@ class GitConfig {
         case .parsing:
             return "File content cannot be parsed."
         }
+    }
+
+    public func getOriginURL() -> URL? {
+        if let remoteUrl = configDictionary[#"remote "origin""#]?["url"] {
+            return URL(string: remoteUrl)
+        }
+        return nil
+    }
+
+    public func getOriginURL() -> String? {
+        return getOriginURL()?.lastPathComponent
+    }
+
+    public func getRepoName() -> String? {
+        return getOriginURL()?.absoluteString // FIXME: origen can be nil!
+    }
+
+    public func getRepoRootPath() -> URL {
+        return repoRootPath
     }
 
     // MARK: PRIVATE

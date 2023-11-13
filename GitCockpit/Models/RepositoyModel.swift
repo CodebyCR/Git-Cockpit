@@ -33,6 +33,14 @@ class RepositoryModel: Identifiable, Hashable {
         self.remote = remote
     }
 
+    init(gitConfig: GitConfig) {
+        self.id = UUID()
+        self.name = gitConfig.getRepoName() ?? "Unknown"
+        self.pathToRoot = gitConfig.getRepoRootPath().absoluteString
+        self.gitConfig = gitConfig
+        self.remote = gitConfig.getOriginURL()?.absoluteString
+    }
+
     static func getDemoRepos() -> [RepositoryModel] {
         let demo = RepositoryModel(name: "Git-Cockpit",
                                    pathToRoot: "/Users/christoph_rohde/Documents/New/GitCockpit",

@@ -12,14 +12,21 @@ struct GitRepoHandler {
 
     static func listGitDirectories(from path: String) -> [String] {
         let directories = FileUtils.recursiveDirectoryList(path: path)
-        let gitRepos = filterGitDirectories(fromPaths: directories)
+        return filterGitDirectories(fromPaths: directories)
+    }
 
-        for repo in gitRepos {
+    static func createRepositoryModels(FromDirectories gitDirectories: [String]) -> [RepositoryModel] {
+        var repositoryModels: [RepositoryModel] = []
+
+        for repo in gitDirectories {
             GitConfig.parse(from: "\(repo)/.git/config") { result in
                 switch result {
                 case .success(let gitConfig):
-                    print("\n\(gitConfig.path)")
-                    gitConfig.prettyPrint()
+//                    print("\n\(gitConfig.path)")
+//                    gitConfig.prettyPrint()
+                    let currentRepo = RepositoryModel(gitConfig: gitConfig)
+                    repositoryModels.append(currentRepo)
+
                 case .failure(let failure):
                     let description = GitConfig.getFailureDescription(failure)
                     print("Error: \(description)")
@@ -27,7 +34,7 @@ struct GitRepoHandler {
             }
         }
 
-        return gitRepos
+        return repositoryModels
     }
 
     static func filterGitDirectories(fromPaths directories: [String]) -> [String] {
