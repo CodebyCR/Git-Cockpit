@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct EmptyListView: View {
+    let message: String
+    let command: String
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Spacer()
+        HStack {
+            Spacer()
+            Text(message)
+                .font(.title)
+            Text(command)
+                .foregroundStyle(.gray)
+            Spacer()
+        }
+        Spacer()
     }
 }
 
 #Preview {
-    EmptyListView()
+    EmptyListView(message: "No search paths chosen", command: "⇧ ⌘ N")
 }
