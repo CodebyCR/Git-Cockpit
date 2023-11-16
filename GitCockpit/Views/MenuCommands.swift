@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct MenuCommands: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+struct CommandMenuView: Commands {
+    @Environment (\.modelContext)
+    private var modelContext
+    private let dictionaryPicker = DirectoryPicker()
 
-#Preview {
-    MenuCommands()
+    var body: some Commands {
+        CommandMenu("File", content: {
+            AddPathButtonView()
+                   .buttonStyle(.borderless)
+                   .frame(maxWidth: .infinity, alignment: .leading)
+
+//            CommandMenu("Help", content: {
+//                Button("Help", action: { print("help") })
+//
+//                Section("More", content: {
+//                    Button("Help2", action: { print("help") })
+//                    Button("Help3", action: { print("help") })
+//                })
+        })
+    }
 }
