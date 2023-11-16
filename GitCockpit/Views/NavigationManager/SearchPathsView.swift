@@ -5,11 +5,26 @@
 //  Created by Christoph Rohde on 16.11.23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct SearchPathsView: View {
+    @Query(sort: \SearchPathModel.path, animation: .easeIn)
+    var searchPaths: [SearchPathModel]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if searchPaths.isEmpty {
+            EmptyListView(
+                message: "No search paths chosen",
+                command: "⇧ ⌘ N")
+        } else {
+            List(searchPaths) { searchPathModel in
+                Text(searchPathModel.path)
+            }
+        }
+//        .onDelete(
+//            perform: deleteItems(with: <#T##[ItemIdentifierType]#>)
+//        )
     }
 }
 
