@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import Logging
+
+let logger = Logger(label: "com.CodebyCR.GitCockpit") // put in env
 
 class RepositoryModel: Identifiable, Hashable {
     let id: UUID
@@ -16,7 +19,8 @@ class RepositoryModel: Identifiable, Hashable {
 
     var lastAccessDate: String? {
         guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: pathToRoot) else {
-            print("The access Date can't be called.")
+            logger.info("The access Date can't be called.")
+//            print("The access Date can't be called.")
             return nil
         }
 
@@ -43,7 +47,7 @@ class RepositoryModel: Identifiable, Hashable {
 
     static func getDemoRepos() -> [RepositoryModel] {
         let demo = RepositoryModel(name: "Git-Cockpit",
-                                   pathToRoot: "/Users/christoph_rohde/Documents/New/GitCockpit",
+                                   pathToRoot: "/Users/christoph_rohde/Swift/GitCockpit",
                                    remote: nil)
 
         let timedAction = RepositoryModel(name: "Timed-Action",
@@ -81,6 +85,31 @@ class RepositoryModel: Identifiable, Hashable {
 
         ProcessHandler
             .execute(task: task)
+    }
+
+    func getCurrentBranchName() -> String? {
+        guard let rootPath = URL(string: pathToRoot) else {
+            print("can't parse root path")
+            return nil
+        }
+
+        let headParser = GitHeadParser(withRepositoryRoot: rootPath)
+
+        let headParserResult = headParser.getCurrentBranch()
+
+        switch headParserResult {
+        case .success(let branchName):
+            logger.info("Current branch: \(branchName)")
+            return branchName
+
+        case .failure(let error):
+            logger.error("Error: \(error.localizedDescription)")
+            return nil
+        }
+    }
+
+    func getName() -> String {
+        return URL(fileURLWithPath: pathToRoot).lastPathComponent
     }
 
     // TODO:
