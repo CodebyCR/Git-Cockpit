@@ -5,6 +5,7 @@
 //  Created by Christoph Rohde on 16.11.23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct AddPathButtonView: View {
@@ -16,7 +17,7 @@ struct AddPathButtonView: View {
         Button("Add Path", action: {
             if let dirPath = dictionaryPicker.chosePath() {
                 let newSearchPathModel = SearchPathModel(path: dirPath)
-                modelContext.insert(newSearchPathModel)
+                AddPathButtonView.add(SearchPath: newSearchPathModel, toContext: modelContext)
 
                 let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath)
                 let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
@@ -28,6 +29,13 @@ struct AddPathButtonView: View {
             }
         })
         .keyboardShortcut("n", modifiers: [.command, .shift])
+    }
+
+    static func add(SearchPath newSearchPathModel: SearchPathModel, toContext modelContext: ModelContext) {
+        print("SearchPath: \(newSearchPathModel.path)")
+        print("ModelContext: \(modelContext.insertedModelsArray)")
+
+        modelContext.insert(newSearchPathModel)
     }
 }
 

@@ -18,16 +18,15 @@ struct NavigationManagerView: View {
     var body: some View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
             SidebarView(selectedSidebarItem: $selectedSidebarItem)
-//                .onChange(of: selectedSidebarItem) { _ in
-//                    // TODO:
-//                }
+                .onChange(of: selectedSidebarItem) { _ in
+                    print("SelectedSidebarItem: \(selectedSidebarItem)")
+                }
         }
         detail: {
             switch selectedSidebarItem {
             case .repositories:
                 MainRectangleView(width: 0.9, height: 0.9, gradientColors: gradientColors)
                     .frame(minWidth: 600, idealWidth: 600)
-                
             case .paths:
                 SearchPathsView()
                     .frame(minWidth: 600, idealWidth: 600)
