@@ -9,11 +9,10 @@ import SwiftUI
 
 @main
 struct GitCockpitApp: App {
-
     var body: some Scene {
         WindowGroup {
             MenuView()
-                .modelContainer(for: [SearchPathModel.self])
+                .modelContainer(for: SearchPathModel.self)
         }
         .commands {
             CommandMenuView()
