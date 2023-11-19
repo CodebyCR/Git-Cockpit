@@ -23,11 +23,20 @@ struct SingleCellView: View {
                     : Color.clear,
                     width: 2)
                 .cornerRadius(30)
-            Text("\(repo.name)")
-                .foregroundColor(.white)
-                .font(.system(size: 30,
-                              weight: .medium,
-                              design: .rounded))
+            VStack {
+                Text(repo.getName())
+                    .foregroundColor(.white)
+                    .font(.system(size: 30,
+                                  weight: .medium,
+                                  design: .rounded))
+                HStack {
+                    Text(repo.getCurrentBranchName() ?? "—")
+                        .foregroundColor(.white)
+                        .font(.system(size: 18,
+                                      weight: .medium,
+                                      design: .rounded))
+                }
+            }
             VStack {
                 Spacer()
                 HStack {
