@@ -35,10 +35,10 @@ struct HamburgerMenuView: View {
     }
 }
 
-#Preview("HamburgerMenuView") {
-    ZStack {
-        Color.gray
-        HamburgerMenuView(repo: RepositoryModel.getDemoRepos().first!)
-            .frame(width: 440)
-    }
-}
+//#Preview("HamburgerMenuView") {
+//    ZStack {
+//        Color.gray
+//        HamburgerMenuView(repo: RepositoryModel.getDemoRepos().first!)
+//            .frame(width: 440)
+//    }
+//}

@@ -89,10 +89,10 @@ struct SingleCellView: View {
 //    }
 // }
 
-#Preview("SingleCellView") {
-    SingleCellView(
-        repo: RepositoryModel.getDemoRepos().first!,
-        isSelected: true
-    )
-    .frame(width: 440, height: 200)
-}
+// #Preview("SingleCellView") {
+//    SingleCellView(
+//        repo: RepositoryModel.getDemoRepos().first!,
+//        isSelected: true
+//    )
+//    .frame(width: 440, height: 200)
+// }

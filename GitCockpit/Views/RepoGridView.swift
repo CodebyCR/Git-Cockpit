@@ -6,12 +6,17 @@
 //
 
 import Foundation
+import SwiftData
 import SwiftUI
 
 struct RepoGridView: View {
     @State
     private var selectedRepo: RepositoryModel?
-    var repos: [RepositoryModel] = RepositoryModel.getDemoRepos()
+//    @Environment(\.modelContext)
+//    private var modelContext
+
+    private var repos: [RepositoryModel]
+//    = GitRepoHandler.getGitRepositories(ForSeachPaths: searchPaths)
     let gradientColors: [Color] = [.purple, .indigo, .blue, .cyan]
 
     private let adaptiveColumns = [
@@ -19,10 +24,14 @@ struct RepoGridView: View {
         GridItem(.adaptive(minimum: 440))
     ]
 
+    init(searchPaths: [SearchPathModel]) {
+        self.repos = GitRepoHandler.getGitRepositories(ForSeachPaths: searchPaths)
+    }
+
     var body: some View {
         ScrollView {
             LazyVGrid(columns: adaptiveColumns, spacing: 20) {
-                ForEach(RepositoryModel.getDemoRepos()) { repo in
+                ForEach(repos) { repo in
                     let isSelected = repo == selectedRepo
                     SingleCellView(repo: repo, isSelected: isSelected)
                         .tag(repo)
@@ -33,7 +42,7 @@ struct RepoGridView: View {
     }
 }
 
-#Preview("RepoGridView") {
-    RepoGridView()
-        .frame(width: 600)
-}
+// #Preview("RepoGridView") {
+//    RepoGridView()
+//        .frame(width: 600)
+// }
