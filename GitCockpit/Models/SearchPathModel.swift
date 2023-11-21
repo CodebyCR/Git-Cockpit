@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 class SearchPathModel: Identifiable, Hashable {
+    @Attribute(.unique)
     let path: String
 
     init(path: String) {
