@@ -45,22 +45,6 @@ class RepositoryModel: Identifiable, Hashable {
         self.remote = gitConfig.getOriginURL()?.absoluteString
     }
 
-    static func getDemoRepos() -> [RepositoryModel] {
-        let demo = RepositoryModel(name: "Git-Cockpit",
-                                   pathToRoot: "/Users/christoph_rohde/Swift/GitCockpit",
-                                   remote: nil)
-
-        let timedAction = RepositoryModel(name: "Timed-Action",
-                                          pathToRoot: "/Users/christoph_rohde/CLionProjects/TimedAction",
-                                          remote: "https://github.com/CodebyCR/TimedAction")
-
-        let qrala = RepositoryModel(name: "Qrala",
-                                    pathToRoot: "/Users/christoph_rohde/PycharmProjects/Qrala",
-                                    remote: "https://github.com/CodebyCR/Qrala")
-
-        return [demo, timedAction, qrala]
-    }
-
     static func == (lhs: RepositoryModel, rhs: RepositoryModel) -> Bool {
         return lhs.pathToRoot == rhs.pathToRoot
     }
@@ -109,6 +93,13 @@ class RepositoryModel: Identifiable, Hashable {
     }
 
     func getName() -> String {
+//        print("Path: \(pathToRoot)")
+
+        if let datat = pathToRoot.data(using: .nonLossyASCII) {
+            let str = String(decoding: datat, as: UTF8.self)
+            print(str)
+        }
+
         return URL(fileURLWithPath: pathToRoot).lastPathComponent
     }
 
