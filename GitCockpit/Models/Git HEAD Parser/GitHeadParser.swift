@@ -194,7 +194,7 @@ struct GitHeadParser {
             .last
 
         guard let subString else {
-//                    print("Branch name can't be accessed.")
+//             print("Branch name can't be accessed.")
 
             return .failure(.unreadableBranchName)
         }

@@ -11,7 +11,7 @@ class GitConfig {
 
     init?(atPath path: String) {
         self.path = path
-        self.repoRootPath = (URL(string: path)!.deletingLastPathComponent().deletingLastPathComponent())
+        self.repoRootPath = URL(string: path)!.deletingLastPathComponent().deletingLastPathComponent()
         parseData()
     }
 

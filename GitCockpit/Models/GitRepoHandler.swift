@@ -50,4 +50,22 @@ struct GitRepoHandler {
 
         return gitDirectories
     }
+
+    static func getGitRepositories(ForSeachPaths seachPaths: [SearchPathModel]) -> [RepositoryModel] {
+        var repoModels: [RepositoryModel] = []
+
+        for dirPath in seachPaths {
+            let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath.path)
+            let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
+
+            repoModels.append(contentsOf: gitRepos)
+//            for repo in gitRepos {
+//                let gitConfig = repo.gitConfig
+//                repoModels.append(RepositoryModel(gitConfig: <#T##GitConfig#>))
+//                print("Test: \(repo.name)")
+//            }
+        }
+
+        return repoModels
+    }
 }
