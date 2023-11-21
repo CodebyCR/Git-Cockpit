@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 let gradientColors: [Color] = [.purple, .indigo, .blue, .cyan]
 
@@ -13,6 +14,9 @@ struct MainRectangleView: View {
     let width: CGFloat
     let height: CGFloat
     let gradientColors: [Color]
+
+    @Query(sort: \SearchPathModel.path)
+    var searchPaths: [SearchPathModel]
 
     @State
     private var isPresented: Bool = false
@@ -25,7 +29,7 @@ struct MainRectangleView: View {
 //                .opacity(0.6)
 //                .ignoresSafeArea()
 
-            RepoGridView()
+            RepoGridView(searchPaths: searchPaths)
         }
         .inspector(isPresented: $isPresented) {
             Text("Show details here...")
