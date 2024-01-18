@@ -18,12 +18,14 @@ struct GitRepoHandler {
     static func createRepositoryModels(FromDirectories gitDirectories: [String]) -> [RepositoryModel] {
         var repositoryModels: [RepositoryModel] = []
 
+
         for repo in gitDirectories {
-            GitConfig.parse(from: "\(repo)/.git/config") { result in
+            let repoPath = "\(repo)/.git/config"
+            print("RepoPath: \(repoPath)")
+
+            GitConfig.parse(from: repoPath) { result in
                 switch result {
                 case .success(let gitConfig):
-//                    print("\n\(gitConfig.path)")
-//                    gitConfig.prettyPrint()
                     let currentRepo = RepositoryModel(gitConfig: gitConfig)
                     repositoryModels.append(currentRepo)
 
@@ -40,8 +42,9 @@ struct GitRepoHandler {
     static func filterGitDirectories(fromPaths directories: [String]) -> [String] {
         var gitDirectories: [String] = []
         let fileManager = FileManager.default
+        let uniqueDirectories = Set(directories)
 
-        for path in directories {
+        for path in uniqueDirectories {
             let gitPath = (path as NSString).appendingPathComponent(".git")
             if fileManager.fileExists(atPath: gitPath) {
                 gitDirectories.append(path)
@@ -56,16 +59,13 @@ struct GitRepoHandler {
 
         for dirPath in seachPaths {
             let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath.path)
+            print("Size 1: \(gitDirectories.count)")
             let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
-
+            print("Size 2: \(gitRepos.count)")
             repoModels.append(contentsOf: gitRepos)
-//            for repo in gitRepos {
-//                let gitConfig = repo.gitConfig
-//                repoModels.append(RepositoryModel(gitConfig: <#T##GitConfig#>))
-//                print("Test: \(repo.name)")
-//            }
         }
 
+        print("Size 3: \(repoModels.count)")
         return repoModels
     }
 }

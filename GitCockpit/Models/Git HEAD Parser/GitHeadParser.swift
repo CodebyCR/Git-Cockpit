@@ -198,6 +198,7 @@ struct GitHeadParser {
 
             return .failure(.unreadableBranchName)
         }
+
         return .success(String(subString))
     }
 

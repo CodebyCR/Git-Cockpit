@@ -93,14 +93,8 @@ class RepositoryModel: Identifiable, Hashable {
     }
 
     func getName() -> String {
-//        print("Path: \(pathToRoot)")
-
-        if let datat = pathToRoot.data(using: .nonLossyASCII) {
-            let str = String(decoding: datat, as: UTF8.self)
-            print(str)
-        }
-
-        return URL(fileURLWithPath: pathToRoot).lastPathComponent
+        let branchName =  URL(fileURLWithPath: pathToRoot).lastPathComponent
+        return String(branchName).replacingOccurrences(of: "%20", with: " ")
     }
 
     // TODO:
