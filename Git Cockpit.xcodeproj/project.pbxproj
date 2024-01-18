@@ -136,6 +136,7 @@
 		8E415E8F2AFFBA7900F49FA9 /* Essentials */ = {
 			isa = PBXGroup;
 			children = (
+				8E6036462B0D2B7500B63587 /* Extensions */,
 				8E415E902AFFBABF00F49FA9 /* SFSymbols.swift */,
 			);
 			path = Essentials;
@@ -162,6 +163,13 @@
 				8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		8E6036462B0D2B7500B63587 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8E6574E82AE16BB20047ACFD /* NavigationManager */ = {

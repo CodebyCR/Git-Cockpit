@@ -26,8 +26,9 @@ struct SearchPathsView: View {
                     HStack {
                         Text(searchPathModel.path)
 
-//                            .onDeleteCommand(perform: deletePath)
-                        Button(action: {}, label: {
+                        Button(action: {
+                            modelContext.delete(searchPathModel)
+                        }, label: {
                             Text("Delete")
                         })
                     }
@@ -38,16 +39,7 @@ struct SearchPathsView: View {
             Spacer()
             AddPathButtonView()
         }
-//        .onDelete(
-//            perform: deleteItems(with: <#T##[ItemIdentifierType]#>)
-//        )
-    }
 
-    private func deletePath(indexSet: IndexSet) {
-        for index in indexSet {
-//            let searchPath = searchPaths.remove(at: index)
-//            modelContext.delete(searchPath)
-        }
     }
 }
 
