@@ -1,6 +1,5 @@
 //
 //  RepositoyModel.swift
-//  GraphenAutomator
 //
 //  Created by Christoph Rohde on 20.10.23.
 //
@@ -18,8 +17,9 @@ class RepositoryModel: Identifiable, Hashable {
     var remote: String?
 
     var lastAccessDate: String? {
-        guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: pathToRoot) else {
-            logger.info("The access Date can't be called.")
+        let saferPath = pathToRoot.replacingOccurrences(of: "%20", with: " ")
+        guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: saferPath) else {
+//            logger.info("The access Date can't be called.")
 //            print("The access Date can't be called.")
             return nil
         }
@@ -32,15 +32,16 @@ class RepositoryModel: Identifiable, Hashable {
     init(name: String, pathToRoot: String, remote: String?) {
         self.id = UUID()
         self.name = name
-        self.pathToRoot = pathToRoot
-        self.gitConfig = GitConfig(atPath: "\(pathToRoot)/.git/config")
+        self.pathToRoot = pathToRoot.replacingOccurrences(of: "%20", with: " ")
+        let totalPath = "\(pathToRoot)\(pathToRoot.hasSuffix("/") ? ".git/config" : "/.git/config")"
+        self.gitConfig = GitConfig(atPath: totalPath)
         self.remote = remote
     }
 
     init(gitConfig: GitConfig) {
         self.id = UUID()
         self.name = gitConfig.getRepoName() ?? "Unknown"
-        self.pathToRoot = gitConfig.getRepoRootPath().absoluteString
+        self.pathToRoot = gitConfig.getRepoRootPath().absoluteString.replacingOccurrences(of: "%20", with: " ")
         self.gitConfig = gitConfig
         self.remote = gitConfig.getOriginURL()?.absoluteString
     }
@@ -78,12 +79,11 @@ class RepositoryModel: Identifiable, Hashable {
         }
 
         let headParser = GitHeadParser(withRepositoryRoot: rootPath)
-
         let headParserResult = headParser.getCurrentBranch()
 
         switch headParserResult {
         case .success(let branchName):
-            logger.info("Current branch: \(branchName)")
+//            logger.info("Current branch: \(branchName)")
             return branchName
 
         case .failure(let error):
@@ -98,6 +98,6 @@ class RepositoryModel: Identifiable, Hashable {
     }
 
     // TODO:
-//    - Add branch name,
-//    - open in (editor)
+    //    - Add branch name,
+    //    - open in (editor)
 }

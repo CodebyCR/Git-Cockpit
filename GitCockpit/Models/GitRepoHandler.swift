@@ -18,10 +18,8 @@ struct GitRepoHandler {
     static func createRepositoryModels(FromDirectories gitDirectories: [String]) -> [RepositoryModel] {
         var repositoryModels: [RepositoryModel] = []
 
-
         for repo in gitDirectories {
-            let repoPath = "\(repo)/.git/config"
-            print("RepoPath: \(repoPath)")
+            let repoPath = repo.hasSuffix("/") ? "\(repo).git/config" : "\(repo)/.git/config"
 
             GitConfig.parse(from: repoPath) { result in
                 switch result {
@@ -45,7 +43,7 @@ struct GitRepoHandler {
         let uniqueDirectories = Set(directories)
 
         for path in uniqueDirectories {
-            let gitPath = (path as NSString).appendingPathComponent(".git")
+            let gitPath = (path as NSString).appendingPathComponent(".git/config")
             if fileManager.fileExists(atPath: gitPath) {
                 gitDirectories.append(path)
             }
@@ -59,13 +57,11 @@ struct GitRepoHandler {
 
         for dirPath in seachPaths {
             let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath.path)
-            print("Size 1: \(gitDirectories.count)")
             let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
-            print("Size 2: \(gitRepos.count)")
             repoModels.append(contentsOf: gitRepos)
         }
 
-        print("Size 3: \(repoModels.count)")
+        repoModels.sort(by: { $0.getName().lowercased() < $1.getName().lowercased() })
         return repoModels
     }
 }

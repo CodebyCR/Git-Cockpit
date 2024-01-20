@@ -177,7 +177,9 @@ struct GitHeadParser {
 //    }
 
     func getCurrentBranch() -> Result<String, GitHeadError> {
-        let headPath = URL(fileURLWithPath: "\(repoRootPath)/.git/HEAD")
+        let headPath = repoRootPath.absoluteString.hasSuffix("/")
+            ? URL(fileURLWithPath: "\(repoRootPath).git/HEAD")
+            : URL(fileURLWithPath: "\(repoRootPath)/.git/HEAD")
 
 //        guard let headPath else {
 //            // print("Undefined HEAD file for git repo at: \(repoRootPath)") // later as error
@@ -195,7 +197,6 @@ struct GitHeadParser {
 
         guard let subString else {
 //             print("Branch name can't be accessed.")
-
             return .failure(.unreadableBranchName)
         }
 
@@ -204,7 +205,7 @@ struct GitHeadParser {
 
     private func readFile(atPath path: String) -> String? {
         do {
-            let contents = try String(contentsOfFile: path, encoding: .utf8)
+            let contents = try String(contentsOfFile: path.replacingOccurrences(of: "%20", with: " "), encoding: .utf8)
             return contents
         } catch {
             print("Error reading file: \(error)")

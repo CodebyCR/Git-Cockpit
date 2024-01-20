@@ -58,8 +58,9 @@ struct FileUtils {
     static func isDirectory(_ path: String) -> Bool {
         var isDirectory: ObjCBool = false
         let fileManager = FileManager.default
+        let saferPath = path.replacingOccurrences(of: "%20", with: " ")
 
-        if fileManager.fileExists(atPath: path, isDirectory: &isDirectory) {
+        if fileManager.fileExists(atPath: saferPath, isDirectory: &isDirectory) {
             return isDirectory.boolValue
         }
 
@@ -68,6 +69,7 @@ struct FileUtils {
 
     static func getLastAccessDate(forFolderPath folderPath: String) -> Date? {
         do {
+            let saferPath = folderPath.replacingOccurrences(of: "%20", with: " ")
             let attributes = try FileManager.default.attributesOfItem(atPath: folderPath)
             if let accessDate = attributes[FileAttributeKey.modificationDate] as? Date {
                 return accessDate
