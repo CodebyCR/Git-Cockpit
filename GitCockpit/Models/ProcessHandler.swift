@@ -1,6 +1,6 @@
 //
 //  ProcessHandler.swift
-//  GraphenAutomator
+
 //
 //  Created by Christoph Rohde on 20.10.23.
 //

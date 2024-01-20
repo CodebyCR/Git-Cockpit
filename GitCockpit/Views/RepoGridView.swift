@@ -1,6 +1,5 @@
 //
 //  RepoGridView.swift
-//  GraphenAutomator
 //
 //  Created by Christoph Rohde on 19.10.23.
 //

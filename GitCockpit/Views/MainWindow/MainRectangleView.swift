@@ -1,6 +1,5 @@
 //
 //  MainRectangleView.swift
-//  GraphenAutomator
 //
 //  Created by Christoph Rohde on 29.05.23.
 //
