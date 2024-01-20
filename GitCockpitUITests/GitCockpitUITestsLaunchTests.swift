@@ -1,13 +1,10 @@
 //
-//  GraphenAutomatorUITestsLaunchTests.swift
-//  GraphenAutomatorUITests
-//
 //  Created by Christoph Rohde on 28.05.23.
 //
 
 import XCTest
 
-final class GraphenAutomatorUITestsLaunchTests: XCTestCase {
+final class GitCockpitUITestsLaunchTests: XCTestCase {
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

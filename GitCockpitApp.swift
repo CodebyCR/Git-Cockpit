@@ -1,7 +1,4 @@
 //
-//  GraphenAutomatorApp.swift
-//  GraphenAutomator
-//
 //  Created by Christoph Rohde on 28.05.23.
 //
 
