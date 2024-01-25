@@ -69,7 +69,6 @@ struct FileUtils {
 
     static func getLastAccessDate(forFolderPath folderPath: String) -> Date? {
         do {
-            let saferPath = folderPath.replacingOccurrences(of: "%20", with: " ")
             let attributes = try FileManager.default.attributesOfItem(atPath: folderPath)
             if let accessDate = attributes[FileAttributeKey.modificationDate] as? Date {
                 return accessDate

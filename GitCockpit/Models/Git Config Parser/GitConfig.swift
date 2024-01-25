@@ -79,7 +79,7 @@ class GitConfig {
     }
 
     public func getRepoName() -> String? {
-        return getOriginURL()?.absoluteString // FIXME: origen can be nil!
+        return getOriginURL()?.absoluteString
     }
 
     public func getRepoRootPath() -> URL {

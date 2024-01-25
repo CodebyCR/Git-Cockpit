@@ -17,7 +17,7 @@ struct NavigationManagerView: View {
     var body: some View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
             SidebarView(selectedSidebarItem: $selectedSidebarItem)
-                .onChange(of: selectedSidebarItem) { _ in
+                .onChange(of: selectedSidebarItem, initial: true) {
                     print("SelectedSidebarItem: \(selectedSidebarItem)")
                 }
         }
