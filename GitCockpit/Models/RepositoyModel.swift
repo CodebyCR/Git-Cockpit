@@ -93,11 +93,16 @@ class RepositoryModel: Identifiable, Hashable {
     }
 
     func getName() -> String {
-        let branchName =  URL(fileURLWithPath: pathToRoot).lastPathComponent
+        let branchName = URL(fileURLWithPath: pathToRoot).lastPathComponent
         return String(branchName).replacingOccurrences(of: "%20", with: " ")
     }
 
-    // TODO:
-    //    - Add branch name,
-    //    - open in (editor)
+    func open(editor inEditor: String) -> Process {
+        let task = Process()
+        task.launchPath = "/usr/bin/open"
+        task.arguments = ["-R", pathToRoot]
+
+        return task
+    }
+
 }
