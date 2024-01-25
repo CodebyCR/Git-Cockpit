@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct MenuView: View {    
+struct MenuView: View {
     var body: some View {
         ContentView()
-            .frame(minWidth: 800, minHeight: 600)
+            .frame(minWidth: 960, minHeight: 600)
     }
 }
 
