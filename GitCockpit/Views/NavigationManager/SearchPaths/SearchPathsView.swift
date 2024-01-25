@@ -26,12 +26,14 @@ struct SearchPathsView: View {
                     HStack {
                         Text(searchPathModel.path)
 
+                        Spacer()
+
                         Button(action: {
                             modelContext.delete(searchPathModel)
                         }, label: {
                             Text("Delete")
                         })
-                    }
+                    }.frame(height: 30)
                 }
             }
         }
@@ -39,10 +41,10 @@ struct SearchPathsView: View {
             Spacer()
             AddPathButtonView()
         }
-
     }
 }
 
 #Preview {
     SearchPathsView()
+        .frame(minHeight: 200)
 }
