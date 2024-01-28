@@ -6,6 +6,7 @@
 
 import Foundation
 import Logging
+import System
 
 let logger = Logger(label: "com.CodebyCR.GitCockpit") // put in env
 
@@ -29,14 +30,14 @@ class RepositoryModel: Identifiable, Hashable {
         return dateFormatter.string(from: accessDate)
     }
 
-    init(name: String, pathToRoot: String, remote: String?) {
-        self.id = UUID()
-        self.name = name
-        self.pathToRoot = pathToRoot.replacingOccurrences(of: "%20", with: " ")
-        let totalPath = "\(pathToRoot)\(pathToRoot.hasSuffix("/") ? ".git/config" : "/.git/config")"
-        self.gitConfig = GitConfig(atPath: totalPath)
-        self.remote = remote
-    }
+//    init(name: String, pathToRoot: String, remote: String?) {
+//        self.id = UUID()
+//        self.name = name
+//        self.pathToRoot = pathToRoot.replacingOccurrences(of: "%20", with: " ")
+//        let totalPath = "\(pathToRoot)\(pathToRoot.hasSuffix("/") ? ".git/config" : "/.git/config")"
+//        self.gitConfig = GitConfig(atPath: totalPath)
+//        self.remote = remote
+//    }
 
     init(gitConfig: GitConfig) {
         self.id = UUID()
@@ -104,5 +105,4 @@ class RepositoryModel: Identifiable, Hashable {
 
         return task
     }
-
 }

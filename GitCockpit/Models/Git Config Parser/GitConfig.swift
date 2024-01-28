@@ -36,6 +36,14 @@ class GitConfig {
 
     // MARK: PUBLIC
 
+    public func show() {
+        print("GitConfig: \(configDictionary)")
+    }
+
+    public func getContent() -> [String: [String: String]] {
+        return configDictionary
+    }
+
     public func getValue(forKey key: String) -> [String: String]? {
         if let valueDictionary = configDictionary[key] {
             return valueDictionary

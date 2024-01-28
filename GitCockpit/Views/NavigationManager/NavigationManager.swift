@@ -29,6 +29,9 @@ struct NavigationManagerView: View {
             case .paths:
                 SearchPathsView()
                     .frame(minWidth: 600, idealWidth: 600)
+            case .gitConfig:
+                GitConfigView()
+                    .frame(minWidth: 600, idealWidth: 600)
 
             default:
                 Text("\(selectedSidebarItem.displayName)")
