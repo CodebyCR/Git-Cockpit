@@ -1,14 +1,6 @@
-
-import Foundation
 import SwiftUI
 
-
-
-
-
-struct GitConfigView: View{
-
-
+struct GitConfigView: View {
     init() {
         GitGlobalConfig.parseGlobalGitConfig { result in
             switch result {
@@ -23,10 +15,4 @@ struct GitConfigView: View{
     var body: some View {
         Text("GitConfigView")
     }
-    
-
-
-
-
-
 }

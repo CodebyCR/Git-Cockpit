@@ -10,7 +10,7 @@ import System
 
 let logger = Logger(label: "com.CodebyCR.GitCockpit") // put in env
 
-class RepositoryModel: Identifiable, Hashable {
+class RepositoryModel: Identifiable, Hashable, ObservableObject {
     let id: UUID
     let name: String
     let pathToRoot: String

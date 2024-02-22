@@ -9,23 +9,13 @@ import SwiftData
 import SwiftUI
 
 struct RepoGridView: View {
-    @State
-    private var selectedRepo: RepositoryModel?
-//    @Environment(\.modelContext)
-//    private var modelContext
-
-    private var repos: [RepositoryModel]
-//    = GitRepoHandler.getGitRepositories(ForSeachPaths: searchPaths)
-    let gradientColors: [Color] = [.purple, .indigo, .blue, .cyan]
+    var repos: [RepositoryModel]
+    var selectedRepo: RepositoryModel?
 
     private let adaptiveColumns = [
         // should be the same like frame width
         GridItem(.adaptive(minimum: 440))
     ]
-
-    init(searchPaths: [SearchPathModel]) {
-        self.repos = GitRepoHandler.getGitRepositories(ForSeachPaths: searchPaths)
-    }
 
     var body: some View {
         ScrollView {
@@ -37,11 +27,5 @@ struct RepoGridView: View {
                 }
             }
         }
-        .padding()
     }
 }
-
-// #Preview("RepoGridView") {
-//    RepoGridView()
-//        .frame(width: 600)
-// }

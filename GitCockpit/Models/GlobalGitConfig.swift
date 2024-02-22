@@ -7,11 +7,8 @@
 
 import Foundation
 
-// Parse the global git config file
-
 struct GlobalGitConfig {
     private var gitConfig: GitConfig?
-    
 
     public init() {
         let path = "\(NSHomeDirectory())/.gitconfig"

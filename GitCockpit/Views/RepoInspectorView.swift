@@ -9,7 +9,12 @@ import SwiftUI
 
 struct RepoInspectorView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Show details here...")
+            .onAppear(perform: {
+                withAnimation(.easeIn(duration: 1.0)) {
+                    print("animated")
+                }
+            })
     }
 }
 

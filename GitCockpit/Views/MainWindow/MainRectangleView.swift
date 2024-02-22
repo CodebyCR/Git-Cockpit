@@ -4,48 +4,50 @@
 //  Created by Christoph Rohde on 29.05.23.
 //
 
-import SwiftUI
 import SwiftData
-
-let gradientColors: [Color] = [.purple, .indigo, .blue, .cyan]
+import SwiftUI
 
 struct MainRectangleView: View {
     let width: CGFloat
     let height: CGFloat
-    let gradientColors: [Color]
 
     @Query(sort: \SearchPathModel.path)
-    var searchPaths: [SearchPathModel]
+    private var searchPaths: [SearchPathModel]
+
+    private var repositories: [RepositoryModel] {
+        GitRepoHandler.getGitRepositories(ForSeachPaths: searchPaths)
+    }
 
     @State
     private var isPresented: Bool = false
 
-//    @Environment(\.isPresented) private var isPresented
+    @State
+    private var selectedRepo: RepositoryModel?
 
     var body: some View {
         ZStack {
-//            Color.black
-//                .opacity(0.6)
-//                .ignoresSafeArea()
-
-            RepoGridView(searchPaths: searchPaths)
+            RepoGridView(repos: repositories, selectedRepo: selectedRepo)
         }
         .inspector(isPresented: $isPresented) {
-            Text("Show details here...")
-                .onAppear(perform: {
-                    withAnimation(.easeIn(duration: 1.0)) {
-                        print("animated")
-                    }
-                })
+            RepoInspectorView()
         }
         .inspectorColumnWidth(min: 80, ideal: 200, max: 380)
         .toolbar {
             ToolbarView(detailsAreVisible: $isPresented)
         }
     }
+
+//    .onAppear {
+//      self.isPresented = selectedRepo != nil
+//    }
+
+//    // Aktualisierung des Wrappers, wenn sich selectedObject ändert
+//    .onChange(of: selectedObject) { _ in
+//      self.isPresented = selectedRepo != nil
+//    }
 }
 
 #Preview("MainRectangleView") {
-    MainRectangleView(width: 0.9, height: 0.9, gradientColors: gradientColors)
+    MainRectangleView(width: 0.9, height: 0.9)
         .frame(width: 600)
 }

@@ -10,12 +10,12 @@ import Foundation
 struct GitRepoHandler {
     private init() {}
 
-    static func listGitDirectories(from path: String) -> [String] {
+    static func listGitDirectories(from path: consuming String) -> [String] {
         let directories = FileUtils.recursiveDirectoryList(path: path)
         return filterGitDirectories(fromPaths: directories)
     }
 
-    static func createRepositoryModels(FromDirectories gitDirectories: [String]) -> [RepositoryModel] {
+    static func createRepositoryModels(FromDirectories gitDirectories: consuming[String]) -> [RepositoryModel] {
         var repositoryModels: [RepositoryModel] = []
 
         for repo in gitDirectories {
@@ -37,14 +37,14 @@ struct GitRepoHandler {
         return repositoryModels
     }
 
-    static func filterGitDirectories(fromPaths directories: [String]) -> [String] {
+    static func filterGitDirectories(fromPaths directories: consuming[String]) -> [String] {
         var gitDirectories: [String] = []
         let fileManager = FileManager.default
         let uniqueDirectories = Set(directories)
 
         for path in uniqueDirectories {
             let gitPath = (path as NSString).appendingPathComponent(".git/config")
-            if fileManager.fileExists(atPath: gitPath) {
+            if fileManager.fileExists(atPath: consume gitPath) {
                 gitDirectories.append(path)
             }
         }
@@ -52,13 +52,13 @@ struct GitRepoHandler {
         return gitDirectories
     }
 
-    static func getGitRepositories(ForSeachPaths seachPaths: [SearchPathModel]) -> [RepositoryModel] {
+    static func getGitRepositories(ForSeachPaths seachPaths: consuming[SearchPathModel]) -> [RepositoryModel] {
         var repoModels: [RepositoryModel] = []
 
         for dirPath in seachPaths {
             let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath.path)
-            let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
-            repoModels.append(contentsOf: gitRepos)
+            let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: consume gitDirectories)
+            repoModels.append(contentsOf: consume gitRepos)
         }
 
         repoModels.sort(by: { $0.getName().lowercased() < $1.getName().lowercased() })

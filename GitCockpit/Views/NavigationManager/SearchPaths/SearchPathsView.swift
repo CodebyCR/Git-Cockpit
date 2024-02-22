@@ -16,6 +16,13 @@ struct SearchPathsView: View {
     var searchPaths: [SearchPathModel]
 
     var body: some View {
+//        Button {
+//            let changelog = GitChangelog()
+//            changelog.printAll()
+//        } label: {
+//            Text("press")
+//        }
+
         ZStack {
             if searchPaths.isEmpty {
                 EmptyListView(

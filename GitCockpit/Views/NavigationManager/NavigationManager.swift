@@ -24,7 +24,7 @@ struct NavigationManagerView: View {
         detail: {
             switch selectedSidebarItem {
             case .repositories:
-                MainRectangleView(width: 0.9, height: 0.9, gradientColors: gradientColors)
+                MainRectangleView(width: 0.9, height: 0.9)
                     .frame(minWidth: 600, idealWidth: 600)
             case .paths:
                 SearchPathsView()

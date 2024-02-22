@@ -65,6 +65,7 @@ struct SingleCellView: View {
     }
 
     func getGradient() -> LinearGradient {
+        let gradientColors: [Color] = [.purple, .indigo, .blue, .cyan]
         return LinearGradient(
             gradient: Gradient(colors: gradientColors),
             startPoint: .bottomLeading,
