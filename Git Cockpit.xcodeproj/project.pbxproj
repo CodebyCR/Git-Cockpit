@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8E181F392B645B71000229C5 /* GlobalGitConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E181F382B645B71000229C5 /* GlobalGitConfig.swift */; };
 		8E181F3B2B645F8A000229C5 /* GitConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E181F3A2B645F8A000229C5 /* GitConfigView.swift */; };
+		8E18AEEE2B77A27B0070C3ED /* RepoInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18AEED2B77A27B0070C3ED /* RepoInspectorView.swift */; };
+		8E2299442B7DF5F500513007 /* GitChangelog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2299432B7DF5F500513007 /* GitChangelog.swift */; };
 		8E2AFC382A24EBEB00D12539 /* MainRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2AFC372A24EBEB00D12539 /* MainRectangleView.swift */; };
 		8E415E912AFFBABF00F49FA9 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E415E902AFFBABF00F49FA9 /* SFSymbols.swift */; };
 		8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */; };
@@ -64,6 +66,8 @@
 /* Begin PBXFileReference section */
 		8E181F382B645B71000229C5 /* GlobalGitConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalGitConfig.swift; sourceTree = "<group>"; };
 		8E181F3A2B645F8A000229C5 /* GitConfigView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitConfigView.swift; sourceTree = "<group>"; };
+		8E18AEED2B77A27B0070C3ED /* RepoInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInspectorView.swift; sourceTree = "<group>"; };
+		8E2299432B7DF5F500513007 /* GitChangelog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitChangelog.swift; sourceTree = "<group>"; };
 		8E2AFC372A24EBEB00D12539 /* MainRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRectangleView.swift; sourceTree = "<group>"; };
 		8E415E902AFFBABF00F49FA9 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoyModel.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */,
 				8EAD4F672B03EEB200B18E2B /* SearchPathModel.swift */,
 				8E181F382B645B71000229C5 /* GlobalGitConfig.swift */,
+				8E2299432B7DF5F500513007 /* GitChangelog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				8EAD4F702B06885400B18E2B /* MenuCommands.swift */,
 				8EAD4F722B06903000B18E2B /* AddPathButtonView.swift */,
 				8EAD4F742B0697AF00B18E2B /* EmptyListView.swift */,
+				8E18AEED2B77A27B0070C3ED /* RepoInspectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -483,7 +489,9 @@
 				8EAD4F6F2B06860200B18E2B /* DictionaryPicker.swift in Sources */,
 				8E8DC4BC2AE50D31002D2C5A /* GitRepoHandler.swift in Sources */,
 				8E181F392B645B71000229C5 /* GlobalGitConfig.swift in Sources */,
+				8E18AEEE2B77A27B0070C3ED /* RepoInspectorView.swift in Sources */,
 				8E5BAB0A2AFFAEC000DA6350 /* SplashScreenView.swift in Sources */,
+				8E2299442B7DF5F500513007 /* GitChangelog.swift in Sources */,
 				8EAD4F682B03EEB200B18E2B /* SearchPathModel.swift in Sources */,
 				8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */,
 				8E181F3B2B645F8A000229C5 /* GitConfigView.swift in Sources */,
@@ -748,8 +756,8 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5JFNMP7X7J;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GitCockpitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -772,8 +780,8 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5JFNMP7X7J;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GitCockpitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -795,8 +803,8 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5JFNMP7X7J;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GitCockpitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -818,8 +826,8 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 5JFNMP7X7J;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodebyCR.GitCockpitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
