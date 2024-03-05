@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct GitConfigView: View {
@@ -19,16 +18,16 @@ struct GitConfigView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("User Information").fontWeight(.bold)) {
-                    LabeledContent("Name", value: name)
+                Section(header: Text(LocalizedStringKey("User Information")).fontWeight(.bold)) {
+                    LabeledContent(LocalizedStringKey("Name"), value: name)
                         .frame(width: 300)
 
-                    LabeledContent("Email", value: email)
+                    LabeledContent(LocalizedStringKey("Email"), value: email)
                         .frame(width: 300)
                 }
 
-                Section(header: Text("Repository Information").fontWeight(.bold)) {
-                    LabeledContent("Default Branch", value: defaultBranch)
+                Section(header: Text(LocalizedStringKey("Repository Information")).fontWeight(.bold)) {
+                    LabeledContent(LocalizedStringKey("Default Branch"), value: defaultBranch)
                         .frame(width: 300)
                 }
             }.navigationTitle(SidebarItem.gitConfig.displayName)

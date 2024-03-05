@@ -25,6 +25,6 @@ struct SidebarView: View {
 }
 
 #Preview("SidebarView") {
-    SidebarView(selectedSidebarItem: .constant(SidebarItem.repositories))
+    SidebarView(selectedSidebarItem: .constant(SidebarItem.repositorys))
         .listStyle(.sidebar)
 }

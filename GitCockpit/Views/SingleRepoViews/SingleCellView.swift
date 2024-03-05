@@ -40,7 +40,7 @@ struct SingleCellView: View {
             VStack {
                 Spacer()
                 HStack {
-                    Button("Show",
+                    Button(LocalizedStringKey("Show"),
                            systemImage: "folder",
                            action: { repo.showLocal() })
                         .buttonStyle(.borderless)

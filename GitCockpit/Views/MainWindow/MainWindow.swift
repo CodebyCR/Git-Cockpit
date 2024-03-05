@@ -14,7 +14,7 @@ struct MainWindow: View {
 //            Color.white
 
 //        CStack {
-        MainRectangleView(width: 0.9, height: 0.9)
+        MainRectangleView()
 //        }
 //        }
     }

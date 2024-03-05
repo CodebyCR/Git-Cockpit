@@ -12,7 +12,7 @@ struct NavigationManagerView: View {
     var sideBarVisibility: NavigationSplitViewVisibility = .detailOnly
 
     @State
-    var selectedSidebarItem: SidebarItem = .repositories
+    var selectedSidebarItem: SidebarItem = .repositorys
 
     var body: some View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
@@ -23,8 +23,8 @@ struct NavigationManagerView: View {
         }
         detail: {
             switch selectedSidebarItem {
-            case .repositories:
-                MainRectangleView(width: 0.9, height: 0.9)
+            case .repositorys:
+                MainRectangleView()
                     .frame(minWidth: 600, idealWidth: 600)
             case .paths:
                 SearchPathsView()
@@ -34,7 +34,7 @@ struct NavigationManagerView: View {
                     .frame(minWidth: 600, idealWidth: 600)
 
             default:
-                Text("\(selectedSidebarItem.displayName)")
+                Text(selectedSidebarItem.displayName)
             }
         }
     }

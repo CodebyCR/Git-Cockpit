@@ -44,6 +44,7 @@
 		8EC46E3D2A23835000F3AF79 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E3C2A23835000F3AF79 /* MainWindow.swift */; };
 		8EC7026A2B08FAE300A6E2E2 /* GitHeadParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC702692B08FAE300A6E2E2 /* GitHeadParser.swift */; };
 		8EC7026E2B0A431100A6E2E2 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EC7026D2B0A431100A6E2E2 /* Logging */; };
+		8EF4BB6D2B96F9A200AFAC40 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8EF4BB6C2B96F9A200AFAC40 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		8EC46E3C2A23835000F3AF79 /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		8EC702692B08FAE300A6E2E2 /* GitHeadParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHeadParser.swift; sourceTree = "<group>"; };
 		8ECDE3D52AE2C92100A74341 /* GitCockpit.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = GitCockpit.entitlements; sourceTree = "<group>"; };
+		8EF4BB6C2B96F9A200AFAC40 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +159,6 @@
 				8E8DC4C42AE67FD1002D2C5A /* Git Config Parser */,
 				8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */,
 				8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */,
-				8E9987472AE3C32600145820 /* SidebarItems.swift */,
 				8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */,
 				8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */,
 				8EAD4F672B03EEB200B18E2B /* SearchPathModel.swift */,
@@ -185,6 +186,7 @@
 		8E6574E82AE16BB20047ACFD /* NavigationManager */ = {
 			isa = PBXGroup;
 			children = (
+				8E9987472AE3C32600145820 /* SidebarItems.swift */,
 				8E181F3A2B645F8A000229C5 /* GitConfigView.swift */,
 				8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */,
 				8EC702662B08F65700A6E2E2 /* SearchPaths */,
@@ -245,6 +247,7 @@
 		8EC46E0A2A23821200F3AF79 /* GitCockpit */ = {
 			isa = PBXGroup;
 			children = (
+				8EF4BB6B2B96F95D00AFAC40 /* LanguageCatalogs */,
 				8ECDE3D52AE2C92100A74341 /* GitCockpit.entitlements */,
 				8EC46E142A23821500F3AF79 /* Assets.xcassets */,
 				8E415E8F2AFFBA7900F49FA9 /* Essentials */,
@@ -312,6 +315,14 @@
 				8EC702692B08FAE300A6E2E2 /* GitHeadParser.swift */,
 			);
 			path = "Git HEAD Parser";
+			sourceTree = "<group>";
+		};
+		8EF4BB6B2B96F95D00AFAC40 /* LanguageCatalogs */ = {
+			isa = PBXGroup;
+			children = (
+				8EF4BB6C2B96F9A200AFAC40 /* Localizable.xcstrings */,
+			);
+			path = LanguageCatalogs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +416,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 8EC46DFF2A23821200F3AF79;
 			packageReferences = (
@@ -428,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EC46E192A23821500F3AF79 /* Preview Assets.xcassets in Resources */,
+				8EF4BB6D2B96F9A200AFAC40 /* Localizable.xcstrings in Resources */,
 				8EC46E152A23821500F3AF79 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

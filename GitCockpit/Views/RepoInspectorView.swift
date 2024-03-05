@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RepoInspectorView: View {
     var body: some View {
-        Text("Show details here...")
+        Text(LocalizedStringKey("Show details here..."))
             .onAppear(perform: {
                 withAnimation(.easeIn(duration: 1.0)) {
                     print("animated")
