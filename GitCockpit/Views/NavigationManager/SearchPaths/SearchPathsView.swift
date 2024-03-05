@@ -26,7 +26,7 @@ struct SearchPathsView: View {
         ZStack {
             if searchPaths.isEmpty {
                 EmptyListView(
-                    message: "No search paths chosen",
+                    message: LocalizedStringKey("No search paths chosen"),
                     command: "⇧ ⌘ N")
             } else {
                 List(searchPaths) { searchPathModel in
@@ -38,7 +38,7 @@ struct SearchPathsView: View {
                         Button(action: {
                             modelContext.delete(searchPathModel)
                         }, label: {
-                            Text("Delete")
+                            Text(LocalizedStringKey("Delete"))
                         })
                     }.frame(height: 30)
                 }

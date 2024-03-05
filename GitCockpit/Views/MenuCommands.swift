@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct CommandMenuView: Commands {
-    @Environment (\.modelContext)
+    @Environment(\.modelContext)
     private var modelContext
     private let dictionaryPicker = DirectoryPicker()
 
     var body: some Commands {
         CommandMenu("File", content: {
             AddPathButtonView()
-                   .buttonStyle(.borderless)
-                   .frame(maxWidth: .infinity, alignment: .leading)
+                .buttonStyle(.borderless)
+                .frame(maxWidth: .infinity, alignment: .leading)
 
 //            CommandMenu("Help", content: {
 //                Button("Help", action: { print("help") })

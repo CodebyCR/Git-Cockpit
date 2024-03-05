@@ -19,7 +19,7 @@ struct HamburgerMenuView: View {
         VStack {
             HStack {
                 Menu(content: {
-                         Text("Last access: \(repo.lastAccessDate ?? "-")")
+                         Text(LocalizedStringKey("Last access: \(repo.lastAccessDate ?? "-")"))
                      },
                      label: {
                          Image(systemName: "line.3.horizontal")

@@ -19,7 +19,7 @@ struct ToolbarView: View {
             detailsAreVisible.toggle()
         }
         label: {
-            Label("Info", systemImage: "info.circle")
+            Label(LocalizedStringKey("Info"), systemImage: "info.circle")
         }
     }
 }

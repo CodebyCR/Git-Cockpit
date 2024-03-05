@@ -8,8 +8,8 @@ import SwiftData
 import SwiftUI
 
 struct MainRectangleView: View {
-    let width: CGFloat
-    let height: CGFloat
+    private let width: CGFloat
+    private let height: CGFloat
 
     @Query(sort: \SearchPathModel.path)
     private var searchPaths: [SearchPathModel]
@@ -23,6 +23,11 @@ struct MainRectangleView: View {
 
     @State
     private var selectedRepo: RepositoryModel?
+
+    public init(width: CGFloat = 1.0, height: CGFloat = 1.0) {
+        self.width = width
+        self.height = height
+    }
 
     var body: some View {
         ZStack {

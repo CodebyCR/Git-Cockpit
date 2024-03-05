@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DirectoryPicker {
-    func chosePath(withDialogTitle dialogTitle: String = "Choose a Directory") -> String? {
+    func chosePath(withDialogTitle dialogTitle: String = String(localized: "Choose a Directory")) -> String? {
         let dialog = NSOpenPanel()
 
         dialog.title = dialogTitle
