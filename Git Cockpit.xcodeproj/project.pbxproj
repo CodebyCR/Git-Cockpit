@@ -16,6 +16,7 @@
 		8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */; };
 		8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */; };
 		8E5829132B9783AE00F6D0E7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8E5829122B9783AE00F6D0E7 /* .gitignore */; };
+		8E5829162B978A5F00F6D0E7 /* ThemeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5829152B978A5F00F6D0E7 /* ThemeMode.swift */; };
 		8E5BAB0A2AFFAEC000DA6350 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */; };
 		8E6574EA2AE16BD90047ACFD /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6574E92AE16BD90047ACFD /* NavigationManager.swift */; };
 		8E6E0C7E2AEEBEEF00B1A013 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */; };
@@ -30,9 +31,8 @@
 		8E9987482AE3C32600145820 /* SidebarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9987472AE3C32600145820 /* SidebarItems.swift */; };
 		8EAD4F682B03EEB200B18E2B /* SearchPathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD4F672B03EEB200B18E2B /* SearchPathModel.swift */; };
 		8EAD4F6A2B06791F00B18E2B /* SearchPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD4F692B06791F00B18E2B /* SearchPathsView.swift */; };
-		8EAD4F6C2B06855A00B18E2B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD4F6B2B06855A00B18E2B /* MenuView.swift */; };
 		8EAD4F6F2B06860200B18E2B /* DictionaryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD4F6E2B06860200B18E2B /* DictionaryPicker.swift */; };
-		8EAD4F712B06885400B18E2B /* MenuCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD4F702B06885400B18E2B /* MenuCommands.swift */; };
+		8EAD4F712B06885400B18E2B /* CommandMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD4F702B06885400B18E2B /* CommandMenuView.swift */; };
 		8EAD4F732B06903000B18E2B /* AddPathButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD4F722B06903000B18E2B /* AddPathButtonView.swift */; };
 		8EAD4F752B0697AF00B18E2B /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD4F742B0697AF00B18E2B /* EmptyListView.swift */; };
 		8EC46E0C2A23821200F3AF79 /* GitCockpitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E0B2A23821200F3AF79 /* GitCockpitApp.swift */; };
@@ -75,6 +75,7 @@
 		8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoyModel.swift; sourceTree = "<group>"; };
 		8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessHandler.swift; sourceTree = "<group>"; };
 		8E5829122B9783AE00F6D0E7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8E5829152B978A5F00F6D0E7 /* ThemeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeMode.swift; sourceTree = "<group>"; };
 		8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8E6574E92AE16BD90047ACFD /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
@@ -89,9 +90,8 @@
 		8E9987472AE3C32600145820 /* SidebarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItems.swift; sourceTree = "<group>"; };
 		8EAD4F672B03EEB200B18E2B /* SearchPathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPathModel.swift; sourceTree = "<group>"; };
 		8EAD4F692B06791F00B18E2B /* SearchPathsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPathsView.swift; sourceTree = "<group>"; };
-		8EAD4F6B2B06855A00B18E2B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8EAD4F6E2B06860200B18E2B /* DictionaryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPicker.swift; sourceTree = "<group>"; };
-		8EAD4F702B06885400B18E2B /* MenuCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommands.swift; sourceTree = "<group>"; };
+		8EAD4F702B06885400B18E2B /* CommandMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandMenuView.swift; sourceTree = "<group>"; };
 		8EAD4F722B06903000B18E2B /* AddPathButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathButtonView.swift; sourceTree = "<group>"; };
 		8EAD4F742B0697AF00B18E2B /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		8EC46E082A23821200F3AF79 /* Git Cockpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Git Cockpit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +170,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8E5829142B9789E100F6D0E7 /* Enumerable */ = {
+			isa = PBXGroup;
+			children = (
+				8E5829152B978A5F00F6D0E7 /* ThemeMode.swift */,
+			);
+			path = Enumerable;
+			sourceTree = "<group>";
+		};
 		8E5BAB082AFFAE1500DA6350 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +205,15 @@
 				8E9987452AE3B58B00145820 /* SidebarView.swift */,
 			);
 			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		8E7F7DD72B9854680060CFE6 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				8EAD4F702B06885400B18E2B /* CommandMenuView.swift */,
+				8EAD4F722B06903000B18E2B /* AddPathButtonView.swift */,
+			);
+			path = MenuBar;
 			sourceTree = "<group>";
 		};
 		8E8DC4BF2AE65C5F002D2C5A /* SingleRepoViews */ = {
@@ -250,6 +267,7 @@
 		8EC46E0A2A23821200F3AF79 /* GitCockpit */ = {
 			isa = PBXGroup;
 			children = (
+				8E7F7DD72B9854680060CFE6 /* MenuBar */,
 				8EF4BB6B2B96F95D00AFAC40 /* LanguageCatalogs */,
 				8ECDE3D52AE2C92100A74341 /* GitCockpit.entitlements */,
 				8EC46E142A23821500F3AF79 /* Assets.xcassets */,
@@ -289,15 +307,13 @@
 		8EC46E3B2A23831B00F3AF79 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E5829142B9789E100F6D0E7 /* Enumerable */,
 				8EAD4F6D2B0685D500B18E2B /* Utility */,
 				8E5BAB082AFFAE1500DA6350 /* SplashScreen */,
 				8E8DC4BF2AE65C5F002D2C5A /* SingleRepoViews */,
 				8E6574E82AE16BB20047ACFD /* NavigationManager */,
 				8E2AFC362A24EBBD00D12539 /* MainWindow */,
 				8E93264B2AE15ABA00DFE0D9 /* RepoGridView.swift */,
-				8EAD4F6B2B06855A00B18E2B /* MenuView.swift */,
-				8EAD4F702B06885400B18E2B /* MenuCommands.swift */,
-				8EAD4F722B06903000B18E2B /* AddPathButtonView.swift */,
 				8EAD4F742B0697AF00B18E2B /* EmptyListView.swift */,
 				8E18AEED2B77A27B0070C3ED /* RepoInspectorView.swift */,
 			);
@@ -397,7 +413,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					8EC46E072A23821200F3AF79 = {
 						CreatedOnToolsVersion = 14.3;
@@ -492,13 +508,13 @@
 			files = (
 				8EAD4F732B06903000B18E2B /* AddPathButtonView.swift in Sources */,
 				8E8DC4C62AE68065002D2C5A /* GitConfig.swift in Sources */,
+				8E5829162B978A5F00F6D0E7 /* ThemeMode.swift in Sources */,
 				8E9987462AE3B58B00145820 /* SidebarView.swift in Sources */,
 				8EAD4F6A2B06791F00B18E2B /* SearchPathsView.swift in Sources */,
 				8EC46E0C2A23821200F3AF79 /* GitCockpitApp.swift in Sources */,
 				8E6574EA2AE16BD90047ACFD /* NavigationManager.swift in Sources */,
 				8E8DC4C12AE65C8F002D2C5A /* HamburgerMenuView.swift in Sources */,
 				8E8DC4C32AE67B2A002D2C5A /* SingleCellView.swift in Sources */,
-				8EAD4F6C2B06855A00B18E2B /* MenuView.swift in Sources */,
 				8E8DC4B82AE4FF75002D2C5A /* FileUtils.swift in Sources */,
 				8EC46E3D2A23835000F3AF79 /* MainWindow.swift in Sources */,
 				8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */,
@@ -516,7 +532,7 @@
 				8E2AFC382A24EBEB00D12539 /* MainRectangleView.swift in Sources */,
 				8E93264C2AE15ABA00DFE0D9 /* RepoGridView.swift in Sources */,
 				8E6E0C7E2AEEBEEF00B1A013 /* ToolbarView.swift in Sources */,
-				8EAD4F712B06885400B18E2B /* MenuCommands.swift in Sources */,
+				8EAD4F712B06885400B18E2B /* CommandMenuView.swift in Sources */,
 				8EC46E132A23821200F3AF79 /* ContentView.swift in Sources */,
 				8EC7026A2B08FAE300A6E2E2 /* GitHeadParser.swift in Sources */,
 				8E7DB4872ADFBD4100F4EAB7 /* SettingsBarView.swift in Sources */,
@@ -566,6 +582,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -614,6 +631,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -627,6 +646,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -670,6 +690,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

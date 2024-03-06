@@ -1,23 +1,28 @@
+////
+////  Created by Christoph Rohde on 28.05.23.
+////
 //
-//  Created by Christoph Rohde on 28.05.23.
-//
-
 import SwiftUI
 
 @main
 struct GitCockpitApp: App {
+    @AppStorage("themeMode") private var themeMode: ThemeMode = .system
+
     var body: some Scene {
         WindowGroup {
-            MenuView()
+            ContentView()
+                .preferredColorScheme(themeMode == .dark ? .dark : .light)
+                .frame(minWidth: 960, minHeight: 600)
                 .modelContainer(for: SearchPathModel.self)
         }
         .commands {
-            CommandMenuView()
+            CommandMenuView(themeMode: themeMode) { newThemeMode in
+                themeMode = newThemeMode
+            }
 
             CommandGroup(before: .newItem) {
                 AddPathButtonView()
             }
         }
-//        .windowStyle(HiddenTitleBarWindowStyle())
     }
 }

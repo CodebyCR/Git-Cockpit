@@ -11,6 +11,7 @@ struct CommandMenuView: Commands {
     @Environment(\.modelContext)
     private var modelContext
     private let dictionaryPicker = DirectoryPicker()
+    private var themeMode: ThemeMode = .system
 
     var body: some Commands {
         CommandMenu("File", content: {
@@ -18,13 +19,5 @@ struct CommandMenuView: Commands {
                 .buttonStyle(.borderless)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-//            CommandMenu("Help", content: {
-//                Button("Help", action: { print("help") })
-//
-//                Section("More", content: {
-//                    Button("Help2", action: { print("help") })
-//                    Button("Help3", action: { print("help") })
-//                })
-        })
     }
 }

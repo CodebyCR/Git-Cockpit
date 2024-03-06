@@ -44,6 +44,7 @@ struct SearchPathsView: View {
                 }
             }
         }
+        .navigationTitle(SidebarItem.paths.displayName)
         .toolbar {
             Spacer()
             AddPathButtonView()
