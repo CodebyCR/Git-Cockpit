@@ -8,28 +8,60 @@
 import SwiftUI
 
 struct CommandMenuView: Commands {
-    @Environment(\.modelContext)
-    private var modelContext
-    private let dictionaryPicker = DirectoryPicker()
+    private let themeMode: ThemeMode
+    private let onThemeChange: (ThemeMode) -> Void
+
+    init(themeMode: ThemeMode, onThemeChange: @escaping (ThemeMode) -> Void) {
+        self.themeMode = themeMode
+        self.onThemeChange = onThemeChange
+        print("Current Theme: \(themeMode)")
+    }
 
     var body: some Commands {
         CommandMenu("File", content: {
             AddPathButtonView()
                 .buttonStyle(.borderless)
                 .frame(maxWidth: .infinity, alignment: .leading)
-
-//            CommandMenu("Help", content: {
-//                Button("Help", action: { print("help") })
-//
-//                Section("More", content: {
-//                    Button("Help2", action: { print("help") })
-//                    Button("Help3", action: { print("help") })
-//                })
         })
 
-        CommandMenuView("View", content: {
-            Section("ThemeMode"){
-                
+        CommandMenu("View", content: {
+            Section("Theme") {
+                Button(action: {
+                    onThemeChange(.dark)
+                }) {
+                    Text(String(localized: "Dark"))
+
+                    if themeMode == .dark {
+                        Image(systemName: "checkmark")
+                    }
+                }
+                .tag(ThemeMode.dark)
+                .foregroundColor(themeMode == .dark ? .white : .primary)
+                .background(themeMode == .dark ? Color.primary : Color.clear)
+
+                Button(action: {
+                    onThemeChange(.light)
+                }) {
+                    if themeMode == .light {
+                        Image(systemName: "checkmark")
+                    }
+                    Text(String(localized: "Light"))
+                }
+                .tag(ThemeMode.light)
+                .foregroundColor(themeMode == .light ? .white : .primary)
+                .background(themeMode == .light ? Color.primary : Color.clear)
+
+                Button(action: {
+                    onThemeChange(.system)
+                }) {
+                    if themeMode == .system {
+                        Image(systemName: "checkmark")
+                    }
+                    Text(String(localized: "System"))
+                }
+                .tag(ThemeMode.system)
+                .foregroundColor(themeMode == .system ? .white : .primary)
+                .background(themeMode == .system ? Color.primary : Color.clear)
             }
         })
     }

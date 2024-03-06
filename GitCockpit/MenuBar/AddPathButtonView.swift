@@ -20,6 +20,7 @@ struct AddPathButtonView: View {
                 AddPathButtonView.add(SearchPath: newSearchPathModel, toContext: modelContext)
 
                 let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath)
+
                 let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
 
                 for repo in gitRepos {

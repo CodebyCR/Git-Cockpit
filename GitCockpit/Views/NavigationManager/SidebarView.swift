@@ -14,7 +14,9 @@ struct SidebarView: View {
 
     var body: some View {
         List(selection: $selectedSidebarItem) {
-            Section("Repositories") {
+            Section(
+                LocalizedStringKey("Repositorys")
+            ) {
                 ForEach(SidebarItem.allCases) { selection in
                     Label(selection.displayName, systemImage: selection.icon)
                         .tag(selection)
