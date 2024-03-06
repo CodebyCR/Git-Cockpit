@@ -14,7 +14,7 @@ struct AddPathButtonView: View {
     private var modelContext
 
     var body: some View {
-        Button(String(localized: "Add Path"), action: {
+        Button("", systemImage: "folder.badge.plus", action: {
             if let dirPath = dictionaryPicker.chosePath() {
                 let newSearchPathModel = SearchPathModel(path: dirPath)
                 AddPathButtonView.add(SearchPath: newSearchPathModel, toContext: modelContext)
