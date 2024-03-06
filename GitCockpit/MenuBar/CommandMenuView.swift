@@ -26,5 +26,11 @@ struct CommandMenuView: Commands {
 //                    Button("Help3", action: { print("help") })
 //                })
         })
+
+        CommandMenuView("View", content: {
+            Section("ThemeMode"){
+                
+            }
+        })
     }
 }
