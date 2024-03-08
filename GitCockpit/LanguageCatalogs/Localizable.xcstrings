@@ -101,6 +101,9 @@
         }
       }
     },
+    "English" : {
+
+    },
     "File" : {
       "localizations" : {
         "de" : {
@@ -116,6 +119,9 @@
           }
         }
       }
+    },
+    "German" : {
+
     },
     "Git Configuration" : {
       "localizations" : {
@@ -148,6 +154,9 @@
           }
         }
       }
+    },
+    "Language" : {
+
     },
     "Last access: %@" : {
       "localizations" : {
