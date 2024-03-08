@@ -22,7 +22,7 @@ struct SidebarItem: Identifiable, CaseIterable, Hashable {
     }
 
     static let repositorys = SidebarItem(icon: "star", displayName: "Repositorys")
-    static let paths = SidebarItem(icon: "folder", displayName: "Paths")
+    static let paths = SidebarItem(icon: "folder", displayName: "Search Paths")
     static let gitConfig = SidebarItem(icon: "person.text.rectangle", displayName: "Git Configuration")
 
     static var allCases: [SidebarItem] {

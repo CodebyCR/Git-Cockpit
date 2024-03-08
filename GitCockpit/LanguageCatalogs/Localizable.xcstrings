@@ -20,6 +20,22 @@
         }
       }
     },
+    "Add search path" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suchpfad hinzufügen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add search path"
+          }
+        }
+      }
+    },
     "Choose a Directory" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -36,6 +52,9 @@
           }
         }
       }
+    },
+    "Clone into Path" : {
+
     },
     "Dark" : {
       "localizations" : {
@@ -65,22 +84,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Default Branch"
-          }
-        }
-      }
-    },
-    "Delete" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Löschen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete"
           }
         }
       }
@@ -213,21 +216,8 @@
         }
       }
     },
-    "Paths" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pfade"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paths"
-          }
-        }
-      }
+    "Path Action" : {
+
     },
     "Profile" : {
       "localizations" : {
@@ -261,22 +251,8 @@
         }
       }
     },
-    "Repositories" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repositorys"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repositorys"
-          }
-        }
-      }
+    "Remove" : {
+
     },
     "Repository Information" : {
       "localizations" : {
@@ -306,6 +282,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repositorys"
+          }
+        }
+      }
+    },
+    "Search Paths" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suchpfade"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Paths"
           }
         }
       }

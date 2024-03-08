@@ -1,9 +1,9 @@
-//
-//  SearchPathsView.swift
-//  Git Cockpit
-//
-//  Created by Christoph Rohde on 16.11.23.
-//
+////
+////  SearchPathsView.swift
+////  Git Cockpit
+////
+////  Created by Christoph Rohde on 16.11.23.
+////
 
 import SwiftData
 import SwiftUI
@@ -16,38 +16,25 @@ struct SearchPathsView: View {
     var searchPaths: [SearchPathModel]
 
     var body: some View {
-//        Button {
-//            let changelog = GitChangelog()
-//            changelog.printAll()
-//        } label: {
-//            Text("press")
-//        }
+        NavigationStack {
+            ScrollView {
+                if searchPaths.isEmpty {
+                    Spacer()
+                    EmptyListView(message: "Add search path",
+                                  command: "⇧ ⌘ N")
 
-        ZStack {
-            if searchPaths.isEmpty {
-                EmptyListView(
-                    message: LocalizedStringKey("No search paths chosen"),
-                    command: "⇧ ⌘ N")
-            } else {
-                List(searchPaths) { searchPathModel in
-                    HStack {
-                        Text(searchPathModel.path)
-
-                        Spacer()
-
-                        Button(action: {
-                            modelContext.delete(searchPathModel)
-                        }, label: {
-                            Text(LocalizedStringKey("Delete"))
-                        })
-                    }.frame(height: 30)
+                } else {
+                    ForEach(searchPaths) { searchPath in
+                        SingleSearchPathView(searchPathModel: searchPath)
+                    }
                 }
             }
-        }
-        .navigationTitle(SidebarItem.paths.displayName)
-        .toolbar {
-            Spacer()
-            AddPathButtonView()
+
+            .navigationTitle(SidebarItem.paths.displayName)
+            .toolbar {
+                Spacer()
+                AddPathButtonView()
+            }
         }
     }
 }
