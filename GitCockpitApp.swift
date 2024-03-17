@@ -2,6 +2,7 @@
 ////  Created by Christoph Rohde on 28.05.23.
 ////
 //
+import SwiftData
 import SwiftUI
 
 @main
@@ -13,7 +14,7 @@ struct GitCockpitApp: App {
             ContentView()
                 .preferredColorScheme(themeMode == .dark ? .dark : .light)
                 .frame(minWidth: 960, minHeight: 600)
-                .modelContainer(for: SearchPathModel.self)
+                .modelContainer(for: [SearchPathModel.self, TagModel.self])
         }
         .commands {
             CommandMenuView(themeMode: themeMode) { newThemeMode in
