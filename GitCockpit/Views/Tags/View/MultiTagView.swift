@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MultiTagView: View {
     var tags: [TagModel]
+    @State private var showingPopover = false
 
     public init(tags: [TagModel]) {
         self.tags = tags
@@ -27,11 +28,17 @@ struct MultiTagView: View {
                 .onTapGesture {
                     addTag()
                 }
+                .popover(isPresented: $showingPopover) {
+                    SelectTagPopupView(selectedTags: tags)
+                }
         }
     }
 
     func addTag() {
-        print("Add tag")
+        withAnimation(.spring) {
+            print("Open Popup")
+            showingPopover = true
+        }
     }
 }
 
@@ -41,6 +48,6 @@ struct MultiTagView: View {
          TagModel(name: "C++"),
          TagModel(name: "GitHub"),
          TagModel(name: "Feature"),
-         TagModel(name: "Java", color: .orange)]
+         TagModel(name: "Java")]
     )
 }
