@@ -9,11 +9,11 @@ struct SingleTagView: View {
             .foregroundColor(tag.color.color)
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
-            .background(tag.color.color.opacity(0.3))
+            .background(tag.color.color.opacity(0.2))
             .cornerRadius(32)
             .overlay(
                 RoundedRectangle(cornerRadius: 32)
-                    .stroke(tag.color.color, lineWidth: 2)
+                    .stroke(tag.color.color.opacity(0.85), lineWidth: 2)
             )
             .padding(4)
     }
@@ -21,6 +21,6 @@ struct SingleTagView: View {
 
 #Preview("Single Tag") {
     SingleTagView(tag:
-        TagModel(name: "Bugfix", color: .red)
+        TagModel(name: "Bugfix")
     )
 }
