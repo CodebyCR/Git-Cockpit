@@ -12,7 +12,7 @@ struct SelectTagPopupView: View {
     @Query(sort: \TagModel.name, animation: .easeInOut)
     private let allTags: [TagModel]
 
-    @State
+    @Binding
     var selectedTags: [TagModel]
 
     var body: some View {
@@ -41,7 +41,7 @@ struct SelectTagPopupView: View {
     }
 }
 
-#Preview {
-    SelectTagPopupView(selectedTags: [])
-        .modelContainer(for: TagModel.self, inMemory: true)
-}
+//#Preview {
+//    SelectTagPopupView(selectedTags: $[])
+//        .modelContainer(for: TagModel.self, inMemory: true)
+//}

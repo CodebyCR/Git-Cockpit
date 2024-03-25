@@ -1,16 +1,14 @@
 import SwiftUI
 
 struct MultiTagView: View {
-    var tags: [TagModel]
-    @State private var showingPopover = false
+    @Binding
+    var tags: [TagModel]?
 
-    public init(tags: [TagModel]) {
-        self.tags = tags
-    }
+    @State private var showingPopover = false
 
     var body: some View {
         HStack {
-            ForEach(tags) { tag in
+            ForEach(tags ?? []) { tag in
                 SingleTagView(tag: tag)
             }
 
@@ -29,7 +27,7 @@ struct MultiTagView: View {
                     addTag()
                 }
                 .popover(isPresented: $showingPopover) {
-                    SelectTagPopupView(selectedTags: tags)
+                    SelectTagPopupView(selectedTags: getTagsAsBinding(tags: tags))
                 }
         }
     }
@@ -40,14 +38,22 @@ struct MultiTagView: View {
             showingPopover = true
         }
     }
+
+    func getTagsAsBinding(tags: [TagModel]?) -> Binding<[TagModel]> {
+        return Binding(get: {
+            tags ?? []
+        }, set: { newValue in
+            self.tags = newValue
+        })
+    }
 }
 
-#Preview("Multi Tags") {
-    MultiTagView(tags:
-        [TagModel(name: "Bugfix"),
-         TagModel(name: "C++"),
-         TagModel(name: "GitHub"),
-         TagModel(name: "Feature"),
-         TagModel(name: "Java")]
-    )
-}
+// #Preview("Multi Tags") {
+//    MultiTagView(tags:
+//        [TagModel(name: "Bugfix"),
+//         TagModel(name: "C++"),
+//         TagModel(name: "GitHub"),
+//         TagModel(name: "Feature"),
+//         TagModel(name: "Java")]
+//    )
+// }
