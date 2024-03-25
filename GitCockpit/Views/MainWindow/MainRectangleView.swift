@@ -7,6 +7,7 @@
 import SwiftData
 import SwiftUI
 
+// deprecated
 struct MainRectangleView: View {
     private let width: CGFloat
     private let height: CGFloat
@@ -15,7 +16,7 @@ struct MainRectangleView: View {
     private var searchPaths: [SearchPathModel]
 
     private var repositories: [RepositoryModel] {
-        GitRepoHandler.getGitRepositories(ForSeachPaths: searchPaths)
+        GitRepoHandler.getGitRepositories(from: searchPaths)
     }
 
     @State
@@ -35,7 +36,7 @@ struct MainRectangleView: View {
         }
         .navigationTitle(SidebarItem.repositorys.displayName)
         .inspector(isPresented: $isPresented) {
-            RepoInspectorView()
+//            RepoInspectorView($)
         }
         .inspectorColumnWidth(min: 80, ideal: 200, max: 380)
         .toolbar {
