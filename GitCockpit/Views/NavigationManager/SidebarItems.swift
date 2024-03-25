@@ -24,9 +24,10 @@ struct SidebarItem: Identifiable, CaseIterable, Hashable {
     static let repositorys = SidebarItem(icon: "star", displayName: "Repositorys")
     static let paths = SidebarItem(icon: "folder", displayName: "Search Paths")
     static let gitConfig = SidebarItem(icon: "person.text.rectangle", displayName: "Git Configuration")
+    static let tags = SidebarItem(icon: "tag", displayName: "Tags")
 
     static var allCases: [SidebarItem] {
-        return [repositorys, paths, gitConfig]
+        return [repositorys, paths, gitConfig, tags]
     }
 
     static func == (lhs: SidebarItem, rhs: SidebarItem) -> Bool {
