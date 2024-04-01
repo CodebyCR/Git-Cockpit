@@ -24,7 +24,6 @@ struct NavigationManagerView: View {
         detail: {
             switch selectedSidebarItem {
             case .repositorys:
-//                MainRectangleView()
                 MultiRepositoryView()
                     .frame(minWidth: 600, idealWidth: 600)
 

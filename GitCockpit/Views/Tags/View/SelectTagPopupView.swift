@@ -29,6 +29,7 @@ struct SelectTagPopupView: View {
                 }
             }
             .onTapGesture {
+                print(tag.name)
                 withAnimation(.spring(duration: 0.4)) {
                     if selectedTags.contains(tag) {
                         selectedTags.removeAll(where: { $0 == tag })
@@ -41,7 +42,7 @@ struct SelectTagPopupView: View {
     }
 }
 
-//#Preview {
+// #Preview {
 //    SelectTagPopupView(selectedTags: $[])
 //        .modelContainer(for: TagModel.self, inMemory: true)
-//}
+// }

@@ -27,9 +27,9 @@ struct SingleSearchPathView: View {
                 Spacer()
                 HStack {
                     Menu("Path Action") {
-                        Button(action: {
+                        Button {
                             // Implement actual cloning logic here
-                        }) {
+                        } label: {
                             Text("Clone into Path")
                             Image(systemName: "plus")
                                 .foregroundColor(.green)
@@ -37,9 +37,9 @@ struct SingleSearchPathView: View {
 
                         Divider()
 
-                        Button(action: {
+                        Button {
                             modelContext.delete(searchPathModel)
-                        }) {
+                        } label: {
                             Text("Remove")
                             Image(systemName: "trash")
                                 .foregroundColor(.red)

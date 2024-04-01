@@ -29,8 +29,6 @@ struct RepoInspectorView: View {
             MultiTagView(tags: $tags)
         }
     }
-
-
 }
 
 // #Preview {

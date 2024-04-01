@@ -24,18 +24,14 @@ struct MultiTagView: View {
                 )
                 .padding(4)
                 .onTapGesture {
-                    addTag()
+                    withAnimation(.spring) {
+                        print("Open Popup")
+                        showingPopover = true
+                    }
                 }
                 .popover(isPresented: $showingPopover) {
                     SelectTagPopupView(selectedTags: getTagsAsBinding(tags: tags))
                 }
-        }
-    }
-
-    func addTag() {
-        withAnimation(.spring) {
-            print("Open Popup")
-            showingPopover = true
         }
     }
 
