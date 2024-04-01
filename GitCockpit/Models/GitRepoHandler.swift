@@ -10,8 +10,6 @@ import Foundation
 struct GitRepoHandler {
     private init() {}
 
-
-
 //    static func getGitRepositories(forSearchPaths searchPaths: [SearchPathModel]) -> [RepositoryModel] {
 //        return searchPaths.flatMap { searchPath -> [RepositoryModel] in
 //            let gitDirectories = FileUtils.recursiveDirectoryList(path: searchPath.path).filter { path in
@@ -39,26 +37,16 @@ struct GitRepoHandler {
     private static func createRepositoryModels(from gitDirectories: consuming[String]) -> [RepositoryModel] {
         var repositoryModels: [RepositoryModel] = []
 
-        for repo in gitDirectories {
-            let repoPath = repo.hasSuffix("/") ? "\(repo).git/config" : "\(repo)/.git/config"
-
-            GitConfig.parse(from: repoPath) { result in
-                switch result {
-                case .success(let gitConfig):
-                    let currentRepo = RepositoryModel(gitConfig: gitConfig)
-                    repositoryModels.append(currentRepo)
-
-                case .failure(let failure):
-                    let description = GitConfig.getFailureDescription(failure)
-                    print("Error: \(description)")
-                }
+        for repoRootPath in gitDirectories {
+            if let currentRepo = RepositoryModel(from: repoRootPath) {
+                repositoryModels.append(currentRepo)
             }
         }
 
         return repositoryModels
     }
 
-       private  static func filterGitDirectories(fromPaths directories: consuming[String]) -> [String] {
+    private static func filterGitDirectories(fromPaths directories: consuming[String]) -> [String] {
         var gitDirectories: [String] = []
         let fileManager = FileManager.default
         let uniqueDirectories = Set(directories)

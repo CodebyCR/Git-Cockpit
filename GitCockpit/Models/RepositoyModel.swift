@@ -14,27 +14,25 @@ class RepositoryModel: Identifiable, Hashable {
     let id: UUID
     let name: String
     let pathToRoot: String
-    let gitConfig: GitConfig?
+    let gitConfig: GitConfig
     var remote: String?
 
-    
-    /// Todo: use GitConfig in model als dependecy
-
-//    init(name: String, pathToRoot: String, remote: String?) {
-//        self.id = UUID()
-//        self.name = name
-//        self.pathToRoot = pathToRoot.replacingOccurrences(of: "%20", with: " ")
-//        let totalPath = "\(pathToRoot)\(pathToRoot.hasSuffix("/") ? ".git/config" : "/.git/config")"
-//        self.gitConfig = GitConfig(atPath: totalPath)
-//        self.remote = remote
-//    }
-
-    init(gitConfig: GitConfig) {
+    /// - Parameter pathToRoot: The path to the root of the Git Repository as String
+    init?(from pathToRoot: String) {
         self.id = UUID()
-        self.name = gitConfig.getRepoName() ?? "Unknown"
-        self.pathToRoot = gitConfig.getRepoRootPath().absoluteString.replacingOccurrences(of: "%20", with: " ")
+        self.pathToRoot = pathToRoot
+
+        let gitConfigPath = pathToRoot.hasSuffix("/")
+            ? "\(pathToRoot).git/config"
+            : "\(pathToRoot)/.git/config"
+
+        guard let gitConfig = GitConfig(atPath: gitConfigPath) else {
+            print("Failed to create GitConfig for Path: \(gitConfigPath)")
+            return nil
+        }
         self.gitConfig = gitConfig
-        self.remote = gitConfig.getOriginURL()?.absoluteString
+        self.name = self.gitConfig.getRepoName() ?? "Unknown"
+        self.remote = self.gitConfig.getOriginURL()?.absoluteString
     }
 
     static func == (lhs: RepositoryModel, rhs: RepositoryModel) -> Bool {
