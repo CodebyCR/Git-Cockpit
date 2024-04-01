@@ -16,17 +16,16 @@ struct AddPathButtonView: View {
     var body: some View {
         Button("", systemImage: "folder.badge.plus", action: {
             if let dirPath = dictionaryPicker.chosePath() {
-                let newSearchPathModel = SearchPathModel(path: dirPath)
-                AddPathButtonView.add(SearchPath: newSearchPathModel, toContext: modelContext)
+                let newSearchPath = SearchPathModel(path: dirPath)
 
-                let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath)
+                AddPathButtonView.add(SearchPath: newSearchPath, toContext: modelContext)
 
-                let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: gitDirectories)
+                let gitRepos = GitRepoHandler.getGitRepositories(from: [newSearchPath])
 
                 for repo in gitRepos {
                     print("Test: \(repo.name)")
                 }
-                // TODO: add to Env list
+
             }
         })
         .keyboardShortcut("n", modifiers: [.command, .shift])

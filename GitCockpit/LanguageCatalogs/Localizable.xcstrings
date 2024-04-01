@@ -56,6 +56,9 @@
     "Clone into Path" : {
 
     },
+    "Create Tag" : {
+
+    },
     "Dark" : {
       "localizations" : {
         "de" : {
@@ -87,6 +90,9 @@
           }
         }
       }
+    },
+    "Delete" : {
+
     },
     "Email" : {
       "localizations" : {
@@ -183,6 +189,9 @@
           }
         }
       }
+    },
+    "More Information about %@" : {
+
     },
     "Name" : {
       "localizations" : {
@@ -349,6 +358,18 @@
           }
         }
       }
+    },
+    "Tag Color" : {
+
+    },
+    "Tag Name" : {
+
+    },
+    "Tags" : {
+
+    },
+    "test" : {
+
     },
     "Theme" : {
       "localizations" : {

@@ -10,25 +10,15 @@ import System
 
 let logger = Logger(label: "com.CodebyCR.GitCockpit") // put in env
 
-class RepositoryModel: Identifiable, Hashable, ObservableObject {
+class RepositoryModel: Identifiable, Hashable {
     let id: UUID
     let name: String
     let pathToRoot: String
     let gitConfig: GitConfig?
     var remote: String?
 
-    var lastAccessDate: String? {
-        let saferPath = pathToRoot.replacingOccurrences(of: "%20", with: " ")
-        guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: saferPath) else {
-//            logger.info("The access Date can't be called.")
-//            print("The access Date can't be called.")
-            return nil
-        }
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd. MMM yyyy HH:mm:ss"
-        return dateFormatter.string(from: accessDate)
-    }
+    
+    /// Todo: use GitConfig in model als dependecy
 
 //    init(name: String, pathToRoot: String, remote: String?) {
 //        self.id = UUID()
@@ -104,5 +94,18 @@ class RepositoryModel: Identifiable, Hashable, ObservableObject {
         task.arguments = ["-R", pathToRoot]
 
         return task
+    }
+
+    var lastAccessDate: String? {
+        let saferPath = pathToRoot.replacingOccurrences(of: "%20", with: " ")
+        guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: saferPath) else {
+//            logger.info("The access Date can't be called.")
+//            print("The access Date can't be called.")
+            return nil
+        }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd. MMM yyyy HH:mm:ss"
+        return dateFormatter.string(from: accessDate)
     }
 }

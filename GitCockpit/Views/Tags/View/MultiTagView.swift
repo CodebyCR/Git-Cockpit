@@ -20,7 +20,7 @@ struct MultiTagView: View {
                 .cornerRadius(40)
                 .overlay(
                     RoundedRectangle(cornerRadius: 40)
-                        .stroke(.blue, lineWidth: 2)
+                        .stroke(.blue, lineWidth: 1)
                 )
                 .padding(4)
                 .onTapGesture {

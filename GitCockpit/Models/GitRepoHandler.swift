@@ -10,12 +10,33 @@ import Foundation
 struct GitRepoHandler {
     private init() {}
 
-    static func listGitDirectories(from path: consuming String) -> [String] {
+
+
+//    static func getGitRepositories(forSearchPaths searchPaths: [SearchPathModel]) -> [RepositoryModel] {
+//        return searchPaths.flatMap { searchPath -> [RepositoryModel] in
+//            let gitDirectories = FileUtils.recursiveDirectoryList(path: searchPath.path).filter { path in
+//                // Use Path instead of NSString for better type safety
+//                FileManager.default.fileExists(atPath: path.appending(".git"))
+//            }
+//
+//            return gitDirectories.compactMap { gitDirectory -> RepositoryModel? in
+//                let configPath = gitDirectory.appending(".git/config")
+//                guard let gitConfig = GitConfig(atPath: configPath) else {
+//                    print("Not found at: \(configPath)")
+//                    return nil
+//                }
+//                let repositoryModel = RepositoryModel(gitConfig: gitConfig)
+//                return repositoryModel
+//            }
+//        }.sorted(by: { $0.name.lowercased() < $1.name.lowercased() }) // Assuming `name` is the property
+//    }
+
+    private static func listGitDirectories(from path: consuming String) -> [String] {
         let directories = FileUtils.recursiveDirectoryList(path: path)
         return filterGitDirectories(fromPaths: directories)
     }
 
-    static func createRepositoryModels(FromDirectories gitDirectories: consuming[String]) -> [RepositoryModel] {
+    private static func createRepositoryModels(from gitDirectories: consuming[String]) -> [RepositoryModel] {
         var repositoryModels: [RepositoryModel] = []
 
         for repo in gitDirectories {
@@ -37,7 +58,7 @@ struct GitRepoHandler {
         return repositoryModels
     }
 
-    static func filterGitDirectories(fromPaths directories: consuming[String]) -> [String] {
+       private  static func filterGitDirectories(fromPaths directories: consuming[String]) -> [String] {
         var gitDirectories: [String] = []
         let fileManager = FileManager.default
         let uniqueDirectories = Set(directories)
@@ -52,12 +73,12 @@ struct GitRepoHandler {
         return gitDirectories
     }
 
-    static func getGitRepositories(ForSeachPaths seachPaths: consuming[SearchPathModel]) -> [RepositoryModel] {
+    static func getGitRepositories(from seachPaths: consuming[SearchPathModel]) -> [RepositoryModel] {
         var repoModels: [RepositoryModel] = []
 
         for dirPath in seachPaths {
             let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath.path)
-            let gitRepos = GitRepoHandler.createRepositoryModels(FromDirectories: consume gitDirectories)
+            let gitRepos = GitRepoHandler.createRepositoryModels(from: consume gitDirectories)
             repoModels.append(contentsOf: consume gitRepos)
         }
 

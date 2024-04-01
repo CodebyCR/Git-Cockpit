@@ -24,15 +24,20 @@ struct NavigationManagerView: View {
         detail: {
             switch selectedSidebarItem {
             case .repositorys:
-
-                MainRectangleView()
+//                MainRectangleView()
+                MultiRepositoryView()
                     .frame(minWidth: 600, idealWidth: 600)
 
             case .paths:
                 SearchPathsView()
                     .frame(minWidth: 600, idealWidth: 600)
+
             case .gitConfig:
                 GitConfigView()
+                    .frame(minWidth: 600, idealWidth: 600)
+
+            case .tags:
+                TagConfigView()
                     .frame(minWidth: 600, idealWidth: 600)
 
             default:

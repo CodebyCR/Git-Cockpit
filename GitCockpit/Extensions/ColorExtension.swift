@@ -16,11 +16,12 @@ extension Color {
     }
 
     func getRGB() -> (Double, Double, Double) {
-        let components = self.cgColor?.components
-        let red = Double(components![0])
-        let green = Double(components![1])
-        let blue = Double(components![2])
-
+        guard let components = cgColor?.components else {
+            return (0, 0, 0)
+        }
+        let red = Double(components[0])
+        let green = Double(components[1])
+        let blue = Double(components[2])
         return (red, green, blue)
     }
 

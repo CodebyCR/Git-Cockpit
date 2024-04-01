@@ -13,6 +13,7 @@ struct SidebarView: View {
     var selectedSidebarItem: SidebarItem
 
     var body: some View {
+        // TODO: Add more sections and Entries for the SearchPaths
         List(selection: $selectedSidebarItem) {
             Section(
                 LocalizedStringKey("Repositorys")
