@@ -9,12 +9,14 @@ import Foundation
 import SwiftData
 
 @Model
-class SearchPathModel: Identifiable, Hashable {
+class SearchPathModel: Equatable {
     @Attribute(.unique)
     let path: String
+    let displayName: String
 
     init(path: String) {
         self.path = path
+        self.displayName = URL(fileURLWithPath: path).lastPathComponent
     }
 
     static func == (lhs: SearchPathModel, rhs: SearchPathModel) -> Bool {
@@ -23,5 +25,9 @@ class SearchPathModel: Identifiable, Hashable {
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(path)
+    }
+
+    var sidebarRegister: SidebarRegister {
+        return SidebarRegister(displayedName: displayName, icon: "folder")
     }
 }

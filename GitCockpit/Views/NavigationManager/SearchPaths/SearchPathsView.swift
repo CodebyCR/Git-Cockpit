@@ -21,7 +21,7 @@ struct SearchPathsView: View {
                 if searchPaths.isEmpty {
                     Spacer()
                     EmptyListView(message: "Add search path",
-                                    command: "⇧ ⌘ N")
+                                  command: "⇧ ⌘ N")
 
                 } else {
                     ForEach(searchPaths) { searchPath in
@@ -30,7 +30,7 @@ struct SearchPathsView: View {
                 }
             }
 
-            .navigationTitle(SidebarItem.paths.displayName)
+            .navigationTitle(SidebarRegister.paths.displayedName)
             .toolbar {
                 Spacer()
                 AddPathButtonView()

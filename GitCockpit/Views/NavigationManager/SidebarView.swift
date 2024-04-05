@@ -5,22 +5,35 @@
 //  Created by Christoph Rohde on 21.10.23.
 //
 
-import Foundation
+import SwiftData
 import SwiftUI
 
 struct SidebarView: View {
+    @Query(sort: \SearchPathModel.path)
+    var searchPaths: [SearchPathModel]
+
+    @State
+    var repositorySidebarRegister = SidebarRegister.allRepositoryCases(additionalCases: []) // TODO: Add folder from searchPaths
+
+    @State
+    var sidebarConfigurationRegisters = SidebarRegister.allOtherCases()
+
     @Binding
-    var selectedSidebarItem: SidebarItem
+    var selectedSidebarRegister: SidebarRegister
 
     var body: some View {
-        // TODO: Add more sections and Entries for the SearchPaths
-        List(selection: $selectedSidebarItem) {
-            Section(
-                LocalizedStringKey("Repositorys")
-            ) {
-                ForEach(SidebarItem.allCases) { selection in
-                    Label(selection.displayName, systemImage: selection.icon)
-                        .tag(selection)
+        List(selection: $selectedSidebarRegister) {
+            Section(String(localized: "Repositorys")) {
+                ForEach(repositorySidebarRegister, id: \.id) { register in
+                    Label(register.displayedName, systemImage: register.icon)
+                        .tag(register)
+                }
+            }
+
+            Section(String(localized: "Configuartion")) {
+                ForEach(sidebarConfigurationRegisters) { sidebarItem in
+                    Label(sidebarItem.displayedName, systemImage: sidebarItem.icon)
+                        .tag(sidebarItem)
                 }
             }
         }
@@ -28,6 +41,6 @@ struct SidebarView: View {
 }
 
 #Preview("SidebarView") {
-    SidebarView(selectedSidebarItem: .constant(SidebarItem.repositorys))
+    SidebarView(selectedSidebarRegister: .constant(SidebarRegister.tags))
         .listStyle(.sidebar)
 }
