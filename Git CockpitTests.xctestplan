@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "6E0817C2-3BF7-40C4-A0DC-E0C2BC7E0735",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "skippedTests" : [
+        "GitCockpitTests",
+        "RepositoryModelTests"
+      ],
+      "target" : {
+        "containerPath" : "container:Git Cockpit.xcodeproj",
+        "identifier" : "8EC46E1D2A23821500F3AF79",
+        "name" : "Git CockpitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

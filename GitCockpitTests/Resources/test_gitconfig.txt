@@ -1,0 +1,11 @@
+[core]
+    repositoryformatversion = 0
+    filemode = true
+    bare = false
+    logallrefupdates = true
+[remote "origin"]
+    url = https://github.com/example/repo.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[user]
+    name = John Doe
+    email = john@example.com

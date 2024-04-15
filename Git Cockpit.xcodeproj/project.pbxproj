@@ -45,6 +45,11 @@
 		8EC46E3D2A23835000F3AF79 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC46E3C2A23835000F3AF79 /* MainWindow.swift */; };
 		8EC7026A2B08FAE300A6E2E2 /* GitHeadParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC702692B08FAE300A6E2E2 /* GitHeadParser.swift */; };
 		8EC7026E2B0A431100A6E2E2 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 8EC7026D2B0A431100A6E2E2 /* Logging */; };
+		8ECB462A2B9A05CB007A8956 /* RepositoryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB46292B9A05CB007A8956 /* RepositoryModelTests.swift */; };
+		8ECB462D2B9A0C46007A8956 /* GitConfigModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB462C2B9A0C46007A8956 /* GitConfigModelTests.swift */; };
+		8ECB46302B9A106A007A8956 /* test_gitconfig.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB462F2B9A106A007A8956 /* test_gitconfig.txt */; };
+		8ECDCDBC2B9AF686003B6F65 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDCDBB2B9AF686003B6F65 /* Language.swift */; };
+		8ECDCDBE2B9AFEEA003B6F65 /* CurrentLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDCDBD2B9AFEEA003B6F65 /* CurrentLanguage.swift */; };
 		8EF4BB6D2B96F9A200AFAC40 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8EF4BB6C2B96F9A200AFAC40 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +111,12 @@
 		8EC46E2E2A23821500F3AF79 /* GitCockpitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCockpitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8EC46E3C2A23835000F3AF79 /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		8EC702692B08FAE300A6E2E2 /* GitHeadParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHeadParser.swift; sourceTree = "<group>"; };
+		8ECB46292B9A05CB007A8956 /* RepositoryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModelTests.swift; sourceTree = "<group>"; };
+		8ECB462C2B9A0C46007A8956 /* GitConfigModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitConfigModelTests.swift; sourceTree = "<group>"; };
+		8ECB462F2B9A106A007A8956 /* test_gitconfig.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_gitconfig.txt; sourceTree = "<group>"; };
+		8ECB46312B9A174C007A8956 /* Git CockpitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Git CockpitTests.xctestplan"; sourceTree = "<group>"; };
+		8ECDCDBB2B9AF686003B6F65 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		8ECDCDBD2B9AFEEA003B6F65 /* CurrentLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLanguage.swift; sourceTree = "<group>"; };
 		8ECDE3D52AE2C92100A74341 /* GitCockpit.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = GitCockpit.entitlements; sourceTree = "<group>"; };
 		8EF4BB6C2B96F9A200AFAC40 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,8 +221,10 @@
 		8E7F7DD72B9854680060CFE6 /* MenuBar */ = {
 			isa = PBXGroup;
 			children = (
+				8ECDCDBA2B9AF616003B6F65 /* MenuEnums */,
 				8EAD4F702B06885400B18E2B /* CommandMenuView.swift */,
 				8EAD4F722B06903000B18E2B /* AddPathButtonView.swift */,
+				8ECDCDBD2B9AFEEA003B6F65 /* CurrentLanguage.swift */,
 			);
 			path = MenuBar;
 			sourceTree = "<group>";
@@ -244,6 +257,7 @@
 		8EC46DFF2A23821200F3AF79 = {
 			isa = PBXGroup;
 			children = (
+				8ECB46312B9A174C007A8956 /* Git CockpitTests.xctestplan */,
 				8E5829122B9783AE00F6D0E7 /* .gitignore */,
 				8EC46E122A23821200F3AF79 /* ContentView.swift */,
 				8EC46E0B2A23821200F3AF79 /* GitCockpitApp.swift */,
@@ -290,6 +304,8 @@
 		8EC46E212A23821500F3AF79 /* GitCockpitTests */ = {
 			isa = PBXGroup;
 			children = (
+				8ECB462E2B9A1014007A8956 /* Resources */,
+				8ECB462B2B9A0C19007A8956 /* Mocks */,
 				8EC46E222A23821500F3AF79 /* GitCockpitTests.swift */,
 			);
 			path = GitCockpitTests;
@@ -334,6 +350,31 @@
 				8EC702692B08FAE300A6E2E2 /* GitHeadParser.swift */,
 			);
 			path = "Git HEAD Parser";
+			sourceTree = "<group>";
+		};
+		8ECB462B2B9A0C19007A8956 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB46292B9A05CB007A8956 /* RepositoryModelTests.swift */,
+				8ECB462C2B9A0C46007A8956 /* GitConfigModelTests.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8ECB462E2B9A1014007A8956 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8ECB462F2B9A106A007A8956 /* test_gitconfig.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8ECDCDBA2B9AF616003B6F65 /* MenuEnums */ = {
+			isa = PBXGroup;
+			children = (
+				8ECDCDBB2B9AF686003B6F65 /* Language.swift */,
+			);
+			path = MenuEnums;
 			sourceTree = "<group>";
 		};
 		8EF4BB6B2B96F95D00AFAC40 /* LanguageCatalogs */ = {
@@ -469,6 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ECB46302B9A106A007A8956 /* test_gitconfig.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +548,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ECDCDBE2B9AFEEA003B6F65 /* CurrentLanguage.swift in Sources */,
 				8EAD4F732B06903000B18E2B /* AddPathButtonView.swift in Sources */,
+				8ECDCDBC2B9AF686003B6F65 /* Language.swift in Sources */,
 				8E8DC4C62AE68065002D2C5A /* GitConfig.swift in Sources */,
 				8E5829162B978A5F00F6D0E7 /* ThemeMode.swift in Sources */,
 				8E9987462AE3B58B00145820 /* SidebarView.swift in Sources */,
@@ -545,6 +589,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EC46E232A23821500F3AF79 /* GitCockpitTests.swift in Sources */,
+				8ECB462D2B9A0C46007A8956 /* GitConfigModelTests.swift in Sources */,
+				8ECB462A2B9A05CB007A8956 /* RepositoryModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

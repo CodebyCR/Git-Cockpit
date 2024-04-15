@@ -17,28 +17,6 @@ class RepositoryModel: Identifiable, Hashable, ObservableObject {
     let gitConfig: GitConfig?
     var remote: String?
 
-    var lastAccessDate: String? {
-        let saferPath = pathToRoot.replacingOccurrences(of: "%20", with: " ")
-        guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: saferPath) else {
-//            logger.info("The access Date can't be called.")
-//            print("The access Date can't be called.")
-            return nil
-        }
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd. MMM yyyy HH:mm:ss"
-        return dateFormatter.string(from: accessDate)
-    }
-
-//    init(name: String, pathToRoot: String, remote: String?) {
-//        self.id = UUID()
-//        self.name = name
-//        self.pathToRoot = pathToRoot.replacingOccurrences(of: "%20", with: " ")
-//        let totalPath = "\(pathToRoot)\(pathToRoot.hasSuffix("/") ? ".git/config" : "/.git/config")"
-//        self.gitConfig = GitConfig(atPath: totalPath)
-//        self.remote = remote
-//    }
-
     init(gitConfig: GitConfig) {
         self.id = UUID()
         self.name = gitConfig.getRepoName() ?? "Unknown"
@@ -73,6 +51,22 @@ class RepositoryModel: Identifiable, Hashable, ObservableObject {
             .execute(task: task)
     }
 
+    func open(editor inEditor: String) -> Process {
+        let task = Process()
+        task.launchPath = "/usr/bin/open"
+        task.arguments = ["-R", pathToRoot]
+
+        return task
+    }
+
+    /// Return the Repository name
+    func getName() -> String {
+        let branchName = URL(fileURLWithPath: pathToRoot).lastPathComponent
+        return String(branchName).replacingOccurrences(of: "%20", with: " ")
+    }
+
+    /// Return the currently selected branch name
+    /// or nil if the git HEAD file can't be read
     func getCurrentBranchName() -> String? {
         guard let rootPath = URL(string: pathToRoot) else {
             print("can't parse root path")
@@ -93,16 +87,15 @@ class RepositoryModel: Identifiable, Hashable, ObservableObject {
         }
     }
 
-    func getName() -> String {
-        let branchName = URL(fileURLWithPath: pathToRoot).lastPathComponent
-        return String(branchName).replacingOccurrences(of: "%20", with: " ")
-    }
+    /// Return the last date where the finder tracked an access on Folder path
+    var lastAccessDate: String? {
+        let saferPath = pathToRoot.replacingOccurrences(of: "%20", with: " ")
+        guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: saferPath) else {
+            return nil
+        }
 
-    func open(editor inEditor: String) -> Process {
-        let task = Process()
-        task.launchPath = "/usr/bin/open"
-        task.arguments = ["-R", pathToRoot]
-
-        return task
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd. MMM yyyy HH:mm:ss"
+        return dateFormatter.string(from: accessDate)
     }
 }

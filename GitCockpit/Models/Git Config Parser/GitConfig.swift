@@ -21,7 +21,6 @@ class GitConfig {
         let fileManager = FileManager.default
         let saferPath = path.replacingOccurrences(of: "%20", with: " ")
 
-        // Prüfen, ob die Datei existiert
         guard fileManager.fileExists(atPath: saferPath) else {
             completion(.failure(GitConfigError.fileNotFound))
             return
