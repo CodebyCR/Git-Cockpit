@@ -34,7 +34,7 @@ struct MainRectangleView: View {
         ZStack {
             RepoGridView(repos: repositories, selectedRepo: selectedRepo)
         }
-        .navigationTitle(SidebarItem.repositorys.displayName)
+        .navigationTitle(SidebarRegister.allRepositorys.displayedName)
         .inspector(isPresented: $isPresented) {
 //            RepoInspectorView($)
         }

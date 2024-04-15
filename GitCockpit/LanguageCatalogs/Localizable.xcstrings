@@ -36,6 +36,9 @@
         }
       }
     },
+    "All Repositorys" : {
+
+    },
     "Choose a Directory" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -54,6 +57,9 @@
       }
     },
     "Clone into Path" : {
+
+    },
+    "Configuartion" : {
 
     },
     "Create Tag" : {

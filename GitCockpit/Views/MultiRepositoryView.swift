@@ -68,7 +68,7 @@ struct MultiRepositoryView: View {
                 }
             }
         }
-        .navigationTitle(SidebarItem.repositorys.displayName)
+        .navigationTitle(SidebarRegister.allRepositorys.displayedName)
         .inspector(isPresented: $isPresented) {
             // TODO: currentRepo as EnviromentObject and Obserable
             RepoInspectorView(currentRepository: $selectedRepository, tags: getTagsAsBinding(repository: selectedRepository))

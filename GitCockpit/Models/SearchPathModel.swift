@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class SearchPathModel: Equatable {
+class SearchPathModel: Identifiable, Hashable {
     @Attribute(.unique)
     let path: String
     let displayName: String

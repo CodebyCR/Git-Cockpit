@@ -29,48 +29,37 @@ struct GitRepoHandler {
 //        }.sorted(by: { $0.name.lowercased() < $1.name.lowercased() }) // Assuming `name` is the property
 //    }
 
-    private static func listGitDirectories(from path: consuming String) -> [String] {
-        let directories = FileUtils.recursiveDirectoryList(path: path)
-        return filterGitDirectories(fromPaths: directories)
-    }
-
-    private static func createRepositoryModels(from gitDirectories: consuming[String]) -> [RepositoryModel] {
+    static func getGitRepositories(from searchPaths: consuming[SearchPathModel]) -> [RepositoryModel] {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        var uniquePaths = Set<String>()
         var repositoryModels: [RepositoryModel] = []
 
-        for repoRootPath in gitDirectories {
-            if let currentRepo = RepositoryModel(from: repoRootPath) {
+        for dirPath in searchPaths {
+            let dirPaths = FileUtils.recursiveDirectoryList(path: dirPath.path)
+            uniquePaths.formUnion(consume dirPaths)
+        }
+
+        for path in uniquePaths {
+            let gitConfigPath = URL(fileURLWithPath: path).appendingPathComponent(".git/config").path
+            guard FileManager.default.fileExists(atPath: consume gitConfigPath) else { continue }
+
+            if let currentRepo = RepositoryModel(from: path) {
                 repositoryModels.append(currentRepo)
             }
         }
 
+        repositoryModels.sort { $0.getName().lowercased() < $1.getName().lowercased() }
+
+        let endTime = CFAbsoluteTimeGetCurrent()
+
+        let time = endTime - startTime
+        print("Time needened: \(time)")
+
+        // 0.3415480852127075
+        // 0.30237090587615967
+        // 0.2376459836959839
+        // 0.22451496124267578
+
         return repositoryModels
-    }
-
-    private static func filterGitDirectories(fromPaths directories: consuming[String]) -> [String] {
-        var gitDirectories: [String] = []
-        let fileManager = FileManager.default
-        let uniqueDirectories = Set(directories)
-
-        for path in uniqueDirectories {
-            let gitPath = (path as NSString).appendingPathComponent(".git/config")
-            if fileManager.fileExists(atPath: consume gitPath) {
-                gitDirectories.append(path)
-            }
-        }
-
-        return gitDirectories
-    }
-
-    static func getGitRepositories(from seachPaths: consuming[SearchPathModel]) -> [RepositoryModel] {
-        var repoModels: [RepositoryModel] = []
-
-        for dirPath in seachPaths {
-            let gitDirectories = GitRepoHandler.listGitDirectories(from: dirPath.path)
-            let gitRepos = GitRepoHandler.createRepositoryModels(from: consume gitDirectories)
-            repoModels.append(contentsOf: consume gitRepos)
-        }
-
-        repoModels.sort(by: { $0.getName().lowercased() < $1.getName().lowercased() })
-        return repoModels
     }
 }

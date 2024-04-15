@@ -25,7 +25,6 @@ struct AddPathButtonView: View {
                 for repo in gitRepos {
                     print("Test: \(repo.name)")
                 }
-
             }
         })
         .keyboardShortcut("n", modifiers: [.command, .shift])
@@ -36,6 +35,8 @@ struct AddPathButtonView: View {
         print("ModelContext: \(modelContext.insertedModelsArray)")
 
         modelContext.insert(newSearchPathModel)
+
+         
     }
 }
 
