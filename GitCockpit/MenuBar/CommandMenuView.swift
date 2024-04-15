@@ -11,6 +11,9 @@ struct CommandMenuView: Commands {
     private let themeMode: ThemeMode
     private let onThemeChange: (ThemeMode) -> Void
 
+    @State private var currentLanguage = CurrentLanguage()
+    private let allLanguages = Language.allCases
+
     init(themeMode: ThemeMode, onThemeChange: @escaping (ThemeMode) -> Void) {
         self.themeMode = themeMode
         self.onThemeChange = onThemeChange
@@ -22,6 +25,21 @@ struct CommandMenuView: Commands {
             AddPathButtonView()
                 .buttonStyle(.borderless)
                 .frame(maxWidth: .infinity, alignment: .leading)
+        })
+
+        // TODO: refactor 19.1 Part 4:53 min
+        CommandGroup(after: .toolbar, addition: {
+            Picker(String(localized: "Language"), selection: $currentLanguage.selectedOption) {
+                ForEach(0 ..< allLanguages.count) { index in
+                    Button(action: {
+                        currentLanguage.selectedOption = allLanguages[index]
+
+                    }) {
+                        Text(allLanguages[index].language)
+                            .tag(index)
+                    }
+                }
+            }
         })
 
         CommandMenu("View", content: {

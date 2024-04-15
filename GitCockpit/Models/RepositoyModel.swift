@@ -17,6 +17,7 @@ class RepositoryModel: Identifiable, Hashable {
     let gitConfig: GitConfig
     var remote: String?
 
+
     /// - Parameter pathToRoot: The path to the root of the Git Repository as String
     init?(from pathToRoot: String) {
         self.id = UUID()
@@ -30,6 +31,7 @@ class RepositoryModel: Identifiable, Hashable {
             print("Failed to create GitConfig for Path: \(gitConfigPath)")
             return nil
         }
+
         self.gitConfig = gitConfig
         self.name = self.gitConfig.getRepoName() ?? "Unknown"
         self.remote = self.gitConfig.getOriginURL()?.absoluteString
@@ -61,6 +63,22 @@ class RepositoryModel: Identifiable, Hashable {
             .execute(task: task)
     }
 
+    func open(editor inEditor: String) -> Process {
+        let task = Process()
+        task.launchPath = "/usr/bin/open"
+        task.arguments = ["-R", pathToRoot]
+
+        return task
+    }
+
+    /// Return the Repository name
+    func getName() -> String {
+        let branchName = URL(fileURLWithPath: pathToRoot).lastPathComponent
+        return String(branchName).replacingOccurrences(of: "%20", with: " ")
+    }
+
+    /// Return the currently selected branch name
+    /// or nil if the git HEAD file can't be read
     func getCurrentBranchName() -> String? {
         guard let rootPath = URL(string: pathToRoot) else {
             print("can't parse root path")
@@ -81,17 +99,16 @@ class RepositoryModel: Identifiable, Hashable {
         }
     }
 
-    func getName() -> String {
-        let branchName = URL(fileURLWithPath: pathToRoot).lastPathComponent
-        return String(branchName).replacingOccurrences(of: "%20", with: " ")
-    }
+    /// Return the last date where the finder tracked an access on Folder path
+    var lastAccessDate: String? {
+        let saferPath = pathToRoot.replacingOccurrences(of: "%20", with: " ")
+        guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: saferPath) else {
+            return nil
+        }
 
-    func open(editor inEditor: String) -> Process {
-        let task = Process()
-        task.launchPath = "/usr/bin/open"
-        task.arguments = ["-R", pathToRoot]
-
-        return task
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd. MMM yyyy HH:mm:ss"
+        return dateFormatter.string(from: accessDate)
     }
 
     var lastAccessDate: String? {
