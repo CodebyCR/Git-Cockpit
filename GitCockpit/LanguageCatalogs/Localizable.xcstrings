@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
+          }
+        }
+      }
     },
     "Add Path" : {
       "localizations" : {
@@ -21,10 +28,24 @@
       }
     },
     "Add search path" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suchpfad hinzufügen"
+          }
+        }
+      }
     },
     "All Repositorys" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Repositories"
+          }
+        }
+      }
     },
     "Choose a Directory" : {
       "extractionState" : "manual",
@@ -44,13 +65,34 @@
       }
     },
     "Clone into Path" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Pfad klonen"
+          }
+        }
+      }
     },
     "Configuartion" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konfiguration"
+          }
+        }
+      }
     },
     "Create Tag" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag erstellen"
+          }
+        }
+      }
     },
     "Dark" : {
       "localizations" : {
@@ -117,7 +159,14 @@
       }
     },
     "English" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Englisch"
+          }
+        }
+      }
     },
     "File" : {
       "localizations" : {
@@ -136,7 +185,14 @@
       }
     },
     "German" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deutsch"
+          }
+        }
+      }
     },
     "Git Configuration" : {
       "localizations" : {
@@ -171,7 +227,14 @@
       }
     },
     "Language" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprache"
+          }
+        }
+      }
     },
     "Last access: %@" : {
       "localizations" : {
@@ -206,7 +269,14 @@
       }
     },
     "More Information about %@" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr Informationen zu %@"
+          }
+        }
+      }
     },
     "Name" : {
       "localizations" : {
@@ -241,7 +311,14 @@
       }
     },
     "Path Action" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pfad Aktionen"
+          }
+        }
+      }
     },
     "Paths" : {
       "localizations" : {
@@ -292,7 +369,14 @@
       }
     },
     "Remove" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernen"
+          }
+        }
+      }
     },
     "Repositories" : {
       "extractionState" : "stale",
@@ -344,7 +428,14 @@
       }
     },
     "Search Paths" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suchpfade"
+          }
+        }
+      }
     },
     "Show" : {
       "localizations" : {
@@ -395,16 +486,44 @@
       }
     },
     "Tag Color" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tagfarbe"
+          }
+        }
+      }
     },
     "Tag Name" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tagname"
+          }
+        }
+      }
     },
     "Tags" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tags"
+          }
+        }
+      }
     },
     "test" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "test"
+          }
+        }
+      }
     },
     "Theme" : {
       "localizations" : {
