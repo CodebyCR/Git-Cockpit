@@ -18,14 +18,15 @@ struct RepoGridView: View {
     ]
 
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: adaptiveColumns, spacing: 16) {
-                ForEach(repos) { repo in
-                    let isSelected = repo == selectedRepo
-                    SingleCellView(repo: repo, isSelected: isSelected)
-                        .tag(repo)
-                }
-            }
-        }
+        Text("test")
+//        ScrollView {
+//            LazyVGrid(columns: adaptiveColumns, spacing: 16) {
+//                ForEach(repos) { repo in
+//                    let isSelected = repo == selectedRepo
+//                    SingleCellView(repo: repo, isSelected: isSelected)
+//                        .tag(repo)
+//                }
+//            }
+//        }
     }
 }

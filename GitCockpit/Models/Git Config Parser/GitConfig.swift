@@ -18,10 +18,10 @@ class GitConfig {
     // MARK: STATIC
 
     public static func parse(from path: String, completion: @escaping (Result<GitConfig, GitConfigError>) -> Void) {
-        let fileManager = FileManager.default
         let saferPath = path.replacingOccurrences(of: "%20", with: " ")
 
-        guard fileManager.fileExists(atPath: saferPath) else {
+        // Prüfen, ob die Datei existiert
+        guard FileManager.default.fileExists(atPath: saferPath) else {
             completion(.failure(GitConfigError.fileNotFound))
             return
         }

@@ -44,9 +44,9 @@ struct CommandMenuView: Commands {
 
         CommandMenu("View", content: {
             Section("Theme") {
-                Button(action: {
+                Button {
                     onThemeChange(.dark)
-                }) {
+                } label: {
                     Text(String(localized: "Dark"))
 
                     if themeMode == .dark {
@@ -57,9 +57,9 @@ struct CommandMenuView: Commands {
                 .foregroundColor(themeMode == .dark ? .white : .primary)
                 .background(themeMode == .dark ? Color.primary : Color.clear)
 
-                Button(action: {
+                Button {
                     onThemeChange(.light)
-                }) {
+                } label: {
                     if themeMode == .light {
                         Image(systemName: "checkmark")
                     }
@@ -69,9 +69,9 @@ struct CommandMenuView: Commands {
                 .foregroundColor(themeMode == .light ? .white : .primary)
                 .background(themeMode == .light ? Color.primary : Color.clear)
 
-                Button(action: {
+                Button {
                     onThemeChange(.system)
-                }) {
+                } label: {
                     if themeMode == .system {
                         Image(systemName: "checkmark")
                     }

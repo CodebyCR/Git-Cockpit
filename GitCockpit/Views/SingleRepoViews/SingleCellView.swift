@@ -8,29 +8,23 @@
 import Foundation
 import SwiftUI
 
-struct SingleCellView: View {
+struct SingleRepositoryView: View {
     @State
-    var repo: RepositoryModel
-    @State
-    var isSelected: Bool
+    var repository: RepositoryModel
 
     var body: some View {
         ZStack {
             getGradient()
                 .frame(width: 440, height: 200)
-                .border(isSelected
-                    ? Color.white
-                    : Color.clear,
-                    width: 2)
                 .cornerRadius(30)
             VStack {
-                Text(repo.getName())
+                Text(repository.getName())
                     .foregroundColor(.white)
                     .font(.system(size: 30,
                                   weight: .medium,
                                   design: .rounded))
                 HStack {
-                    Text(repo.getCurrentBranchName() ?? "—")
+                    Text(repository.getCurrentBranchName() ?? "—")
                         .foregroundColor(.white)
                         .font(.system(size: 18,
                                       weight: .medium,
@@ -42,15 +36,15 @@ struct SingleCellView: View {
                 HStack {
                     Button(LocalizedStringKey("Show"),
                            systemImage: "folder",
-                           action: { repo.showLocal() })
+                           action: { repository.showLocal() })
                         .buttonStyle(.borderless)
                         .foregroundColor(Color.white)
                         .padding()
 
-                    if repo.remote != nil {
+                    if repository.remote != nil {
                         Button("Remote",
                                systemImage: "network",
-                               action: { repo.showRemote() })
+                               action: { repository.showRemote() })
                             .buttonStyle(.borderless)
                             .foregroundColor(Color.white)
                             .padding()
@@ -58,7 +52,11 @@ struct SingleCellView: View {
                 }
             }
 
-            HamburgerMenuView(repo: repo)
+            /// Todo:
+            /// Add RepositoryWrapper Model
+            /// With list of selegted tags as observable state
+
+            HamburgerMenuView(repo: repository)
                 .frame(width: 440)
         }
 //        .modifier(highlightRepo(ifSelected: isSelected))
@@ -73,27 +71,3 @@ struct SingleCellView: View {
         )
     }
 }
-
-// struct highlightRepo: ViewModifier {
-//    let isSelected: Bool // Boolean-Eigenschaft für die Modifikation
-//
-//    init(ifSelected isSelected: Bool) {
-//        self.isSelected = isSelected
-//    }
-//
-//    func body(content: Content) -> some View {
-//        if isSelected {
-//            content
-//                .border(Color.white)
-//                .cornerRadius(30)
-//        }
-//    }
-// }
-
-// #Preview("SingleCellView") {
-//    SingleCellView(
-//        repo: RepositoryModel.getDemoRepos().first!,
-//        isSelected: true
-//    )
-//    .frame(width: 440, height: 200)
-// }

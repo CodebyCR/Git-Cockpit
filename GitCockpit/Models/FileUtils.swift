@@ -14,57 +14,26 @@ struct FileUtils {
         let fileManager = FileManager.default
         var paths: [String] = [path]
 
-        do {
-            let contents = try fileManager.contentsOfDirectory(atPath: path)
-            for item in contents {
-                let itemPath = (path as NSString).appendingPathComponent(item)
-                var isDirectory: ObjCBool = false
-                if fileManager.fileExists(atPath: itemPath, isDirectory: &isDirectory) {
-                    if isDirectory.boolValue {
-                        // Verzeichnispfad hinzufügen
-                        paths.append(itemPath)
-                        // Rekursiv Verzeichnisse durchgehen
-                        let subPaths = recursiveFileList(path: itemPath)
-                        paths.append(contentsOf: subPaths)
-                    } else {
-                        // Dateipfad hinzufügen
-                        paths.append(itemPath)
-                    }
-                }
+        guard let contents = try? fileManager.contentsOfDirectory(atPath: path) else {
+            print("Fehler beim Lesen des Verzeichnisses: \(path)")
+            return paths
+        }
+
+        for item in contents {
+            let itemPath = (path as NSString).appendingPathComponent(item)
+            if fileManager.isExistingDirectory(itemPath) {
+                paths.append(itemPath)
+                let subPaths = recursiveFileList(path: itemPath)
+                paths.append(contentsOf: subPaths)
             }
-        } catch {
-            print("Fehler beim Lesen des Verzeichnisses: \(error.localizedDescription)")
         }
 
         return paths
     }
 
-    static func filterFolders(fromPaths filePaths: [String]) -> [String] {
-        var folderPaths: [String] = []
-        filePaths.forEach { path in
-            if isDirectory(path) {
-                folderPaths.append(path)
-            }
-        }
-
-        return folderPaths
-    }
-
     static func recursiveDirectoryList(path: String) -> [String] {
         let files = FileUtils.recursiveFileList(path: path)
-        return FileUtils.filterFolders(fromPaths: files)
-    }
-
-    static func isDirectory(_ path: String) -> Bool {
-        var isDirectory: ObjCBool = false
-        let fileManager = FileManager.default
-        let saferPath = path.replacingOccurrences(of: "%20", with: " ")
-
-        if fileManager.fileExists(atPath: saferPath, isDirectory: &isDirectory) {
-            return isDirectory.boolValue
-        }
-
-        return false
+        return FileManager.default.filterOnFolders(from: files)
     }
 
     static func getLastAccessDate(forFolderPath folderPath: String) -> Date? {

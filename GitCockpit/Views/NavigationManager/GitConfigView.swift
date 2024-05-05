@@ -30,7 +30,7 @@ struct GitConfigView: View {
                     LabeledContent(LocalizedStringKey("Default Branch"), value: defaultBranch)
                         .frame(width: 300)
                 }
-            }.navigationTitle(SidebarItem.gitConfig.displayName)
+            }.navigationTitle(SidebarRegister.gitConfig.displayedName)
         }
     }
 }

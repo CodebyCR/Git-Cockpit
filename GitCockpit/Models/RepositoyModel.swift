@@ -5,24 +5,38 @@
 //
 
 import Foundation
-import Logging
-import System
+import os
 
-let logger = Logger(label: "com.CodebyCR.GitCockpit") // put in env
+class RepositoryModel: Identifiable, Hashable {
 
-class RepositoryModel: Identifiable, Hashable, ObservableObject {
+    private static let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier!,
+        category: String(describing: RepositoryModel.self)
+    )
+
     let id: UUID
     let name: String
     let pathToRoot: String
-    let gitConfig: GitConfig?
+    let gitConfig: GitConfig
     var remote: String?
 
-    init(gitConfig: GitConfig) {
+    /// - Parameter pathToRoot: The path to the root of the Git Repository as String
+    init?(from pathToRoot: String) {
         self.id = UUID()
-        self.name = gitConfig.getRepoName() ?? "Unknown"
-        self.pathToRoot = gitConfig.getRepoRootPath().absoluteString.replacingOccurrences(of: "%20", with: " ")
+        self.pathToRoot = pathToRoot
+
+        let gitConfigPath = pathToRoot.hasSuffix("/")
+            ? "\(pathToRoot).git/config"
+            : "\(pathToRoot)/.git/config"
+
+        guard let gitConfig = GitConfig(atPath: gitConfigPath) else {
+            print("Failed to create GitConfig for Path: \(gitConfigPath)")
+            return nil
+        }
+
         self.gitConfig = gitConfig
-        self.remote = gitConfig.getOriginURL()?.absoluteString
+        self.name = self.gitConfig.getRepoName() ?? "Unknown"
+        self.remote = self.gitConfig.getOriginURL()?.absoluteString
     }
 
     static func == (lhs: RepositoryModel, rhs: RepositoryModel) -> Bool {
@@ -82,7 +96,7 @@ class RepositoryModel: Identifiable, Hashable, ObservableObject {
             return branchName
 
         case .failure(let error):
-            logger.error("Error: \(error.localizedDescription)")
+            RepositoryModel.logger.error("Error: \(error.localizedDescription)")
             return nil
         }
     }
@@ -91,6 +105,8 @@ class RepositoryModel: Identifiable, Hashable, ObservableObject {
     var lastAccessDate: String? {
         let saferPath = pathToRoot.replacingOccurrences(of: "%20", with: " ")
         guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: saferPath) else {
+            RepositoryModel.logger.info("The access Date can't be called.")
+//            print("The access Date can't be called.")
             return nil
         }
 

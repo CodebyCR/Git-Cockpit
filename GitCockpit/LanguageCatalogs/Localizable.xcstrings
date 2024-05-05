@@ -20,6 +20,12 @@
         }
       }
     },
+    "Add search path" : {
+
+    },
+    "All Repositorys" : {
+
+    },
     "Choose a Directory" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -36,6 +42,15 @@
           }
         }
       }
+    },
+    "Clone into Path" : {
+
+    },
+    "Configuartion" : {
+
+    },
+    "Create Tag" : {
+
     },
     "Dark" : {
       "localizations" : {
@@ -190,6 +205,9 @@
         }
       }
     },
+    "More Information about %@" : {
+
+    },
     "Name" : {
       "localizations" : {
         "de" : {
@@ -221,6 +239,9 @@
           }
         }
       }
+    },
+    "Path Action" : {
+
     },
     "Paths" : {
       "localizations" : {
@@ -269,6 +290,9 @@
           }
         }
       }
+    },
+    "Remove" : {
+
     },
     "Repositories" : {
       "extractionState" : "stale",
@@ -319,6 +343,9 @@
         }
       }
     },
+    "Search Paths" : {
+
+    },
     "Show" : {
       "localizations" : {
         "de" : {
@@ -366,6 +393,18 @@
           }
         }
       }
+    },
+    "Tag Color" : {
+
+    },
+    "Tag Name" : {
+
+    },
+    "Tags" : {
+
+    },
+    "test" : {
+
     },
     "Theme" : {
       "localizations" : {
