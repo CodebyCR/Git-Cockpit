@@ -93,6 +93,10 @@ iOSInjectionProject/
 # vs code
 .vscode/
 
+# JetBrains
+
+.idea/
+
 # Mac OS
 .DS_Store
 */.DS_Store
