@@ -1,0 +1,2 @@
+# Auto Merge xcodeproj files
+*.xcodeproj/* merge=union

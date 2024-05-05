@@ -33,6 +33,7 @@
 		8E5BAB0A2AFFAEC000DA6350 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */; };
 		8E6574EA2AE16BD90047ACFD /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6574E92AE16BD90047ACFD /* NavigationManager.swift */; };
 		8E6E0C7E2AEEBEEF00B1A013 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */; };
+		8E75DAF02BE809BF00462F91 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 8E75DAEF2BE809BF00462F91 /* .gitattributes */; };
 		8E7DB4872ADFBD4100F4EAB7 /* SettingsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */; };
 		8E8DC4B82AE4FF75002D2C5A /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */; };
 		8E8DC4BC2AE50D31002D2C5A /* GitRepoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */; };
@@ -108,6 +109,7 @@
 		8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8E6574E92AE16BD90047ACFD /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		8E6E0C7D2AEEBEEF00B1A013 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		8E75DAEF2BE809BF00462F91 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		8E7DB4862ADFBD4100F4EAB7 /* SettingsBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBarView.swift; sourceTree = "<group>"; };
 		8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoHandler.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				8ECB46312B9A174C007A8956 /* Git CockpitTests.xctestplan */,
+				8E75DAEF2BE809BF00462F91 /* .gitattributes */,
 				8E5829122B9783AE00F6D0E7 /* .gitignore */,
 				8EC46E122A23821200F3AF79 /* ContentView.swift */,
 				8EC46E0B2A23821200F3AF79 /* GitCockpitApp.swift */,
@@ -555,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E75DAF02BE809BF00462F91 /* .gitattributes in Resources */,
 				8E5829132B9783AE00F6D0E7 /* .gitignore in Resources */,
 				8EC46E192A23821500F3AF79 /* Preview Assets.xcassets in Resources */,
 				8EF4BB6D2B96F9A200AFAC40 /* Localizable.xcstrings in Resources */,
