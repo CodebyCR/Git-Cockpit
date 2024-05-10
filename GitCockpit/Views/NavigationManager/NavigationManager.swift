@@ -27,7 +27,7 @@ struct NavigationManagerView: View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
             List(selection: $selectedTag) {
                 Section(String(localized: "Repositorys")) {
-                    ForEach(repositorySidebarRegister) { register in
+                    ForEach(repositorySidebarRegister, id: \.self) { register in
                         Label(register.displayedName, systemImage: register.icon)
                             .foregroundStyle(selectedTag == register.displayedName ? Color.primary : .gray)
                             .tag(register.displayedName)
@@ -43,7 +43,7 @@ struct NavigationManagerView: View {
 //                    }
 
                 Section(String(localized: "Configuartion")) {
-                    ForEach(sidebarConfigurationRegisters) { sidebarItem in
+                    ForEach(sidebarConfigurationRegisters, id: \.self) { sidebarItem in
                         Label(sidebarItem.displayedName, systemImage: sidebarItem.icon)
                             .foregroundStyle(selectedTag == sidebarItem.displayedName ? Color.primary : .gray)
                             .tag(sidebarItem.displayedName)

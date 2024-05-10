@@ -1,9 +1,11 @@
 import Foundation
+import SwiftData
 
 enum GitConfigError: Error {
     case fileNotFound, parsing
 }
 
+@Model
 class GitConfig {
     let repoRootPath: URL
     let path: String

@@ -7,9 +7,14 @@
 import Foundation
 import SwiftData
 
+//@Model
 class RepositoryWrapper: Identifiable, Equatable, Hashable {
     let id: UUID
+
+//    @Relationship(deleteRule: .noAction)
     var tags: [TagModel]
+
+//    @Relationship(deleteRule: .cascade)
     var model: RepositoryModel
 
     // new RepositoryWrapper

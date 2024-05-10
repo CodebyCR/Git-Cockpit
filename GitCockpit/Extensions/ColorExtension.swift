@@ -15,7 +15,7 @@ extension Color {
         return Color(red: red, green: green, blue: blue)
     }
 
-    func getRGB() -> (Double, Double, Double) {
+    func getRGB() -> (red: Double, green: Double, blue: Double) {
         guard let components = cgColor?.components else {
             return (0, 0, 0)
         }

@@ -70,8 +70,8 @@ struct MultiRepositoryView: View {
         }
         .navigationTitle(SidebarRegister.allRepositorys.displayedName)
         .inspector(isPresented: $isPresented) {
-            // TODO: currentRepo as EnviromentObject and Obserable
-            RepoInspectorView(currentRepository: $selectedRepository, tags: getTagsAsBinding(repository: selectedRepository))
+            RepoInspectorView(currentRepository: $selectedRepository,
+                              tags: getTagsAsBinding(repository: selectedRepository))
         }
         .inspectorColumnWidth(min: 80, ideal: 200, max: 380)
         .toolbar {

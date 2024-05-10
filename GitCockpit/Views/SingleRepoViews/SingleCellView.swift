@@ -51,15 +51,7 @@ struct SingleRepositoryView: View {
                     }
                 }
             }
-
-            /// Todo:
-            /// Add RepositoryWrapper Model
-            /// With list of selegted tags as observable state
-
-            HamburgerMenuView(repo: repository)
-                .frame(width: 440)
         }
-//        .modifier(highlightRepo(ifSelected: isSelected))
     }
 
     func getGradient() -> LinearGradient {

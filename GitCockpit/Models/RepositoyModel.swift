@@ -5,18 +5,20 @@
 //
 
 import Foundation
-import os
+// import os
+import SwiftData
 
+@Model
 class RepositoryModel: Identifiable, Hashable {
-
-    private static let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier!,
-        category: String(describing: RepositoryModel.self)
-    )
+//    private static let logger = Logger(
+//        subsystem: Bundle.main.bundleIdentifier!,
+//        category: String(describing: RepositoryModel.self)
+//    )
 
     let id: UUID
     let name: String
     let pathToRoot: String
+    @Relationship(deleteRule: .cascade)
     let gitConfig: GitConfig
     var remote: String?
 
@@ -35,8 +37,8 @@ class RepositoryModel: Identifiable, Hashable {
         }
 
         self.gitConfig = gitConfig
-        self.name = self.gitConfig.getRepoName() ?? "Unknown"
-        self.remote = self.gitConfig.getOriginURL()?.absoluteString
+        self.name = gitConfig.getRepoName() ?? "Unknown"
+        self.remote = gitConfig.getOriginURL()?.absoluteString
     }
 
     static func == (lhs: RepositoryModel, rhs: RepositoryModel) -> Bool {
@@ -96,7 +98,7 @@ class RepositoryModel: Identifiable, Hashable {
             return branchName
 
         case .failure(let error):
-            RepositoryModel.logger.error("Error: \(error.localizedDescription)")
+//            RepositoryModel.logger.error("Error: \(error.localizedDescription)")
             return nil
         }
     }
@@ -105,7 +107,7 @@ class RepositoryModel: Identifiable, Hashable {
     var lastAccessDate: String? {
         let saferPath = pathToRoot.replacingOccurrences(of: "%20", with: " ")
         guard let accessDate = FileUtils.getLastAccessDate(forFolderPath: saferPath) else {
-            RepositoryModel.logger.info("The access Date can't be called.")
+//            RepositoryModel.logger.info("The access Date can't be called.")
 //            print("The access Date can't be called.")
             return nil
         }

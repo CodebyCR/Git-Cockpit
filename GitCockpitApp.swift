@@ -17,7 +17,13 @@ struct GitCockpitApp: App {
                 .preferredColorScheme(themeMode == .dark ? .dark : .light)
 //                .environment(\.locale, language.locale)
                 .frame(minWidth: 960, minHeight: 600)
-                .modelContainer(for: [SearchPathModel.self, TagModel.self])
+                .modelContainer(for: [
+                    RepositoryModel.self,
+                    GitConfig.self,
+//                    RepositoryWrapper.self,
+                    SearchPathModel.self,
+                    TagModel.self
+                ])
         }
         .commands {
             CommandMenuView(themeMode: themeMode) { newThemeMode in
