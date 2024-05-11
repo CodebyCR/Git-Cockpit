@@ -8,17 +8,20 @@ import SwiftData
 import SwiftUI
 
 struct NavigationManagerView: View {
-    @State
-    var sideBarVisibility: NavigationSplitViewVisibility = .detailOnly
+//    @Environment(TagModel.self)
+//    private var tagModel
 
     @State
-    var selectedTag: String = SidebarRegister.allRepositorys.displayedName
+    private var sideBarVisibility: NavigationSplitViewVisibility = .detailOnly
 
     @State
-    var repositorySidebarRegister = SidebarRegister.allRepositoryCases()
+    private var selectedTag: String = SidebarRegister.allRepositorys.displayedName
 
     @State
-    var sidebarConfigurationRegisters = SidebarRegister.allOtherCases()
+    private var repositorySidebarRegister = SidebarRegister.allRepositoryCases()
+
+    @State
+    private var sidebarConfigurationRegisters = SidebarRegister.allOtherCases()
 
     @Query(animation: .snappy)
     private var searchPaths: [SearchPathModel] // sort: \SearchPathModel.path,
