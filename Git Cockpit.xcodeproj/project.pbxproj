@@ -28,6 +28,7 @@
 		8E415E912AFFBABF00F49FA9 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E415E902AFFBABF00F49FA9 /* SFSymbols.swift */; };
 		8E53E0B62AE2A400003D22CF /* RepositoyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */; };
 		8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */; };
+		8E55E37B2BF6A26E000990AD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8E55E37A2BF6A26E000990AD /* README.md */; };
 		8E5829132B9783AE00F6D0E7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8E5829122B9783AE00F6D0E7 /* .gitignore */; };
 		8E5829162B978A5F00F6D0E7 /* ThemeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5829152B978A5F00F6D0E7 /* ThemeMode.swift */; };
 		8E5BAB0A2AFFAEC000DA6350 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */; };
@@ -102,6 +103,7 @@
 		8E415E902AFFBABF00F49FA9 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoyModel.swift; sourceTree = "<group>"; };
 		8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessHandler.swift; sourceTree = "<group>"; };
+		8E55E37A2BF6A26E000990AD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E5829122B9783AE00F6D0E7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8E5829152B978A5F00F6D0E7 /* ThemeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeMode.swift; sourceTree = "<group>"; };
 		8E5BAB092AFFAEC000DA6350 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		8EC46DFF2A23821200F3AF79 = {
 			isa = PBXGroup;
 			children = (
+				8E55E37A2BF6A26E000990AD /* README.md */,
 				8ECB46312B9A174C007A8956 /* Git CockpitTests.xctestplan */,
 				8E75DAEF2BE809BF00462F91 /* .gitattributes */,
 				8E5829122B9783AE00F6D0E7 /* .gitignore */,
@@ -544,6 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E55E37B2BF6A26E000990AD /* README.md in Resources */,
 				8E75DAF02BE809BF00462F91 /* .gitattributes in Resources */,
 				8E5829132B9783AE00F6D0E7 /* .gitignore in Resources */,
 				8EC46E192A23821500F3AF79 /* Preview Assets.xcassets in Resources */,
