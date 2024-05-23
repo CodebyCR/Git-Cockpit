@@ -18,8 +18,8 @@
 
 <br/>
 
-## \#ConstributersWelcome❤️
+### \#ConstributersWelcome❤️
 
-## Advanced View
+### Advanced View
 
 ![Advanced View](https://github.com/CodebyCR/Git-Cockpit/blob/main/View.png)
