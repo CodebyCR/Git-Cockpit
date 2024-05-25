@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct SidebarItem: Identifiable, CaseIterable, Hashable {
-    let id: UUID = .init()
+    let id: UUID
     let icon: String
     let displayName: LocalizedStringKey
 
     private init(icon: String, displayName: LocalizedStringKey) {
+        self.id = UUID()
         self.icon = icon
         self.displayName = displayName
     }

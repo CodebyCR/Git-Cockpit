@@ -20,7 +20,7 @@ struct GitCockpitApp: App {
                 .modelContainer(for: [
                     RepositoryModel.self,
                     GitConfig.self,
-//                    RepositoryWrapper.self,
+                    RepositoryWrapper.self,
                     SearchPathModel.self,
                     TagModel.self
                 ])

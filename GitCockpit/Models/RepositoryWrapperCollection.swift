@@ -8,12 +8,12 @@
 import Foundation
 
 class RepositoryWrapperCollection: Identifiable {
-    let id: String
+    let id: UUID
     let displayedName: String
     var repositoryWrappers: [RepositoryWrapper]
 
     init(displayedName: String, repositoryWrappers: [RepositoryWrapper]) {
-        self.id = UUID().uuidString
+        self.id = UUID()
         self.displayedName = displayedName
         self.repositoryWrappers = repositoryWrappers
     }

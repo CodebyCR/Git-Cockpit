@@ -23,8 +23,8 @@ struct NavigationManagerView: View {
     @State
     private var sidebarConfigurationRegisters = SidebarRegister.allOtherCases()
 
-    @Query(animation: .snappy)
-    private var searchPaths: [SearchPathModel] // sort: \SearchPathModel.path,
+//    @Query(animation: .snappy)
+//    private var searchPaths: [SearchPathModel] // sort: \SearchPathModel.path,
 
     var body: some View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {

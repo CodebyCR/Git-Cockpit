@@ -18,8 +18,8 @@ struct MultiRepositoryView: View {
     var repositorys: [RepositoryWrapper] {
         var repositorys: [RepositoryWrapper] = []
 
-        for repo in GitRepoHandler.getGitRepositories(from: searchPaths) {
-            repositorys.append(RepositoryWrapper(model: repo))
+        for path in GitRepoHandler.getGitRepositories(for: searchPaths) {
+            repositorys.append(RepositoryWrapper(pathToRoot: path))
         }
 
         return repositorys
@@ -48,7 +48,7 @@ struct MultiRepositoryView: View {
                 LazyVGrid(columns: adaptiveColumns, spacing: 16) {
                     ForEach(repositorys, id: \.self) { repo in
                         if selectedRepository == repo {
-                            SingleRepositoryView(repository: repo.model)
+                            SingleRepositoryView(repository: repo.model!)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 32)
                                         .stroke(Color.white, lineWidth: 2)
@@ -59,7 +59,7 @@ struct MultiRepositoryView: View {
                                 }
                         }
                         else {
-                            SingleRepositoryView(repository: repo.model)
+                            SingleRepositoryView(repository: repo.model!)
                                 .onTapGesture {
                                     selectedRepository = repo
                                     isPresented = true

@@ -7,20 +7,26 @@
 import Foundation
 import SwiftData
 
-//@Model
+@Model
 class RepositoryWrapper: Identifiable, Equatable, Hashable {
     let id: UUID
 
-//    @Relationship(deleteRule: .noAction)
+    @Relationship(deleteRule: .noAction)
     var tags: [TagModel]
 
-//    @Relationship(deleteRule: .cascade)
-    var model: RepositoryModel
+    @Relationship(deleteRule: .cascade)
+    var pathToRoot: String
+
+    public var model: RepositoryModel?{
+        get{
+            RepositoryModel(from: pathToRoot)
+        }
+    }
 
     // new RepositoryWrapper
-    init(model: RepositoryModel) {
+    init(pathToRoot: String) {
         self.id = UUID()
-        self.model = model
+        self.pathToRoot = pathToRoot
         self.tags = []
     }
 
@@ -31,10 +37,10 @@ class RepositoryWrapper: Identifiable, Equatable, Hashable {
 //    }
 
     static func == (lhs: RepositoryWrapper, rhs: RepositoryWrapper) -> Bool {
-        lhs.model.pathToRoot == rhs.model.pathToRoot
+        lhs.id == rhs.id
     }
 
     func hash(into hasher: inout Hasher) {
-        hasher.combine(model.pathToRoot)
+        hasher.combine(id)
     }
 }

@@ -62,4 +62,36 @@ struct GitRepoHandler {
 
         return repositoryModels
     }
+
+    static func getGitRepositories(for searchPaths: consuming[SearchPathModel]) -> [String] {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        var uniquePaths = Set<String>()
+        var repositoryModelsPaths: [String] = []
+
+        for dirPath in searchPaths {
+            let dirPaths = FileUtils.recursiveDirectoryList(path: dirPath.path)
+            uniquePaths.formUnion(consume dirPaths)
+        }
+
+        for path in uniquePaths {
+            let gitConfigPath = URL(fileURLWithPath: path).appendingPathComponent(".git/config").path
+            guard FileManager.default.fileExists(atPath: consume gitConfigPath) else { continue }
+
+            repositoryModelsPaths.append(path)
+        }
+
+        repositoryModelsPaths.sort { $0.lowercased() < $1.lowercased() }
+
+        let endTime = CFAbsoluteTimeGetCurrent()
+
+        let time = endTime - startTime
+        print("Time needened: \(time)")
+
+        // 0.3415480852127075
+        // 0.30237090587615967
+        // 0.2376459836959839
+        // 0.22451496124267578
+
+        return repositoryModelsPaths
+    }
 }

@@ -9,13 +9,13 @@ import Foundation
 import SwiftData
 
 class SidebarRegister: Identifiable, Hashable {
-    var id: String
+    var id: UUID
     var displayedName: String
     var icon: String
     var path: String?
 
     init(displayedName: String, icon: String) {
-        self.id = UUID().uuidString
+        self.id = UUID()
         self.displayedName = String(displayedName)
         self.icon = icon
     }

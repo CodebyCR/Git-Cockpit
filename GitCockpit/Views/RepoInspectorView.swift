@@ -24,7 +24,7 @@ struct RepoInspectorView: View {
                 }
         }
         else {
-            Text("More Information about \(currentRepository!.model.getName())")
+            Text("More Information about \(currentRepository!.model?.getName())")
 
             MultiTagView(tags: $tags)
 
