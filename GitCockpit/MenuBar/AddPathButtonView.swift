@@ -36,7 +36,22 @@ struct AddPathButtonView: View {
 
         modelContext.insert(newSearchPathModel)
 
+        let queue = DispatchQueue.global(qos: .default)
+
+        queue.async {
+            addRepositoryRootPaths(from: newSearchPathModel, into: modelContext)
+        }
     }
+
+    static func addRepositoryRootPaths(from searchPath: SearchPathModel, into context: ModelContext) -> Void {
+
+        for path in GitRepoHandler.getGitRepositories(for: searchPath) {
+            let newRepoWrapper = RepositoryWrapper(pathToRoot: path)
+            context.insert(newRepoWrapper)
+        }
+
+    }
+
 }
 
 #Preview {

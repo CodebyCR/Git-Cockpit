@@ -63,7 +63,7 @@ struct GitRepoHandler {
         return repositoryModels
     }
 
-    static func getGitRepositories(for searchPaths: consuming[SearchPathModel]) -> [String] {
+    static func getGitRepositories(for searchPaths: SearchPathModel...) -> [String] {
         let startTime = CFAbsoluteTimeGetCurrent()
         var uniquePaths = Set<String>()
         var repositoryModelsPaths: [String] = []

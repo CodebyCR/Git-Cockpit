@@ -17,7 +17,7 @@ class RepositoryWrapper: Identifiable, Equatable, Hashable {
     @Relationship(deleteRule: .cascade)
     var pathToRoot: String
 
-    public var model: RepositoryModel?{
+    public var model: RepositoryModel? {
         get{
             RepositoryModel(from: pathToRoot)
         }

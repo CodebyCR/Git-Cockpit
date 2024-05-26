@@ -89,6 +89,7 @@ struct TagConfigView: View {
                 }
             }
         }
+        .navigationTitle(SidebarRegister.tags.displayedName)
     }
 
     func createTag() -> Bool {

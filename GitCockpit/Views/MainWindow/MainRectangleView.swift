@@ -12,12 +12,8 @@ struct MainRectangleView: View {
     private let width: CGFloat
     private let height: CGFloat
 
-    @Query(sort: \SearchPathModel.path)
-    private var searchPaths: [SearchPathModel]
-
-    private var repositories: [RepositoryModel] {
-        GitRepoHandler.getGitRepositories(from: searchPaths)
-    }
+    @Query() //sort: \RepositoryModel
+    private var repositories: [RepositoryModel]
 
     @State
     private var isPresented: Bool = false

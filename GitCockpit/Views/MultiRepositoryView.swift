@@ -9,21 +9,14 @@ import SwiftData
 import SwiftUI
 
 struct MultiRepositoryView: View {
-    @Query(sort: \SearchPathModel.path)
-    private var searchPaths: [SearchPathModel]
+//    @Query(sort: \SearchPathModel.path)
+//    private var searchPaths: [SearchPathModel]
 
     private let width: CGFloat
     private let height: CGFloat
 
-    var repositorys: [RepositoryWrapper] {
-        var repositorys: [RepositoryWrapper] = []
-
-        for path in GitRepoHandler.getGitRepositories(for: searchPaths) {
-            repositorys.append(RepositoryWrapper(pathToRoot: path))
-        }
-
-        return repositorys
-    }
+    @Query(sort: \RepositoryWrapper.pathToRoot)
+    var repositorys: [RepositoryWrapper]
 
     @State
     var selectedRepository: RepositoryWrapper?
@@ -51,7 +44,7 @@ struct MultiRepositoryView: View {
                             SingleRepositoryView(repository: repo.model!)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 32)
-                                        .stroke(Color.white, lineWidth: 2)
+                                        .stroke(Color.primary, lineWidth: 2)
                                 )
                                 .onTapGesture {
                                     selectedRepository = nil
