@@ -18,8 +18,8 @@ class RepositoryWrapper: Identifiable, Equatable, Hashable {
     var pathToRoot: String
 
     public var model: RepositoryModel? {
-        get{
-            RepositoryModel(from: pathToRoot)
+        get {
+            return RepositoryModel(from: pathToRoot)
         }
     }
 

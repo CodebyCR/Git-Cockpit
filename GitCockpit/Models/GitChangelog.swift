@@ -19,9 +19,8 @@ struct GitChangelog {
         guard let data = try? fileHandle.readToEnd() else {
             return .failure(.unableToReadData)
         }
-        guard let output = String(data: data, encoding: .utf8) else {
-            return .failure(.unableToDecodeString)
-        }
+        let output = String(decoding: data, as: UTF8.self)
+
         return .success(output)
     }
 
@@ -41,14 +40,12 @@ struct GitChangelog {
         task.standardOutput = pipe
 
         // Starten des Tasks
-        do{
-            try task.run()
+        do {
+           try task.run()
+        } catch {
+           print("Task run failed.")
+           return []
         }
-        catch{
-            print("Task run failed.")
-            return []
-        }
-
 
         let rawBranches = readLinesFromPipe(pipe)
 
@@ -77,10 +74,9 @@ struct GitChangelog {
         task.standardOutput = pipe
 
         // Starten des Tasks
-        do{
+        do {
             try task.run()
-        }
-        catch{
+        } catch {
             print("Task run failed.")
             return []
         }
@@ -125,10 +121,7 @@ struct GitChangelog {
             // Lesen der Ausgabe des Befehls
             let data = fileHandle.availableData
 
-            guard let output = String(data: data, encoding: .utf8) else {
-                print("Tag-Beschreibung nicht dekodierbar")
-                return
-            }
+            let output = String(decoding: data, as: UTF8.self)
 
             // Parsen der Ausgabe und Extrahieren der Beschreibung
             let tagDescription = output.components(separatedBy: "\n")
@@ -191,9 +184,7 @@ struct GitChangelog {
         }
 
         // Daten in String konvertieren
-        guard let output = String(data: data, encoding: .utf8) else {
-            return nil
-        }
+        let output = String(decoding: data, as: UTF8.self)
 
         // String in Zeilen zerlegen
         let lines = output.components(separatedBy: "\n")

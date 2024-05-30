@@ -12,7 +12,7 @@ struct MainRectangleView: View {
     private let width: CGFloat
     private let height: CGFloat
 
-    @Query() //sort: \RepositoryModel
+    @Query() // sort: \RepositoryModel
     private var repositories: [RepositoryModel]
 
     @State

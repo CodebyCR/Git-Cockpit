@@ -55,9 +55,6 @@ struct SettingsBarView: View {
         if dialog.runModal() == NSApplication.ModalResponse.OK {
             if let result = dialog.url { // Pathname of the file
                 return result.path
-
-                // path contains the file path e.g
-                // /Users/ourcodeworld/Desktop/tiger.jpeg
             }
         }
         return nil

@@ -24,12 +24,9 @@ struct RepoInspectorView: View {
                 }
         }
         else {
-            Text("More Information about \(currentRepository!.model?.getName())")
+            Text("More Information about \(String(describing: currentRepository!.model?.getName()))")
 
             MultiTagView(tags: $tags)
-
-//            HamburgerMenuView(repo: currentRepository!.model)
-//                .frame(width: 440)
         }
     }
 }

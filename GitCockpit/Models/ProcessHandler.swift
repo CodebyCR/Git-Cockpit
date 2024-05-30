@@ -1,6 +1,5 @@
 //
 //  ProcessHandler.swift
-
 //
 //  Created by Christoph Rohde on 20.10.23.
 //
@@ -12,7 +11,9 @@ struct ProcessHandler {
         let pipe = Pipe()
         task.standardOutput = pipe
 
-        guard let _ = try? task.run() else {
+        do {
+            try task.run()
+        } catch {
             print("Task run failed.")
             return
         }
@@ -24,7 +25,9 @@ struct ProcessHandler {
         let pipe = Pipe()
         task.standardOutput = pipe
 
-        guard let _ = try? task.run() else {
+        do {
+            try task.run()
+        } catch {
             print("Task run failed.")
             return task.terminationStatus
         }

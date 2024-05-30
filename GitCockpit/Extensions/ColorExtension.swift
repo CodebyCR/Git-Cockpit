@@ -7,7 +7,7 @@
 import SwiftUI
 
 extension Color {
-    // return a new generated Color
+
     static func random() -> Color {
         let red = Double.random(in: 0..<1)
         let green = Double.random(in: 0..<1)

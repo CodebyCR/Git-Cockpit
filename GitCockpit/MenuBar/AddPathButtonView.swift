@@ -43,7 +43,7 @@ struct AddPathButtonView: View {
         }
     }
 
-    static func addRepositoryRootPaths(from searchPath: SearchPathModel, into context: ModelContext) -> Void {
+    static func addRepositoryRootPaths(from searchPath: SearchPathModel, into context: ModelContext) {
 
         for path in GitRepoHandler.getGitRepositories(for: searchPath) {
             let newRepoWrapper = RepositoryWrapper(pathToRoot: path)

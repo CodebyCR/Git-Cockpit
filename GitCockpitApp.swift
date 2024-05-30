@@ -10,7 +10,6 @@ struct GitCockpitApp: App {
     @AppStorage("themeMode") private var themeMode: ThemeMode = .system
 //    @AppStorage("language") private var language: Language = .english
 
-
     var body: some Scene {
         WindowGroup {
             ContentView()
