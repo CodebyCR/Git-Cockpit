@@ -58,8 +58,9 @@ extension SidebarRegister {
         allCases.append(.allRepositorys)
 
         allCases.append(contentsOf: searchPathRegister)
+
         print("Use all cases")
-        return allCases
+        return Array(Set(allCases))
     }
 
     public static func addSearchPathRegister(_ path: String) {
