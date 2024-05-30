@@ -10,6 +10,7 @@ import Foundation
 enum FileReadError: Error {
     case unableToReadData
     case unableToDecodeString
+    case taskExecutionFailed(Int32)
 }
 
 struct GitChangelog {
@@ -40,7 +41,14 @@ struct GitChangelog {
         task.standardOutput = pipe
 
         // Starten des Tasks
-        task.launch()
+        do{
+            try task.run()
+        }
+        catch{
+            print("Task run failed.")
+            return []
+        }
+
 
         let rawBranches = readLinesFromPipe(pipe)
 
@@ -69,7 +77,13 @@ struct GitChangelog {
         task.standardOutput = pipe
 
         // Starten des Tasks
-        task.launch()
+        do{
+            try task.run()
+        }
+        catch{
+            print("Task run failed.")
+            return []
+        }
 
         let rawTags = readLinesFromPipe(pipe)
 
@@ -98,7 +112,10 @@ struct GitChangelog {
         task.standardOutput = pipe
 
         // Starten des Tasks
-        task.launch()
+        guard let _ = try? task.run() else {
+            print("Task run failed.")
+            return
+        }
 
         // Array zum Speichern der Beschreibungen
         var descriptions: [String] = []

@@ -12,14 +12,23 @@ struct ProcessHandler {
         let pipe = Pipe()
         task.standardOutput = pipe
 
-        task.launch()
+        guard let _ = try? task.run() else {
+            print("Task run failed.")
+            return
+        }
+
         task.waitUntilExit()
     }
 
     static func executeWithStatus(task: Process) -> Int32 {
         let pipe = Pipe()
         task.standardOutput = pipe
-        task.launch()
+
+        guard let _ = try? task.run() else {
+            print("Task run failed.")
+            return task.terminationStatus
+        }
+
         task.waitUntilExit()
 
         return task.terminationStatus
