@@ -108,9 +108,11 @@ struct GitChangelog {
         task.standardOutput = pipe
 
         // Starten des Tasks
-        guard let _ = try? task.run() else {
-            print("Task run failed.")
-            return
+        do {
+           try task.run()
+        } catch {
+           print("Task run failed.")
+           return
         }
 
         // Array zum Speichern der Beschreibungen

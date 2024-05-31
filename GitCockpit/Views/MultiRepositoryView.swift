@@ -38,27 +38,42 @@ struct MultiRepositoryView: View {
 
         ZStack {
             ScrollView {
-                LazyVGrid(columns: adaptiveColumns, spacing: 16) {
-                    ForEach(repositorys, id: \.self) { repo in
-                        if selectedRepository == repo {
-                            SingleRepositoryView(repository: repo.model!)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 32)
-                                        .stroke(Color.primary, lineWidth: 2)
-                                )
-                                .onTapGesture {
-                                    selectedRepository = nil
-                                    isPresented = false
-                                }
-                        }
-                        else {
-                            SingleRepositoryView(repository: repo.model!)
-                                .onTapGesture {
-                                    selectedRepository = repo
-                                    isPresented = true
-                                }
+                ScrollViewReader { scroller in
+                    LazyVGrid(columns: adaptiveColumns, spacing: 16) {
+                        ForEach(repositorys, id: \.self) { repo in
+                            if selectedRepository == repo {
+                                SingleRepositoryView(repository: repo.model!)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 32)
+                                            .stroke(Color.primary, lineWidth: 2)
+                                    )
+                                    .onTapGesture {
+                                        selectedRepository = nil
+                                        isPresented = false
+                                    }
+
+
+                            }
+                            else {
+                                SingleRepositoryView(repository: repo.model!)
+                                    .onTapGesture {
+                                        selectedRepository = repo
+                                        isPresented = true
+                                        let repositoryId = repo.id
+                                        print("Id to scroll to: \(repositoryId)")
+                                        scroller.scrollTo(repositoryId, anchor: .top)
+                                    }
+                            }
                         }
                     }
+//                    .onAppear {
+//                        if let repoToScrollTo = selectedRepository {
+//                            let repositoryId = repoToScrollTo.id
+//                            print("Id to scroll to: \(repositoryId)")
+//                            scroller.scrollTo(repositoryId)
+//                        }
+//                    }
+
                 }
             }
         }

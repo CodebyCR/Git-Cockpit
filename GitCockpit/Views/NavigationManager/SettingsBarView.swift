@@ -39,7 +39,7 @@ struct SettingsBarView: View {
                        }
                    })
 
-        }.frame(width: 140)
+        }.frame(minWidth: 180)
     }
 
     func chosePath() -> String? {
