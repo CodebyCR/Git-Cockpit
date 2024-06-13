@@ -33,7 +33,7 @@ extension Color {
         return String(format: "#%02X%02X%02X", red, green, blue)
     }
 
-    static func fromHex(_ hex: String) -> Color {
+    static func fromHex(_ hex: consuming String) -> Color {
         var hex = hex
         if hex.hasPrefix("#") {
             hex.remove(at: hex.startIndex)

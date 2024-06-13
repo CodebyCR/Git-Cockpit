@@ -35,9 +35,7 @@ struct GitHeadParser {
     }
 
     func getCurrentBranch() -> Result<String, GitHeadError> {
-        let headPath = repoRootPath.absoluteString.hasSuffix("/")
-            ? URL(fileURLWithPath: "\(repoRootPath).git/HEAD")
-            : URL(fileURLWithPath: "\(repoRootPath)/.git/HEAD")
+        let headPath = repoRootPath / ".git/HEAD"
 
         guard let headContent = readFile(atPath: headPath.path) else {
             return .failure(.fileReadError(headPath.absoluteString))

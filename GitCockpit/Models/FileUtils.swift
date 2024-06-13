@@ -15,7 +15,7 @@ struct FileUtils {
         var paths: [String] = [path]
 
         guard let contents = try? fileManager.contentsOfDirectory(atPath: path) else {
-            print("Fehler beim Lesen des Verzeichnisses: \(path)")
+            print("Error to read the directory: \(path)")
             return paths
         }
 
@@ -31,19 +31,19 @@ struct FileUtils {
         return paths
     }
 
-    static func recursiveDirectoryList(path: String) -> [String] {
+    static func recursiveDirectoryList(path: consuming String) -> [String] {
         let files = FileUtils.recursiveFileList(path: path)
         return FileManager.default.filterOnFolders(from: files)
     }
 
-    static func getLastAccessDate(forFolderPath folderPath: String) -> Date? {
+    static func getLastAccessDate(forFolderPath folderPath: consuming String) -> Date? {
         do {
             let attributes = try FileManager.default.attributesOfItem(atPath: folderPath)
             if let accessDate = attributes[FileAttributeKey.modificationDate] as? Date {
                 return accessDate
             }
         } catch {
-            print("Fehler beim Abrufen des Zugriffsdatums: \(error)")
+            print("Error to get the Access date: \(error)")
         }
 
         return nil

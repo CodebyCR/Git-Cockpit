@@ -8,11 +8,11 @@
 import Foundation
 
 extension FileManager {
-    func isExistingDirectory(_ path: String) -> Bool {
+    func isExistingDirectory(_ path: consuming String) -> Bool {
         var isDirectory: ObjCBool = false
         let saferPath = path.replacingOccurrences(of: "%20", with: " ")
 
-        if fileExists(atPath: saferPath, isDirectory: &isDirectory) {
+        if fileExists(atPath: consume saferPath, isDirectory: &isDirectory) {
             return isDirectory.boolValue
         }
 
@@ -22,7 +22,7 @@ extension FileManager {
     func filterOnFolders(from filePaths: consuming [String]) -> [String] {
         var folderPaths: [String] = []
         for path in filePaths where isExistingDirectory(path) {
-            folderPaths.append(path)
+            folderPaths.append( consume path)
         }
 
         return folderPaths
