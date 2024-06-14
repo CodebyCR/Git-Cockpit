@@ -7,7 +7,7 @@
 import SwiftData
 import SwiftUI
 
-// deprecated
+// ! deprecated
 struct MainRectangleView: View {
     private let width: CGFloat
     private let height: CGFloat
@@ -34,7 +34,7 @@ struct MainRectangleView: View {
         .inspector(isPresented: $isPresented) {
 //            RepoInspectorView($)
         }
-        .inspectorColumnWidth(min: 80, ideal: 200, max: 380)
+//        .inspectorColumnWidth(min: 400, ideal: 420, max: 500)
         .toolbar {
             ToolbarView(detailsAreVisible: $isPresented)
         }

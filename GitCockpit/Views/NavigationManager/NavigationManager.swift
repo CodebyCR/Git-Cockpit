@@ -56,7 +56,7 @@ struct NavigationManagerView: View {
             .onChange(of: selectedTag, initial: true) {
                 print("SelectedSidebarItem: \(selectedTag)")
             }
-            .navigationSplitViewColumnWidth(min: 170, ideal: 180, max: 200)
+            .navigationSplitViewColumnWidth(min: 180, ideal: 180, max: 220)
         }
         detail: {
             switch selectedTag {

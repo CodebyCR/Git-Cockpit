@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MarkdownUI
 
 struct ReadMeView: View {
     public let readMe: ReadMe
@@ -13,7 +14,8 @@ struct ReadMeView: View {
     var body: some View {
 
         if let readMeContent = readMe.getContent() {
-            Text(readMeContent)
+            Markdown(readMeContent)
+                .markdownTheme(.gitHub)
         }
         else {
             Text("ReadMe content anavailable.")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E0497662C1C7BAC002A4436 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8E0497652C1C7BAC002A4436 /* MarkdownUI */; };
 		8E181F392B645B71000229C5 /* GlobalGitConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E181F382B645B71000229C5 /* GlobalGitConfig.swift */; };
 		8E181F3B2B645F8A000229C5 /* GitConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E181F3A2B645F8A000229C5 /* GitConfigView.swift */; };
 		8E18AEEE2B77A27B0070C3ED /* RepoInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18AEED2B77A27B0070C3ED /* RepoInspectorView.swift */; };
@@ -157,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E0497662C1C7BAC002A4436 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +468,7 @@
 			);
 			name = "Git Cockpit";
 			packageProductDependencies = (
+				8E0497652C1C7BAC002A4436 /* MarkdownUI */,
 			);
 			productName = GraphenAutomator;
 			productReference = 8EC46E082A23821200F3AF79 /* Git Cockpit.app */;
@@ -542,6 +545,7 @@
 			mainGroup = 8EC46DFF2A23821200F3AF79;
 			packageReferences = (
 				8E6E0C802AEED69300B1A013 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				8E0497642C1C7BAC002A4436 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = 8EC46E092A23821200F3AF79 /* Products */;
 			projectDirPath = "";
@@ -1043,6 +1047,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8E0497642C1C7BAC002A4436 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		8E6E0C802AEED69300B1A013 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint";
@@ -1054,6 +1066,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8E0497652C1C7BAC002A4436 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E0497642C1C7BAC002A4436 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
 		8E6E0C812AEED6FE00B1A013 /* SwiftLintPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E6E0C802AEED69300B1A013 /* XCRemoteSwiftPackageReference "SwiftLint" */;

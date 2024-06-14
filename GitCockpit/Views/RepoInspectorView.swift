@@ -18,11 +18,13 @@ struct RepoInspectorView: View {
         if let currentRepository = currentRepository {
 //            Text("More Information about \(String(describing: currentRepository.model?.getName()))")
 
-            if let readMe = ReadMe(from: currentRepository.pathToRoot) {
-                ReadMeView(readMe: readMe)
-            }
+            ScrollView {
+                if let readMe = ReadMe(from: currentRepository.pathToRoot) {
+                    ReadMeView(readMe: readMe)
+                }
 
-            MultiTagView(tags: $tags)
+                MultiTagView(tags: $tags)
+            }
         }
         else {
             Text(LocalizedStringKey("Show details here..."))
