@@ -269,6 +269,7 @@
       }
     },
     "More Information about %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -351,6 +352,9 @@
           }
         }
       }
+    },
+    "ReadMe content anavailable." : {
+
     },
     "Remote" : {
       "localizations" : {

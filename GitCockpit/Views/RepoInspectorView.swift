@@ -15,18 +15,23 @@ struct RepoInspectorView: View {
     var tags: [TagModel]?
 
     var body: some View {
-        if currentRepository == nil {
+        if let currentRepository = currentRepository {
+//            Text("More Information about \(String(describing: currentRepository.model?.getName()))")
+
+            if let readMe = ReadMe(from: currentRepository.pathToRoot) {
+                ReadMeView(readMe: readMe)
+            }
+
+            MultiTagView(tags: $tags)
+        }
+        else {
             Text(LocalizedStringKey("Show details here..."))
                 .onAppear {
                     withAnimation(.easeIn(duration: 1.0)) {
                         print("animated")
                     }
                 }
-        }
-        else {
-            Text("More Information about \(String(describing: currentRepository!.model?.getName()))")
 
-            MultiTagView(tags: $tags)
         }
     }
 }
