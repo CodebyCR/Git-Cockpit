@@ -56,4 +56,5 @@ struct AddPathButtonView: View {
 
 #Preview {
     AddPathButtonView()
+        .frame(minWidth: 100, minHeight: 50)
 }

@@ -115,11 +115,6 @@ struct TagConfigView: View {
     }
 }
 
-#Preview {
-    TagConfigView()
-        .modelContainer(for: TagModel.self, inMemory: true)
-}
-
 struct DeleteTagView: View {
     let tagToDelete: TagModel
 
@@ -133,4 +128,9 @@ struct DeleteTagView: View {
                 modelContext.delete(tagToDelete)
             })
     }
+}
+
+#Preview {
+    TagConfigView()
+        .modelContainer(for: TagModel.self, inMemory: true)
 }

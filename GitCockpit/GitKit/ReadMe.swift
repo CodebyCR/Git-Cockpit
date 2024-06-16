@@ -43,7 +43,7 @@ struct ReadMe {
         }
 
         let contents = try? fileManager.contentsOfDirectory(atPath: directoryPath)
-        guard let fileNames = contents else {
+        guard let fileNames = consume contents else {
             print("Directory don't conatins any file.")
             return nil
         }

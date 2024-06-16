@@ -16,7 +16,6 @@
 		8E2B14EB2BE6A842004FC9E6 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B14EA2BE6A842004FC9E6 /* ColorExtension.swift */; };
 		8E2B14ED2BE6A871004FC9E6 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B14EC2BE6A871004FC9E6 /* FileManagerExtension.swift */; };
 		8E2B14EF2BE6A9E2004FC9E6 /* RepositoryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B14EE2BE6A9E2004FC9E6 /* RepositoryWrapper.swift */; };
-		8E2B14F12BE6AA0C004FC9E6 /* RepositoryWrapperCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B14F02BE6AA0C004FC9E6 /* RepositoryWrapperCollection.swift */; };
 		8E2B14F42BE6AB65004FC9E6 /* SearchPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B14F32BE6AB65004FC9E6 /* SearchPathsView.swift */; };
 		8E2B14F62BE6AB8E004FC9E6 /* SingleSearchPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B14F52BE6AB8E004FC9E6 /* SingleSearchPathView.swift */; };
 		8E2B14F82BE6AC7D004FC9E6 /* TagConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B14F72BE6AC7D004FC9E6 /* TagConfigView.swift */; };
@@ -95,7 +94,6 @@
 		8E2B14EA2BE6A842004FC9E6 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8E2B14EC2BE6A871004FC9E6 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		8E2B14EE2BE6A9E2004FC9E6 /* RepositoryWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryWrapper.swift; sourceTree = "<group>"; };
-		8E2B14F02BE6AA0C004FC9E6 /* RepositoryWrapperCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryWrapperCollection.swift; sourceTree = "<group>"; };
 		8E2B14F32BE6AB65004FC9E6 /* SearchPathsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPathsView.swift; sourceTree = "<group>"; };
 		8E2B14F52BE6AB8E004FC9E6 /* SingleSearchPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSearchPathView.swift; sourceTree = "<group>"; };
 		8E2B14F72BE6AC7D004FC9E6 /* TagConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagConfigView.swift; sourceTree = "<group>"; };
@@ -179,6 +177,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E28CBB72C1EE3AB00571624 /* GitKit */ = {
+			isa = PBXGroup;
+			children = (
+				8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */,
+				8E8DC4C42AE67FD1002D2C5A /* Git Config Parser */,
+				8E181F382B645B71000229C5 /* GlobalGitConfig.swift */,
+				8E60E3A42C1B8067004B5567 /* ReadMe.swift */,
+				8E2299432B7DF5F500513007 /* GitChangelog.swift */,
+				8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */,
+				8EC7026B2B08FAEE00A6E2E2 /* Git HEAD Parser */,
+			);
+			path = GitKit;
+			sourceTree = "<group>";
+		};
 		8E2AFC362A24EBBD00D12539 /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,18 +250,10 @@
 		8E53E0B42AE2A3D8003D22CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8EC7026B2B08FAEE00A6E2E2 /* Git HEAD Parser */,
-				8E8DC4C42AE67FD1002D2C5A /* Git Config Parser */,
-				8E53E0B52AE2A400003D22CF /* RepositoyModel.swift */,
 				8E53E0B72AE2C29E003D22CF /* ProcessHandler.swift */,
 				8E8DC4B72AE4FF75002D2C5A /* FileUtils.swift */,
-				8E8DC4BB2AE50D31002D2C5A /* GitRepoHandler.swift */,
 				8EAD4F672B03EEB200B18E2B /* SearchPathModel.swift */,
-				8E181F382B645B71000229C5 /* GlobalGitConfig.swift */,
-				8E2299432B7DF5F500513007 /* GitChangelog.swift */,
 				8E2B14EE2BE6A9E2004FC9E6 /* RepositoryWrapper.swift */,
-				8E2B14F02BE6AA0C004FC9E6 /* RepositoryWrapperCollection.swift */,
-				8E60E3A42C1B8067004B5567 /* ReadMe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +354,7 @@
 		8EC46E0A2A23821200F3AF79 /* GitCockpit */ = {
 			isa = PBXGroup;
 			children = (
+				8E28CBB72C1EE3AB00571624 /* GitKit */,
 				8E2B14E92BE6A81E004FC9E6 /* Extensions */,
 				8E7F7DD72B9854680060CFE6 /* MenuBar */,
 				8EF4BB6B2B96F95D00AFAC40 /* LanguageCatalogs */,
@@ -631,7 +636,6 @@
 				8E8DC4B82AE4FF75002D2C5A /* FileUtils.swift in Sources */,
 				8E53E0B82AE2C29E003D22CF /* ProcessHandler.swift in Sources */,
 				8E9987482AE3C32600145820 /* SidebarItems.swift in Sources */,
-				8E2B14F12BE6AA0C004FC9E6 /* RepositoryWrapperCollection.swift in Sources */,
 				8EAD4F6F2B06860200B18E2B /* DictionaryPicker.swift in Sources */,
 				8E8DC4BC2AE50D31002D2C5A /* GitRepoHandler.swift in Sources */,
 				8E181F392B645B71000229C5 /* GlobalGitConfig.swift in Sources */,

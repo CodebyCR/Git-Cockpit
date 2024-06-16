@@ -80,7 +80,6 @@ struct NavigationManagerView: View {
                 Text(selectedTag)
             }
 
-
         }
     }
 }
