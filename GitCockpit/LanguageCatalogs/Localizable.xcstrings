@@ -296,6 +296,7 @@
       }
     },
     "No search paths chosen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

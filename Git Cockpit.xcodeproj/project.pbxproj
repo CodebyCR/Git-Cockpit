@@ -1056,7 +1056,7 @@
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
+				minimumVersion = 2.4.1;
 			};
 		};
 		8E6E0C802AEED69300B1A013 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
@@ -1064,7 +1064,7 @@
 			repositoryURL = "https://github.com/realm/SwiftLint";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.53.0;
+				minimumVersion = 0.57.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
